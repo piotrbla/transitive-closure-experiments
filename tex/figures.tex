@@ -1,0 +1,883 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,positioning}
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\begin{document}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I11) edge [loop above] node {} (I11)
+(I11) edge [loop above] node {} (I11)
+;
+\end{tikzpicture}
+\label{fig:figure2}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I12) edge [bend right, above] node {} (I11)
+(I21) edge [bend right, above] node {} (I11)
+(I11) edge [bend right, above] node {} (I12)
+(I12) edge [loop above] node {} (I12)
+(I21) edge [loop above] node {} (I21)
+(I11) edge [bend right, above] node {} (I21)
+;
+\end{tikzpicture}
+\label{fig:figure3}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I13) edge [bend right, above] node {} (I11)
+(I31) edge [bend right, above] node {} (I11)
+(I12) edge [loop above] node {} (I12)
+(I22) edge [bend right, above] node {} (I12)
+(I11) edge [bend right, above] node {} (I13)
+(I13) edge [loop above] node {} (I13)
+(I22) edge [bend right, above] node {} (I21)
+(I21) edge [loop above] node {} (I21)
+(I21) edge [bend right, above] node {} (I22)
+(I12) edge [bend right, above] node {} (I22)
+(I31) edge [loop above] node {} (I31)
+(I11) edge [bend right, above] node {} (I31)
+;
+\end{tikzpicture}
+\label{fig:figure4}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I14) edge [bend right, above] node {} (I11)
+(I41) edge [bend right, above] node {} (I11)
+(I13) edge [bend right, above] node {} (I12)
+(I32) edge [bend right, above] node {} (I12)
+(I12) edge [bend right, above] node {} (I13)
+(I23) edge [bend right, above] node {} (I13)
+(I11) edge [bend right, above] node {} (I14)
+(I14) edge [loop above] node {} (I14)
+(I23) edge [bend right, above] node {} (I21)
+(I31) edge [bend right, above] node {} (I21)
+(I22) edge [loop above] node {} (I22)
+(I22) edge [loop above] node {} (I22)
+(I21) edge [bend right, above] node {} (I23)
+(I13) edge [bend right, above] node {} (I23)
+(I32) edge [bend right, above] node {} (I31)
+(I21) edge [bend right, above] node {} (I31)
+(I31) edge [bend right, above] node {} (I32)
+(I12) edge [bend right, above] node {} (I32)
+(I41) edge [loop above] node {} (I41)
+(I11) edge [bend right, above] node {} (I41)
+;
+\end{tikzpicture}
+\label{fig:figure5}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I11) edge [loop above] node {} (I11)
+(I11) edge [loop above] node {} (I11)
+(I14) edge [bend right, above] node {} (I12)
+(I42) edge [bend right, above] node {} (I12)
+(I13) edge [loop above] node {} (I13)
+(I33) edge [bend right, above] node {} (I13)
+(I12) edge [bend right, above] node {} (I14)
+(I24) edge [bend right, above] node {} (I14)
+(I24) edge [bend right, above] node {} (I21)
+(I41) edge [bend right, above] node {} (I21)
+(I23) edge [bend right, above] node {} (I22)
+(I32) edge [bend right, above] node {} (I22)
+(I22) edge [bend right, above] node {} (I23)
+(I23) edge [loop above] node {} (I23)
+(I21) edge [bend right, above] node {} (I24)
+(I14) edge [bend right, above] node {} (I24)
+(I33) edge [bend right, above] node {} (I31)
+(I31) edge [loop above] node {} (I31)
+(I32) edge [loop above] node {} (I32)
+(I22) edge [bend right, above] node {} (I32)
+(I31) edge [bend right, above] node {} (I33)
+(I13) edge [bend right, above] node {} (I33)
+(I42) edge [bend right, above] node {} (I41)
+(I21) edge [bend right, above] node {} (I41)
+(I41) edge [bend right, above] node {} (I42)
+(I12) edge [bend right, above] node {} (I42)
+;
+\end{tikzpicture}
+\label{fig:figure6}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I12) edge [bend right, above] node {} (I11)
+(I21) edge [bend right, above] node {} (I11)
+(I11) edge [bend right, above] node {} (I12)
+(I12) edge [loop above] node {} (I12)
+(I14) edge [bend right, above] node {} (I13)
+(I43) edge [bend right, above] node {} (I13)
+(I13) edge [bend right, above] node {} (I14)
+(I34) edge [bend right, above] node {} (I14)
+(I21) edge [loop above] node {} (I21)
+(I11) edge [bend right, above] node {} (I21)
+(I24) edge [bend right, above] node {} (I22)
+(I42) edge [bend right, above] node {} (I22)
+(I23) edge [loop above] node {} (I23)
+(I33) edge [bend right, above] node {} (I23)
+(I22) edge [bend right, above] node {} (I24)
+(I24) edge [loop above] node {} (I24)
+(I34) edge [bend right, above] node {} (I31)
+(I41) edge [bend right, above] node {} (I31)
+(I33) edge [bend right, above] node {} (I32)
+(I32) edge [loop above] node {} (I32)
+(I32) edge [bend right, above] node {} (I33)
+(I23) edge [bend right, above] node {} (I33)
+(I31) edge [bend right, above] node {} (I34)
+(I14) edge [bend right, above] node {} (I34)
+(I43) edge [bend right, above] node {} (I41)
+(I31) edge [bend right, above] node {} (I41)
+(I42) edge [loop above] node {} (I42)
+(I22) edge [bend right, above] node {} (I42)
+(I41) edge [bend right, above] node {} (I43)
+(I13) edge [bend right, above] node {} (I43)
+;
+\end{tikzpicture}
+\label{fig:figure7}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I13) edge [bend right, above] node {} (I11)
+(I31) edge [bend right, above] node {} (I11)
+(I12) edge [loop above] node {} (I12)
+(I22) edge [bend right, above] node {} (I12)
+(I11) edge [bend right, above] node {} (I13)
+(I13) edge [loop above] node {} (I13)
+(I14) edge [loop above] node {} (I14)
+(I44) edge [bend right, above] node {} (I14)
+(I22) edge [bend right, above] node {} (I21)
+(I21) edge [loop above] node {} (I21)
+(I21) edge [bend right, above] node {} (I22)
+(I12) edge [bend right, above] node {} (I22)
+(I24) edge [bend right, above] node {} (I23)
+(I43) edge [bend right, above] node {} (I23)
+(I23) edge [bend right, above] node {} (I24)
+(I34) edge [bend right, above] node {} (I24)
+(I31) edge [loop above] node {} (I31)
+(I11) edge [bend right, above] node {} (I31)
+(I34) edge [bend right, above] node {} (I32)
+(I42) edge [bend right, above] node {} (I32)
+(I33) edge [loop above] node {} (I33)
+(I33) edge [loop above] node {} (I33)
+(I32) edge [bend right, above] node {} (I34)
+(I24) edge [bend right, above] node {} (I34)
+(I44) edge [bend right, above] node {} (I41)
+(I41) edge [loop above] node {} (I41)
+(I43) edge [bend right, above] node {} (I42)
+(I32) edge [bend right, above] node {} (I42)
+(I42) edge [bend right, above] node {} (I43)
+(I23) edge [bend right, above] node {} (I43)
+(I41) edge [bend right, above] node {} (I44)
+(I14) edge [bend right, above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure8}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I14) edge [bend right, above] node {} (I11)
+(I41) edge [bend right, above] node {} (I11)
+(I13) edge [bend right, above] node {} (I12)
+(I32) edge [bend right, above] node {} (I12)
+(I12) edge [bend right, above] node {} (I13)
+(I23) edge [bend right, above] node {} (I13)
+(I11) edge [bend right, above] node {} (I14)
+(I14) edge [loop above] node {} (I14)
+(I23) edge [bend right, above] node {} (I21)
+(I31) edge [bend right, above] node {} (I21)
+(I22) edge [loop above] node {} (I22)
+(I22) edge [loop above] node {} (I22)
+(I21) edge [bend right, above] node {} (I23)
+(I13) edge [bend right, above] node {} (I23)
+(I24) edge [loop above] node {} (I24)
+(I44) edge [bend right, above] node {} (I24)
+(I32) edge [bend right, above] node {} (I31)
+(I21) edge [bend right, above] node {} (I31)
+(I31) edge [bend right, above] node {} (I32)
+(I12) edge [bend right, above] node {} (I32)
+(I34) edge [bend right, above] node {} (I33)
+(I43) edge [bend right, above] node {} (I33)
+(I33) edge [bend right, above] node {} (I34)
+(I34) edge [loop above] node {} (I34)
+(I41) edge [loop above] node {} (I41)
+(I11) edge [bend right, above] node {} (I41)
+(I44) edge [bend right, above] node {} (I42)
+(I42) edge [loop above] node {} (I42)
+(I43) edge [loop above] node {} (I43)
+(I33) edge [bend right, above] node {} (I43)
+(I42) edge [bend right, above] node {} (I44)
+(I24) edge [bend right, above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure9}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I11) edge [loop above] node {} (I11)
+(I11) edge [loop above] node {} (I11)
+(I14) edge [bend right, above] node {} (I12)
+(I42) edge [bend right, above] node {} (I12)
+(I13) edge [loop above] node {} (I13)
+(I33) edge [bend right, above] node {} (I13)
+(I12) edge [bend right, above] node {} (I14)
+(I24) edge [bend right, above] node {} (I14)
+(I24) edge [bend right, above] node {} (I21)
+(I41) edge [bend right, above] node {} (I21)
+(I23) edge [bend right, above] node {} (I22)
+(I32) edge [bend right, above] node {} (I22)
+(I22) edge [bend right, above] node {} (I23)
+(I23) edge [loop above] node {} (I23)
+(I21) edge [bend right, above] node {} (I24)
+(I14) edge [bend right, above] node {} (I24)
+(I33) edge [bend right, above] node {} (I31)
+(I31) edge [loop above] node {} (I31)
+(I32) edge [loop above] node {} (I32)
+(I22) edge [bend right, above] node {} (I32)
+(I31) edge [bend right, above] node {} (I33)
+(I13) edge [bend right, above] node {} (I33)
+(I34) edge [loop above] node {} (I34)
+(I44) edge [bend right, above] node {} (I34)
+(I42) edge [bend right, above] node {} (I41)
+(I21) edge [bend right, above] node {} (I41)
+(I41) edge [bend right, above] node {} (I42)
+(I12) edge [bend right, above] node {} (I42)
+(I44) edge [bend right, above] node {} (I43)
+(I43) edge [loop above] node {} (I43)
+(I43) edge [bend right, above] node {} (I44)
+(I34) edge [bend right, above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure10}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I12) edge [bend right, above] node {} (I11)
+(I21) edge [bend right, above] node {} (I11)
+(I11) edge [bend right, above] node {} (I12)
+(I12) edge [loop above] node {} (I12)
+(I14) edge [bend right, above] node {} (I13)
+(I43) edge [bend right, above] node {} (I13)
+(I13) edge [bend right, above] node {} (I14)
+(I34) edge [bend right, above] node {} (I14)
+(I21) edge [loop above] node {} (I21)
+(I11) edge [bend right, above] node {} (I21)
+(I24) edge [bend right, above] node {} (I22)
+(I42) edge [bend right, above] node {} (I22)
+(I23) edge [loop above] node {} (I23)
+(I33) edge [bend right, above] node {} (I23)
+(I22) edge [bend right, above] node {} (I24)
+(I24) edge [loop above] node {} (I24)
+(I34) edge [bend right, above] node {} (I31)
+(I41) edge [bend right, above] node {} (I31)
+(I33) edge [bend right, above] node {} (I32)
+(I32) edge [loop above] node {} (I32)
+(I32) edge [bend right, above] node {} (I33)
+(I23) edge [bend right, above] node {} (I33)
+(I31) edge [bend right, above] node {} (I34)
+(I14) edge [bend right, above] node {} (I34)
+(I43) edge [bend right, above] node {} (I41)
+(I31) edge [bend right, above] node {} (I41)
+(I42) edge [loop above] node {} (I42)
+(I22) edge [bend right, above] node {} (I42)
+(I41) edge [bend right, above] node {} (I43)
+(I13) edge [bend right, above] node {} (I43)
+(I44) edge [loop above] node {} (I44)
+(I44) edge [loop above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure11}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I13) edge [bend right, above] node {} (I11)
+(I31) edge [bend right, above] node {} (I11)
+(I12) edge [loop above] node {} (I12)
+(I22) edge [bend right, above] node {} (I12)
+(I11) edge [bend right, above] node {} (I13)
+(I13) edge [loop above] node {} (I13)
+(I14) edge [loop above] node {} (I14)
+(I44) edge [bend right, above] node {} (I14)
+(I22) edge [bend right, above] node {} (I21)
+(I21) edge [loop above] node {} (I21)
+(I21) edge [bend right, above] node {} (I22)
+(I12) edge [bend right, above] node {} (I22)
+(I24) edge [bend right, above] node {} (I23)
+(I43) edge [bend right, above] node {} (I23)
+(I23) edge [bend right, above] node {} (I24)
+(I34) edge [bend right, above] node {} (I24)
+(I31) edge [loop above] node {} (I31)
+(I11) edge [bend right, above] node {} (I31)
+(I34) edge [bend right, above] node {} (I32)
+(I42) edge [bend right, above] node {} (I32)
+(I33) edge [loop above] node {} (I33)
+(I33) edge [loop above] node {} (I33)
+(I32) edge [bend right, above] node {} (I34)
+(I24) edge [bend right, above] node {} (I34)
+(I44) edge [bend right, above] node {} (I41)
+(I41) edge [loop above] node {} (I41)
+(I43) edge [bend right, above] node {} (I42)
+(I32) edge [bend right, above] node {} (I42)
+(I42) edge [bend right, above] node {} (I43)
+(I23) edge [bend right, above] node {} (I43)
+(I41) edge [bend right, above] node {} (I44)
+(I14) edge [bend right, above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure12}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I14) edge [bend right, above] node {} (I11)
+(I41) edge [bend right, above] node {} (I11)
+(I13) edge [bend right, above] node {} (I12)
+(I32) edge [bend right, above] node {} (I12)
+(I12) edge [bend right, above] node {} (I13)
+(I23) edge [bend right, above] node {} (I13)
+(I11) edge [bend right, above] node {} (I14)
+(I14) edge [loop above] node {} (I14)
+(I23) edge [bend right, above] node {} (I21)
+(I31) edge [bend right, above] node {} (I21)
+(I22) edge [loop above] node {} (I22)
+(I22) edge [loop above] node {} (I22)
+(I21) edge [bend right, above] node {} (I23)
+(I13) edge [bend right, above] node {} (I23)
+(I24) edge [loop above] node {} (I24)
+(I44) edge [bend right, above] node {} (I24)
+(I32) edge [bend right, above] node {} (I31)
+(I21) edge [bend right, above] node {} (I31)
+(I31) edge [bend right, above] node {} (I32)
+(I12) edge [bend right, above] node {} (I32)
+(I34) edge [bend right, above] node {} (I33)
+(I43) edge [bend right, above] node {} (I33)
+(I33) edge [bend right, above] node {} (I34)
+(I34) edge [loop above] node {} (I34)
+(I41) edge [loop above] node {} (I41)
+(I11) edge [bend right, above] node {} (I41)
+(I44) edge [bend right, above] node {} (I42)
+(I42) edge [loop above] node {} (I42)
+(I43) edge [loop above] node {} (I43)
+(I33) edge [bend right, above] node {} (I43)
+(I42) edge [bend right, above] node {} (I44)
+(I24) edge [bend right, above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure13}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I14) edge [bend right, above] node {} (I12)
+(I42) edge [bend right, above] node {} (I12)
+(I13) edge [loop above] node {} (I13)
+(I33) edge [bend right, above] node {} (I13)
+(I12) edge [bend right, above] node {} (I14)
+(I24) edge [bend right, above] node {} (I14)
+(I24) edge [bend right, above] node {} (I21)
+(I41) edge [bend right, above] node {} (I21)
+(I23) edge [bend right, above] node {} (I22)
+(I32) edge [bend right, above] node {} (I22)
+(I22) edge [bend right, above] node {} (I23)
+(I23) edge [loop above] node {} (I23)
+(I21) edge [bend right, above] node {} (I24)
+(I14) edge [bend right, above] node {} (I24)
+(I33) edge [bend right, above] node {} (I31)
+(I31) edge [loop above] node {} (I31)
+(I32) edge [loop above] node {} (I32)
+(I22) edge [bend right, above] node {} (I32)
+(I31) edge [bend right, above] node {} (I33)
+(I13) edge [bend right, above] node {} (I33)
+(I34) edge [loop above] node {} (I34)
+(I44) edge [bend right, above] node {} (I34)
+(I42) edge [bend right, above] node {} (I41)
+(I21) edge [bend right, above] node {} (I41)
+(I41) edge [bend right, above] node {} (I42)
+(I12) edge [bend right, above] node {} (I42)
+(I44) edge [bend right, above] node {} (I43)
+(I43) edge [loop above] node {} (I43)
+(I43) edge [bend right, above] node {} (I44)
+(I34) edge [bend right, above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure14}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I14) edge [bend right, above] node {} (I13)
+(I43) edge [bend right, above] node {} (I13)
+(I13) edge [bend right, above] node {} (I14)
+(I34) edge [bend right, above] node {} (I14)
+(I24) edge [bend right, above] node {} (I22)
+(I42) edge [bend right, above] node {} (I22)
+(I23) edge [loop above] node {} (I23)
+(I33) edge [bend right, above] node {} (I23)
+(I22) edge [bend right, above] node {} (I24)
+(I24) edge [loop above] node {} (I24)
+(I34) edge [bend right, above] node {} (I31)
+(I41) edge [bend right, above] node {} (I31)
+(I33) edge [bend right, above] node {} (I32)
+(I32) edge [loop above] node {} (I32)
+(I32) edge [bend right, above] node {} (I33)
+(I23) edge [bend right, above] node {} (I33)
+(I31) edge [bend right, above] node {} (I34)
+(I14) edge [bend right, above] node {} (I34)
+(I43) edge [bend right, above] node {} (I41)
+(I31) edge [bend right, above] node {} (I41)
+(I42) edge [loop above] node {} (I42)
+(I22) edge [bend right, above] node {} (I42)
+(I41) edge [bend right, above] node {} (I43)
+(I13) edge [bend right, above] node {} (I43)
+(I44) edge [loop above] node {} (I44)
+(I44) edge [loop above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure15}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I14) edge [loop above] node {} (I14)
+(I44) edge [bend right, above] node {} (I14)
+(I24) edge [bend right, above] node {} (I23)
+(I43) edge [bend right, above] node {} (I23)
+(I23) edge [bend right, above] node {} (I24)
+(I34) edge [bend right, above] node {} (I24)
+(I34) edge [bend right, above] node {} (I32)
+(I42) edge [bend right, above] node {} (I32)
+(I33) edge [loop above] node {} (I33)
+(I33) edge [loop above] node {} (I33)
+(I32) edge [bend right, above] node {} (I34)
+(I24) edge [bend right, above] node {} (I34)
+(I44) edge [bend right, above] node {} (I41)
+(I41) edge [loop above] node {} (I41)
+(I43) edge [bend right, above] node {} (I42)
+(I32) edge [bend right, above] node {} (I42)
+(I42) edge [bend right, above] node {} (I43)
+(I23) edge [bend right, above] node {} (I43)
+(I41) edge [bend right, above] node {} (I44)
+(I14) edge [bend right, above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure16}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I24) edge [loop above] node {} (I24)
+(I44) edge [bend right, above] node {} (I24)
+(I34) edge [bend right, above] node {} (I33)
+(I43) edge [bend right, above] node {} (I33)
+(I33) edge [bend right, above] node {} (I34)
+(I34) edge [loop above] node {} (I34)
+(I44) edge [bend right, above] node {} (I42)
+(I42) edge [loop above] node {} (I42)
+(I43) edge [loop above] node {} (I43)
+(I33) edge [bend right, above] node {} (I43)
+(I42) edge [bend right, above] node {} (I44)
+(I24) edge [bend right, above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure17}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I34) edge [loop above] node {} (I34)
+(I44) edge [bend right, above] node {} (I34)
+(I44) edge [bend right, above] node {} (I43)
+(I43) edge [loop above] node {} (I43)
+(I43) edge [bend right, above] node {} (I44)
+(I34) edge [bend right, above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure18}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=1, xscale=1, inner sep=0pt, outer sep=0pt, 
+->,>=stealth',shorten >=1pt,auto, thick, trans/.style={thick,->,>=stealth}]
+  \node[state, draw=none] (X)                    {};
+	\node[state] (I11) [below=20 of X] {1,1};
+	\node[state] (I12) [right=20 of I11] {1,2};
+	\node[state] (I13) [right=20 of I12] {1,3};
+	\node[state] (I14) [right=20 of I13] {1,4};
+	\node[state] (I21) [below=20 of I11] {2,1};
+	\node[state] (I22) [right=20 of I21] {2,2};
+	\node[state] (I23) [right=20 of I22] {2,3};
+	\node[state] (I24) [right=20 of I23] {2,4};
+	\node[state] (I31) [below=20 of I21] {3,1};
+	\node[state] (I32) [right=20 of I31] {3,2};
+	\node[state] (I33) [right=20 of I32] {3,3};
+	\node[state] (I34) [right=20 of I33] {3,4};
+	\node[state] (I41) [below=20 of I31] {4,1};
+	\node[state] (I42) [right=20 of I41] {4,2};
+	\node[state] (I43) [right=20 of I42] {4,3};
+	\node[state] (I44) [right=20 of I43] {4,4};
+\path 
+(I44) edge [loop above] node {} (I44)
+(I44) edge [loop above] node {} (I44)
+;
+\end{tikzpicture}
+\label{fig:figure19}
+\end{figure}
+
+\end{document}
