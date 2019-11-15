@@ -14,9 +14,9 @@ CODE:=[n]->{S1[k,i,j]->  [tt,kk,ii,jj,t]: n>1 and
    2*jj +1 <=i<=min(2*(jj+1) + 0, n) and jj >=0 and 
 
 
-1<=k,i,j<=n and
+0<=k,i,j<n and
 
-1<=t<=5n-2 and  
+0<=t<5n-2 and  
 
 (
 (k=   t-(i+j) +2 and i+j-1 <=t<=i+j+n-2  ) 
