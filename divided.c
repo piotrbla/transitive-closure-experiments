@@ -130,12 +130,13 @@ void computeTC1(int **matrix, int n) {
   double start = omp_get_wtime();
   register int lbp = 0;
   register int ubp = floord(n + 1, 2) - 1;
-#pragma omp parallel for private(c1, c2, c3, c4, c5, c6)
+//#pragma omp parallel for private(c1, c2, c3, c4, c5, c6)
   for (int c0 = 0; c0 < ubp; c0 += 1)
     for (int c1 = 0; c1 <= min(c0 + 1, n / 2 - 1); c1 += 1)
       for (int c2 = 0; c2 <= min(c0 - c1 + 1, n / 2 - 1); c2 += 1)
         for (int c4 = max(2 * c0 + 1, 2 * c1 + 2 * c2); c4 <= 2 * c0 + 2;
              c4 += 1)
+#pragma omp parallel for private(c5, c6)
           for (int c5 = 2 * c1 + 1; c5 <= min(2 * c1 + 2, -2 * c2 + c4 + 1);
                c5 += 1)
             for (int c6 = 2 * c2 + 1; c6 <= min(2 * c2 + 2, c4 - c5 + 2);
@@ -143,7 +144,7 @@ void computeTC1(int **matrix, int n) {
               reach[c5][c6] = reach[c5][c6] || (reach[c5][c4 - c5 - c6 + 2] &&
                                                 reach[c4 - c5 - c6 + 2][c6]);
 
-#pragma omp parallel for private(c1, c2, c3, c4, c5, c6)
+//#pragma omp parallel for private(c1, c2, c3, c4, c5, c6)
   for (int c0 = ubp; c0 < 2 * n - 2; c0 += 1)
     for (int c1 = 0; c1 < n / 2; c1 += 1)
       for (int c2 = max(0, -2 * n + c0 - c1 + (n + 1) / 2);
@@ -155,6 +156,7 @@ void computeTC1(int **matrix, int n) {
                                      reach[-3 * n + 2 * c0 - c5 + 4][n - 1]);
         for (int c4 = max(2 * c0 + 1, 2 * c1 + 2 * c2);
              c4 <= min(2 * c0 + 2, n + 2 * c1 + 2 * c2 - 1); c4 += 1)
+#pragma omp parallel for private(c5, c6)
           for (int c5 = 2 * c1 + 1;
                c5 <= min(min(n - 1, 2 * c1 + 2), -2 * c2 + c4 + 1); c5 += 1)
             for (int c6 = 2 * c2 + 1;
@@ -167,6 +169,7 @@ void computeTC1(int **matrix, int n) {
                          n + c0 + c1 + c2 + 1);
                c4 += 1) {
             if (n + c0 + c1 + c2 >= c4) {
+#pragma omp parallel for private(c5, c6)
               for (int c5 = 2 * c1 + 1; c5 <= min(n - 1, 2 * c1 + 2); c5 += 1)
                 for (int c6 = 2 * c2 + 1; c6 <= min(n - 1, 2 * c2 + 2);
                      c6 += 1) {
@@ -180,6 +183,7 @@ void computeTC1(int **matrix, int n) {
                                           reach[-n + c4 - c5 - c6 + 2][c6]);
                 }
             } else
+#pragma omp parallel for private(c5, c6)
               for (int c5 = 2 * c1 + 1; c5 <= min(n - 1, 2 * c1 + 2); c5 += 1)
                 for (int c6 = 2 * c2 + 1; c6 <= min(n - 1, 2 * c2 + 2);
                      c6 += 1) {
@@ -204,6 +208,7 @@ void computeTC1(int **matrix, int n) {
                                      reach[-3 * n + 2 * c0 - c6 + 4][c6]);
         for (int c4 = max(2 * c0 + 1, 2 * n + 2 * c1 + 2 * c2 + 2);
              c4 <= min(2 * c0 + 2, 3 * n + 2 * c1 + 2 * c2 + 1); c4 += 1)
+#pragma omp parallel for private(c5, c6)
           for (int c5 = max(2 * c1 + 1, -3 * n - 2 * c2 + c4 + 1);
                c5 <= min(n - 1, 2 * c1 + 2); c5 += 1)
             for (int c6 = max(2 * c2 + 1, -3 * n + c4 - c5 + 3);
@@ -213,7 +218,7 @@ void computeTC1(int **matrix, int n) {
                                     reach[-2 * n + c4 - c5 - c6 + 2][c6]);
       }
 
-#pragma omp parallel for private(c1, c2, c3, c4, c5, c6)
+//#pragma omp parallel for private(c1, c2, c3, c4, c5, c6)
   for (int c0 = 2 * n - 2; c0 < 2 * n + floord(n, 2) - 2; c0 += 1)
     for (int c1 = -2 * n + c0 + 2; c1 < n / 2; c1 += 1)
       for (int c2 = max(-2 * n + c0 + 2, -2 * n + c0 - c1 + (n + 1) / 2);
@@ -221,6 +226,7 @@ void computeTC1(int **matrix, int n) {
         for (int c4 = 2 * c0 + 1;
              c4 <= min(min(5 * n - 5, 2 * c0 + 2), 3 * n + 2 * c1 + 2 * c2 + 1);
              c4 += 1)
+#pragma omp parallel for private(c5, c6)
           for (int c5 = max(max(2 * c1 + 1, -3 * n - 2 * c2 + c4 + 1),
                             -4 * n + c4 + 4);
                c5 <= min(n - 1, 2 * c1 + 2); c5 += 1)
