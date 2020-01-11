@@ -10,7 +10,6 @@
 #include <stdlib.h>
 #define min(x,y)    ((x) < (y) ? (x) : (y))
 #define max(x,y)    ((x) > (y) ? (x) : (y))
-#define floord(n,d) (((n)<0) ? -((-(n)+(d)-1)/(d)) : (n)/(d))
 #define S0(a, i, j, k) d[i][j] = c[i][k] + c[k][j]
 
 void printMatrix(int**, int, int);

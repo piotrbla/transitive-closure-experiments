@@ -7,7 +7,6 @@
 #define max(x, y) ((x) > (y) ? (x) : (y))
 #define min(x, y) ((x) < (y) ? (x) : (y))
 
-#define S1(aaa, i, j, k) reach[i][j] = reach[i][j] || (reach[i][k] && reach[k][j])
 void printMatrix(int **, int, int);
 int **allocateMatrix(int);
 
