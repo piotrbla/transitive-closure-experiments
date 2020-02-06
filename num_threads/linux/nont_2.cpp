@@ -47,7 +47,7 @@ void computeDYN1(int** matrix, int n) {
       c[i][j] = matrix[i][j];
   double start = omp_get_wtime();
   for (int c0 = 2; c0 < n; c0 += 1)
-#pragma omp parallel for private(c1, c2, c0)
+#pragma omp parallel for private(c0)
     for (int c1 = 1; c1 <= n - c0; c1 += 1)
       for (int c2 = c0 + c1; c2 <= min(n, 2 * c0 + c1 - 2); c2 += 1) {
         if (2 * c0 + c1 >= c2 + 3)
