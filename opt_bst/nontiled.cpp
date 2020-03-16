@@ -25,10 +25,13 @@ void computeSEQ0(int* p, int n)
   {
     for (j = 0; j < n; j++)
         w[i][j] = 0;
-    w[i][i] = p[i];
+    if (i<n-1)
+    {
+      w[i][i+1] = p[i];
+    }
   }
   for (i = 0; i < n; i++)        
-     for (j = i+1; j <= n+1; j++)
+     for (j = i+1; j < n; j++)
         w[i][j] = 99999;
 
 
@@ -36,10 +39,9 @@ void computeSEQ0(int* p, int n)
 
 
 
-  for (j = 0; j < n-1; j++)	
-     for (i=0; i < n-j; i++){    
+  for (j = 1; j < n; j++)
+    for (i=0; i < n-j; i++){    
         for (k = i; k <= i+j; k++){
-          printf("i:%d j:%d k:%d\n", i, j, k);
            optimal_w = w[i][k-1] + w[k+1][i+j]; 
            if (optimal_w < w[i][i+j]){   
               w[i][i+j] = optimal_w;	  
@@ -154,7 +156,7 @@ void computeDYN2(int** table, int _PB_N, int* seq) {
 
   double execution_time = omp_get_wtime() - start;
   printf("tiles: %lf\n", execution_time);
-  write_results(_PB_N, execution_time, '\n');
+  //write_results(_PB_N, execution_time, '\n');
   printMatrix(c, _PB_N, 2);
   deallocateMatrix(c, _PB_N + 1);
   deallocateMatrix(d, _PB_N + 1);
@@ -169,10 +171,10 @@ void printMatrix(int** matrix, int N, int fileno) {
     for (int j = 0; j < N; j++)
     {
       fprintf(f, "%d ", matrix[i][j]);
-      //printf("%d ", matrix[i][j]);
+      printf("%d ", matrix[i][j]);
     }
     fprintf(f, "\n");
-    //printf("\n");
+    printf("\n");
   }
   fclose(f);
 }
