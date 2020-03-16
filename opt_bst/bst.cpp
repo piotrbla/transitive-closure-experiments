@@ -36,7 +36,7 @@ void computeSEQ0(int* p, int n)
   double start = omp_get_wtime();
 #pragma scop
   for (j = 1; j < n; j++)
-    for (i=0; i < n-j; i++){    
+    for (i=1; i < n-j; i++){    
         for (k = i; k <= i+j; k++){
 	   w[i][i+j] = min(w[i][k-1] + w[k+1][i+j], w[i][i+j]);
         }
@@ -68,31 +68,29 @@ void computeSEQ0Pluto(int* p, int n)
      for (j = i+1; j < n; j++)
         w[i][j] = 99999;
   double start = omp_get_wtime();
-  int t1, t2, t3, t4, t5, t6, t7, t8, t9;
+   int t1, t2, t3, t4, t5, t6;
  int lb, ub, lbp, ubp, lb2, ub2;
  register int lbv, ubv;
-if (n >= 2) {
-  for (t1=1;t1<=n-1;t1++) {
-    for (t3=0;t3<=-t1+n-1;t3++) {
-      for (t5=t3;t5<=t1+t3;t5++) {
-        optimal_w = w[t3][t5-1] + w[t5+1][t3+t1];;
-        w[t3][t3+t1] = min(optimal_w, w[t3][t3+t1]);;
-      }
-    }
-    lbp=0;
-    ubp=floord(-t1+n-1,19);
-#pragma omp parallel for private(lbv,ubv,t4,t5,t6,t7,t8,t9)
-    for (t3=lbp;t3<=ubp;t3++) {
-      for (t5=ceild(19*t3-24,25);t5<=min(floord(n-1,25),floord(t1+19*t3+18,25));t5++) {
-        for (t6=max(19*t3,-t1+25*t5);t6<=min(min(19*t3+18,25*t5+24),-t1+n-1);t6++) {
-          for (t8=max(25*t5,t6);t8<=min(t1+t6,25*t5+24);t8++) {
-            w[t6][t6+t1] += p[t8];;
+if (n >= 3) {
+  for (t1=0;t1<=floord(44*n-69,475);t1++) {
+    lbp=max(ceild(19*t1-n+2,19),ceild(19*t1-23,44));
+    ubp=min(floord(n-1,25),t1);
+#pragma omp parallel for private(lbv,ubv,t3,t4,t5,t6)
+    for (t2=lbp;t2<=ubp;t2++) {
+      for (t3=max(1,19*t1-19*t2);t3<=min(min(n-2,25*t2+23),19*t1-19*t2+18);t3++) {
+        for (t4=max(25*t2,t3+1);t4<=min(n-1,25*t2+24);t4++) {
+          for (t6=-t3+t4;t6<=t4;t6++) {
+            w[(-t3+t4)][(-t3+t4)+t3] = min(w[(-t3+t4)][t6-1] + w[t6+1][(-t3+t4)+t3], w[(-t3+t4)][(-t3+t4)+t3]);;
+          }
+          for (t6=-t3+t4;t6<=t4;t6++) {
+            w[(-t3+t4)][(-t3+t4)+t3] += p[t6];;
           }
         }
       }
     }
   }
 }
+
   double execution_time = omp_get_wtime() - start;
   printf("pluto: %lf\n", execution_time);
   write_results(n, execution_time);
@@ -118,6 +116,7 @@ void computeSEQ1(int* p, int n)
         w[i][j] = 99999;
   double start = omp_get_wtime();
   for (j = 1; j < n; j++)
+    #pragma omp parallel for
     for (i=0; i < n-j; i++){    
         for (k = i; k <= i+j; k++){
            optimal_w = w[i][k-1] + w[k+1][i+j]; 
@@ -228,7 +227,7 @@ void write_results(int n, double execution_time)
 
 
 int main(void) {//vector
-  const int ZMAX = 7;
+  const int ZMAX = 900;
   int* seq = allocateVector(ZMAX);
   for (int i = 0; i < ZMAX; i++)
     seq[i] = i;
