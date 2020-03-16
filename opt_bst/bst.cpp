@@ -69,17 +69,31 @@ void computeSEQ0Pluto(int* p, int n)
      for (j = i+1; j < n; j++)
         w[i][j] = 99999;
   double start = omp_get_wtime();
-  for (j = 1; j < n; j++)
-    for (i=0; i < n-j; i++){    
-        for (k = i; k <= i+j; k++){
-           optimal_w = w[i][k-1] + w[k+1][i+j]; 
-           if (optimal_w < w[i][i+j]){   
-              w[i][i+j] = optimal_w;	  
-           }
+  int t1, t2, t3, t4, t5, t6, t7, t8, t9;
+ int lb, ub, lbp, ubp, lb2, ub2;
+ register int lbv, ubv;
+if (n >= 2) {
+  for (t1=1;t1<=n-1;t1++) {
+    for (t3=0;t3<=-t1+n-1;t3++) {
+      for (t5=t3;t5<=t1+t3;t5++) {
+        optimal_w = w[t3][t5-1] + w[t5+1][t3+t1];;
+        w[t3][t3+t1] = min(optimal_w, w[t3][t3+t1]);;
+      }
+    }
+    lbp=0;
+    ubp=floord(-t1+n-1,19);
+#pragma omp parallel for private(lbv,ubv,t4,t5,t6,t7,t8,t9)
+    for (t3=lbp;t3<=ubp;t3++) {
+      for (t5=ceild(19*t3-24,25);t5<=min(floord(n-1,25),floord(t1+19*t3+18,25));t5++) {
+        for (t6=max(19*t3,-t1+25*t5);t6<=min(min(19*t3+18,25*t5+24),-t1+n-1);t6++) {
+          for (t8=max(25*t5,t6);t8<=min(t1+t6,25*t5+24);t8++) {
+            w[t6][t6+t1] += p[t8];;
+          }
         }
-        for (k = i; k <= i+j; w[i][i+j] += p[k++])
-          ;
-     }
+      }
+    }
+  }
+}
   double execution_time = omp_get_wtime() - start;
   printf("pluto: %lf\n", execution_time);
   write_results(n, execution_time);
@@ -139,17 +153,23 @@ void computeSEQ2(int* p, int n)
      for (j = i+1; j < n; j++)
         w[i][j] = 99999;
   double start = omp_get_wtime();
-  for (j = 1; j < n; j++)
-    for (i=0; i < n-j; i++){    
-        for (k = i; k <= i+j; k++){
-           optimal_w = w[i][k-1] + w[k+1][i+j]; 
-           if (optimal_w < w[i][i+j]){   
-              w[i][i+j] = optimal_w;	  
-           }
+for (int c0 = floord(-n + 1, 16) + 2; c0 <= floord(n - 3, 16) + 1; c0 += 1) {
+    #pragma omp parallel for
+    for (int c1 = -c0 - (n - 16 * c0 + 46) / 32 + 1; c1 <= min(-1, -c0); c1 += 1) {
+      for (int c4 = -16 * c1 - 15; c4 <= min(min(n - 2, n + 16 * c0 + 16 * c1 - 1), -16 * c1); c4 += 1) {
+        for (int c5 = max(1, -16 * c0 - 16 * c1); c5 <= min(-16 * c0 - 16 * c1 + 15, n - c4 - 1); c5 += 1) {
+          for (int c7 = c5; c7 <= c4 + c5; c7 += 1) {
+            w[c5][c4 + c5] = (((w[c5][c7 - 1] + w[c7 + 1][c4 + c5]) < w[c5][c4 + c5]) ? (w[c5][c7 - 1] + w[c7 + 1][c4 + c5]) : w[c5][c4 + c5]);
+          }
+          for (int c7 = c5; c7 <= c4 + c5; c7 += 1) {
+            w[c5][c4 + c5] += p[c7];
+          }
         }
-        for (k = i; k <= i+j; w[i][i+j] += p[k++])
-          ;
-     }
+      }
+    }
+    if (c0 == 0) {
+    }
+  }
   double execution_time = omp_get_wtime() - start;
   printf("stencil: %lf\n", execution_time);
   write_results(n, execution_time);
