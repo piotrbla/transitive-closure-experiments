@@ -73,7 +73,7 @@ void computeDYN2(int** matrix, int n) {
   double start = omp_get_wtime();
 
   #pragma omp parallel for 
-  for (int i=0 ; i<10 ; i++)
+  for (int i=0 ; i<n ; i++)
   {
 		printf("Tid%d\t", omp_get_thread_num());
 		printf("TT%d\n", omp_get_num_threads());

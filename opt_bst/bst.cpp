@@ -38,8 +38,7 @@ void computeSEQ0(int* p, int n)
   for (j = 1; j < n; j++)
     for (i=0; i < n-j; i++){    
         for (k = i; k <= i+j; k++){
-           optimal_w = w[i][k-1] + w[k+1][i+j]; 
-	   w[i][i+j] = min(optimal_w, w[i][i+j]);
+	   w[i][i+j] = min(w[i][k-1] + w[k+1][i+j], w[i][i+j]);
         }
         for (k = i; k <= i+j; k++)
 		w[i][i+j] += p[k];
