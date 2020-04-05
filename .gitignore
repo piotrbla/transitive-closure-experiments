@@ -31,3 +31,6 @@
 *.out
 *.app
 tex/figures.aux
+bst_algo_explanation/algo.aux
+bst_algo_explanation/algo.pdf
+bst_algo_explanation/algoVector.aux
