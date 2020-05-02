@@ -233,6 +233,7 @@ num\_threads & normal obst & improved obst\\  \hline
 32 & 30.030107 & 7.05399    \\ \hline
 \end{tabular} 
 
+\newpage
 Uzyskane przyśpieszenia:
 
 \begin{tabular}{|r|l|l|}
@@ -272,20 +273,19 @@ num\_threads & speedup S1 & speedup S2 \\  \hline
 32 & 6.282061066 & 26.74386638  \\ \hline
 \end{tabular} 
 
-
-\begin{tikzpicture}[y=1.6cm, x=.6cm,font=\sffamily]
+\begin{tikzpicture}[yscale=0.05,xscale=.4, font=\sffamily]
  	%axis
-	\draw (0,0) -- coordinate (x axis mid) (25,0);
-    	\draw (0,0) -- coordinate (y axis mid) (0,11.2);
+	\draw (0,0) -- coordinate (x axis mid) (33,0);
+    	\draw (0,0) -- coordinate (y axis mid) (0,189.2);
     	%ticks
-    	\foreach \x in {0,...,24}
+    	\foreach \x in {0,5,...,32}
      		\draw (\x,1pt) -- (\x,-4pt)
 			node[anchor=north] {\x};
-    	\foreach \y in {0,1,...,11}
+    	\foreach \y in {0,10,...,180}
      		\draw (1pt,\y) -- (-3pt,\y) 
      			node[anchor=east] {\y}; 
-    \draw[->,xshift=0cm] (0,0) -- coordinate (x axis mid) (25,0);
-    \draw[->,xshift=0cm] (0,0) -- coordinate (y axis mid)(0,11.2);
+    \draw[->,xshift=0cm] (0,0) -- coordinate (x axis mid) (33,0);
+    \draw[->,xshift=0cm] (0,0) -- coordinate (y axis mid)(0,189.2);
 	%labels      
 	\node[below=0.8cm] at (x axis mid) {num\_threads};
 	\node[rotate=90, above=0.8cm] at (y axis mid) {time [s]};
@@ -295,17 +295,165 @@ num\_threads & speedup S1 & speedup S2 \\  \hline
 	\draw plot[mark=square*, mark options={fill=white}] file {tnorm.data};
    
 	%legend
-	\begin{scope}[shift={(16,7)}] 
+	\begin{scope}[shift={(16,70)}] 
 	\draw (0,0) -- 
 		plot[mark=*] (0.25,0) -- (0.5,0) 
-		node[right]{dapt};
-	\draw[yshift=\baselineskip] (0,0) -- 
-		plot[mark=square*, mark options={fill=white}] (0.25,0) -- (0.5,0)
-		node[right]{pluto};
+		node[right]{improved};
+	\draw[yshift=\baselineskip] (0,10) -- 
+		plot[mark=square*, mark options={fill=white}] (0.25,10) -- (0.5,10)
+		node[right]{obst};
 	\end{scope}
 \end{tikzpicture}
 
-Poniżej załączam wykresy w rozbiciu na pojedyncze wartości:
+Wykres przyśpieszeń:\\
+\begin{tikzpicture}[yscale=0.2,xscale=.4, font=\sffamily]
+ 	%axis
+	\draw (0,0) -- coordinate (x axis mid) (33,0);
+    	\draw (0,0) -- coordinate (y axis mid) (0,30);
+    	%ticks
+    	\foreach \x in {0,5,...,32}
+     		\draw (\x,1pt) -- (\x,-4pt)
+			node[anchor=north] {\x};
+    	\foreach \y in {0,5,...,30}
+     		\draw (1pt,\y) -- (-3pt,\y) 
+     			node[anchor=east] {\y}; 
+    \draw[->,xshift=0cm] (0,0) -- coordinate (x axis mid) (33,0);
+    \draw[->,xshift=0cm] (0,0) -- coordinate (y axis mid)(0,30);
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {num\_threads};
+	\node[rotate=90, above=0.8cm] at (y axis mid) {speedup};
+
+	%plots
+	\draw plot[mark=*] file {s1.data};
+	\draw plot[mark=square*, mark options={fill=white}] file {s2.data};
+   
+	%legend
+	\begin{scope}[shift={(16,10)}] 
+	\draw (0,0) -- 
+		plot[mark=*] (0.25,0) -- (0.5,0) 
+		node[right]{s1};
+	\draw[yshift=\baselineskip] (0,1) -- 
+		plot[mark=square*, mark options={fill=white}] (0.25,1) -- (0.5,1)
+		node[right]{s2};
+	\end{scope}
+\end{tikzpicture}
+
+Poniżej załączam wykresy w rozbiciu na pojedyncze wartości:\\
+Wykres OBST:\\
+\begin{tikzpicture}[yscale=0.05,xscale=.4, font=\sffamily]
+ 	%axis
+	\draw (0,0) -- coordinate (x axis mid) (33,0);
+    	\draw (0,0) -- coordinate (y axis mid) (0,189.2);
+    	%ticks
+    	\foreach \x in {0,5,...,32}
+     		\draw (\x,1pt) -- (\x,-4pt)
+			node[anchor=north] {\x};
+    	\foreach \y in {0,10,...,180}
+     		\draw (1pt,\y) -- (-3pt,\y) 
+     			node[anchor=east] {\y}; 
+    \draw[->,xshift=0cm] (0,0) -- coordinate (x axis mid) (33,0);
+    \draw[->,xshift=0cm] (0,0) -- coordinate (y axis mid)(0,189.2);
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {num\_threads};
+	\node[rotate=90, above=0.8cm] at (y axis mid) {time [s]};
+
+	%plots
+	\draw plot[mark=square*, mark options={fill=white}] file {tnorm.data};
+   
+	%legend
+	\begin{scope}[shift={(16,70)}] 
+	\draw[yshift=\baselineskip] (0,10) -- 
+		plot[mark=square*, mark options={fill=white}] (0.25,10) -- (0.5,10)
+		node[right]{obst};
+	\end{scope}
+\end{tikzpicture}
+
+Wersja z if:\\
+\begin{tikzpicture}[yscale=0.05,xscale=.4, font=\sffamily]
+ 	%axis
+	\draw (0,0) -- coordinate (x axis mid) (33,0);
+    	\draw (0,0) -- coordinate (y axis mid) (0,189.2);
+    	%ticks
+    	\foreach \x in {0,5,...,32}
+     		\draw (\x,1pt) -- (\x,-4pt)
+			node[anchor=north] {\x};
+    	\foreach \y in {0,10,...,180}
+     		\draw (1pt,\y) -- (-3pt,\y) 
+     			node[anchor=east] {\y}; 
+    \draw[->,xshift=0cm] (0,0) -- coordinate (x axis mid) (33,0);
+    \draw[->,xshift=0cm] (0,0) -- coordinate (y axis mid)(0,189.2);
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {num\_threads};
+	\node[rotate=90, above=0.8cm] at (y axis mid) {time [s]};
+
+	%plots
+	\draw plot[mark=*] file {tif.data};
+   
+	%legend
+	\begin{scope}[shift={(16,70)}] 
+	\draw (0,0) -- 
+		plot[mark=*] (0.25,0) -- (0.5,0) 
+		node[right]{improved};
+	\end{scope}
+\end{tikzpicture}
+
+Wykresy przyśpieszeń (S1):\\
+\begin{tikzpicture}[yscale=0.2,xscale=.4, font=\sffamily]
+ 	%axis
+	\draw (0,0) -- coordinate (x axis mid) (33,0);
+    	\draw (0,0) -- coordinate (y axis mid) (0,30);
+    	%ticks
+    	\foreach \x in {0,5,...,32}
+     		\draw (\x,1pt) -- (\x,-4pt)
+			node[anchor=north] {\x};
+    	\foreach \y in {0,5,...,30}
+     		\draw (1pt,\y) -- (-3pt,\y) 
+     			node[anchor=east] {\y}; 
+    \draw[->,xshift=0cm] (0,0) -- coordinate (x axis mid) (33,0);
+    \draw[->,xshift=0cm] (0,0) -- coordinate (y axis mid)(0,30);
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {num\_threads};
+	\node[rotate=90, above=0.8cm] at (y axis mid) {speedup};
+
+	%plots
+	\draw plot[mark=*] file {s1.data};
+   
+	%legend
+	\begin{scope}[shift={(16,10)}] 
+	\draw (0,0) -- 
+		plot[mark=*] (0.25,0) -- (0.5,0) 
+		node[right]{S1};
+	\end{scope}
+\end{tikzpicture}
+
+Wykresy przyśpieszeń (S2):\\
+\begin{tikzpicture}[yscale=0.2,xscale=.4, font=\sffamily]
+ 	%axis
+	\draw (0,0) -- coordinate (x axis mid) (33,0);
+    	\draw (0,0) -- coordinate (y axis mid) (0,30);
+    	%ticks
+    	\foreach \x in {0,5,...,32}
+     		\draw (\x,1pt) -- (\x,-4pt)
+			node[anchor=north] {\x};
+    	\foreach \y in {0,5,...,30}
+     		\draw (1pt,\y) -- (-3pt,\y) 
+     			node[anchor=east] {\y}; 
+    \draw[->,xshift=0cm] (0,0) -- coordinate (x axis mid) (33,0);
+    \draw[->,xshift=0cm] (0,0) -- coordinate (y axis mid)(0,30);
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {num\_threads};
+	\node[rotate=90, above=0.8cm] at (y axis mid) {speedup};
+
+	%plots
+	\draw plot[mark=square*, mark options={fill=white}] file {s2.data};
+   
+	%legend
+	\begin{scope}[shift={(16,10)}] 
+	\draw (0,1) -- 
+		plot[mark=square*, mark options={fill=white}] (0.25,1) -- (0.5,1)
+		node[right]{S2};
+	\end{scope}
+\end{tikzpicture}
 
 Poniżej załączam też tabele dla poszczególnych danych w rozbiciu na pojedyncze wartości:
 
