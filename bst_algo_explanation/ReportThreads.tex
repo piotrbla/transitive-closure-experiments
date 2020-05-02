@@ -1,0 +1,315 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage{polski}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{placeins}
+\usetikzlibrary{plotmarks}
+\title{Raport}
+\subtitle{Wpływ liczby wątków na czas wykonywania - Optimal BST}
+\author{Piotr Błaszyński}
+\date{\today}
+
+\begin{filecontents}{tnorm.data}
+#numthreads 	time [s]
+0   188.650966
+1   184.661649
+2   158.061008
+3   118.205924
+4   92.788404
+5   74.941802
+6   62.997307
+7   55.677385
+8   47.967482
+9   43.426307
+10  40.259185
+11  35.993129
+12  34.595824
+13  32.19857
+14  30.683281
+15  29.147565
+16  30.389329
+17  29.545287
+18  31.015962
+19  30.544127
+20  30.874198
+21  29.219287
+22  29.963998
+23  29.697854
+24  29.967067
+25  29.370663
+26  30.694492
+27  29.897847
+28  30.145456
+29  30.015018
+30  30.149217
+31  29.366212
+32  30.030107
+\end{filecontents}
+
+
+\begin{filecontents}{tif.data}
+#numthreads 	time [s]
+0   94.191369 
+1   57.18226
+2   34.87422
+3   24.759321
+4   18.385709
+5   15.307084
+6   12.752232
+7   10.967784
+8   9.978986
+9   9.111519
+10  8.236732
+11  7.681049
+12  7.07542
+13  7.87217
+14  8.292541
+15  8.626039
+16  8.776943
+17  8.089999
+18  7.933015
+19  7.720661
+20  7.590544
+21  7.3329
+22  7.084401
+23  6.986372
+24  6.908875
+25  6.575586
+26  6.729274
+27  6.785697
+28  6.7674
+29  6.823531
+30  6.764758
+31  6.68795
+32  7.05399
+\end{filecontents}
+
+\begin{filecontents}{s1.data}
+#numthreads 	s
+0    1.000000000
+1    1.021603387
+2    1.193532601
+3    1.595951875
+4    2.033130843
+5    2.517299571
+6    2.994587785
+7    3.388287112
+8    3.932892829
+9    4.344163228
+10   4.685911203
+11   5.241304972
+12   5.4529982
+13   5.858985849
+14   6.148330943
+15   6.472271903
+16   6.207802943
+17   6.385145827
+18   6.082383194
+19   6.176341724
+20   6.110311465
+21   6.45638499
+22   6.295921058
+23   6.352343371
+24   6.295276278
+25   6.423108869
+26   6.146085298
+27   6.309851208
+28   6.258023299
+29   6.285219153
+30   6.257242634
+31   6.424082411
+32   6.282061066
+\end{filecontents}
+
+\begin{filecontents}{s2.data}
+#numthreads 	s
+0   2.002847692
+1   3.299116999
+2   5.409467681
+3   7.619391743
+4   10.26073925
+5   12.32442221
+6   14.79356445
+7   17.20046328
+8   18.9048232
+9   20.70466692
+10  22.90361833
+11  24.56057317
+12  26.66286468
+13  23.96429015
+14  22.74947643
+15  21.86994123
+16  21.4939263
+17  23.31903453
+18  23.78048775
+19  24.4345615
+20  24.85341841
+21  25.72665194
+22  26.62906377
+23  27.00270842
+24  27.30559838
+25  28.68960515
+26  28.03437132
+27  27.80126581
+28  27.87643201
+29  27.64711789
+30  27.88731925
+31  28.20759216
+32  26.74386638
+\end{filecontents}
+
+\begin{document}
+\maketitle
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                frame=single, 
+                breaklines=true,
+                morecomment=[l][\color{magenta}]{\#}
+}
+
+Dla poniższego kodu wygenerowanego przez narzędzie dapt/stencil:
+\begin{lstlisting}
+for (int c0 = floord(-n + 1, 16) + 2; c0 <= floord(n - 3, 16) + 1; c0 += 1) {
+\end{lstlisting}
+
+Wygenerowanego na podstawie kodu sekwencyjnego obliczającego optymalne ułożenie BST:
+\begin{lstlisting}
+  for (t1=0;t1<=floord(44*n-69,475);t1++) {
+\end{lstlisting}
+
+Oraz dla poniższego kodu wygenerowanego przez narzędzie dapt/stencil:
+\begin{lstlisting}
+for (int c0 = floord(-n + 1, 16) + 2; c0 <= floord(n - 3, 16) + 1; c0 += 1) {
+\end{lstlisting}
+
+Wygenerowanego na podstawie ulepszonego (kod z if) kodu sekwencyjnego obliczającego optymalne ułożenie BST:
+\begin{lstlisting}
+  for (t1=0;t1<=floord(44*n-69,475);t1++) {
+\end{lstlisting}
+
+
+przyjmując wartości dla MACRO\_NUM\_THREADS z przedziału od 1 do 24 (oraz wykonując wersję sekwencyjną, bez blokowania) uzyskałem następujące wyniki (zero oznacza czas wykonania dla wersji sekwencyjnej):
+
+\begin{tabular}{|r|l|l|}
+num\_threads & normal obst & improved obst\\  \hline 
+0  & 188.650966 & 94.191369  \\ \hline 
+1  & 184.661649 & 57.18226   \\ \hline 
+2  & 158.061008 & 34.87422   \\ \hline
+3  & 118.205924 & 24.759321  \\ \hline
+4  & 92.788404 & 18.385709  \\ \hline
+5  & 74.941802 & 15.307084  \\ \hline
+6  & 62.997307 & 12.752232  \\ \hline
+7  & 55.677385 & 10.967784  \\ \hline
+8  & 47.967482 & 9.978986   \\ \hline
+9  & 43.426307 & 9.111519   \\ \hline
+10 & 40.259185 & 8.236732   \\ \hline
+11 & 35.993129 & 7.681049   \\ \hline
+12 & 34.595824 & 7.07542    \\ \hline
+13 & 32.19857 & 7.87217    \\ \hline
+14 & 30.683281 & 8.292541   \\ \hline
+15 & 29.147565 & 8.626039   \\ \hline
+16 & 30.389329 & 8.776943   \\ \hline
+17 & 29.545287 & 8.089999   \\ \hline
+18 & 31.015962 & 7.933015   \\ \hline
+19 & 30.544127 & 7.720661   \\ \hline
+20 & 30.874198 & 7.590544   \\ \hline
+21 & 29.219287 & 7.3329     \\ \hline
+22 & 29.963998 & 7.084401   \\ \hline
+23 & 29.697854 & 6.986372   \\ \hline
+24 & 29.967067 & 6.908875   \\ \hline
+25 & 29.370663 & 6.575586   \\ \hline
+26 & 30.694492 & 6.729274   \\ \hline
+27 & 29.897847 & 6.785697   \\ \hline
+28 & 30.145456 & 6.7674     \\ \hline
+29 & 30.015018 & 6.823531   \\ \hline
+30 & 30.149217 & 6.764758   \\ \hline
+31 & 29.366212 & 6.68795    \\ \hline
+32 & 30.030107 & 7.05399    \\ \hline
+\end{tabular} 
+
+Uzyskane przyśpieszenia:
+
+\begin{tabular}{|r|l|l|}
+num\_threads & speedup S1 & speedup S2 \\  \hline 
+0  & 1.000000000 & 2.002847692  \\ \hline 
+1  & 1.021603387 & 3.299116999  \\ \hline 
+2  & 1.193532601 & 5.409467681  \\ \hline
+3  & 1.595951875 & 7.619391743  \\ \hline
+4  & 2.033130843 & 10.26073925  \\ \hline
+5  & 2.517299571 & 12.32442221  \\ \hline
+6  & 2.994587785 & 14.79356445  \\ \hline
+7  & 3.388287112 & 17.20046328  \\ \hline
+8  & 3.932892829 & 18.9048232  \\ \hline
+9  & 4.344163228 & 20.70466692  \\ \hline
+10 & 4.685911203 & 22.90361833  \\ \hline
+11 & 5.241304972 & 24.56057317  \\ \hline
+12 & 5.4529982 & 26.66286468  \\ \hline
+13 & 5.858985849 & 23.96429015  \\ \hline
+14 & 6.148330943 & 22.74947643  \\ \hline
+15 & 6.472271903 & 21.86994123  \\ \hline
+16 & 6.207802943 & 21.4939263  \\ \hline
+17 & 6.385145827 & 23.31903453  \\ \hline
+18 & 6.082383194 & 23.78048775  \\ \hline
+19 & 6.176341724 & 24.4345615  \\ \hline
+20 & 6.110311465 & 24.85341841  \\ \hline
+21 & 6.45638499 & 25.72665194  \\ \hline
+22 & 6.295921058 & 26.62906377  \\ \hline
+23 & 6.352343371 & 27.00270842  \\ \hline
+24 & 6.295276278 & 27.30559838  \\ \hline
+25 & 6.423108869 & 28.68960515  \\ \hline
+26 & 6.146085298 & 28.03437132  \\ \hline
+27 & 6.309851208 & 27.80126581  \\ \hline
+28 & 6.258023299 & 27.87643201  \\ \hline
+29 & 6.285219153 & 27.64711789  \\ \hline
+30 & 6.257242634 & 27.88731925  \\ \hline
+31 & 6.424082411 & 28.20759216  \\ \hline
+32 & 6.282061066 & 26.74386638  \\ \hline
+\end{tabular} 
+
+
+\begin{tikzpicture}[y=1.6cm, x=.6cm,font=\sffamily]
+ 	%axis
+	\draw (0,0) -- coordinate (x axis mid) (25,0);
+    	\draw (0,0) -- coordinate (y axis mid) (0,11.2);
+    	%ticks
+    	\foreach \x in {0,...,24}
+     		\draw (\x,1pt) -- (\x,-4pt)
+			node[anchor=north] {\x};
+    	\foreach \y in {0,1,...,11}
+     		\draw (1pt,\y) -- (-3pt,\y) 
+     			node[anchor=east] {\y}; 
+    \draw[->,xshift=0cm] (0,0) -- coordinate (x axis mid) (25,0);
+    \draw[->,xshift=0cm] (0,0) -- coordinate (y axis mid)(0,11.2);
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {num\_threads};
+	\node[rotate=90, above=0.8cm] at (y axis mid) {time [s]};
+
+	%plots
+	\draw plot[mark=*] file {tif.data};
+	\draw plot[mark=square*, mark options={fill=white}] file {tnorm.data};
+   
+	%legend
+	\begin{scope}[shift={(16,7)}] 
+	\draw (0,0) -- 
+		plot[mark=*] (0.25,0) -- (0.5,0) 
+		node[right]{dapt};
+	\draw[yshift=\baselineskip] (0,0) -- 
+		plot[mark=square*, mark options={fill=white}] (0.25,0) -- (0.5,0)
+		node[right]{pluto};
+	\end{scope}
+\end{tikzpicture}
+
+Poniżej załączam wykresy w rozbiciu na pojedyncze wartości:
+
+Poniżej załączam też tabele dla poszczególnych danych w rozbiciu na pojedyncze wartości:
+
+
+Wszystkie powyższe wyniki uzyskane zostały na architekturze UCI przy użyciu węzła systemu kolejkowego na klastrze.
+
+\end{document}
