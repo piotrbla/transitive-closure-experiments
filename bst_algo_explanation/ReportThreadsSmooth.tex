@@ -346,8 +346,8 @@ num\_threads & speedup S1 & speedup S2 \\  \hline
 	\node[rotate=90, above=0.8cm] at (y axis mid) {time [s]};
 
 	%plots
-	\draw[blue,very thick] plot[mark=*] file {tif.data};
-	\draw[red,very thick] plot[mark=square*, mark options={fill=white}] file {tnorm.data};
+	\draw[blue,very thick, smooth] plot[mark=*] file {tif.data};
+	\draw[red,very thick,smooth] plot[mark=square*, mark options={fill=white}] file {tnorm.data};
    
 	%legend
 	\begin{scope}[shift={(16,70)}] 
@@ -379,8 +379,8 @@ Wykres przyśpieszeń:\\
 	\node[rotate=90, above=0.8cm] at (y axis mid) {speedup};
 
 	%plots
-	\draw[red, very thick] plot[mark=*] file {s1.data};
-	\draw[blue,very thick] plot[mark=square*, mark options={fill=white}] file {s2.data};
+	\draw[red, very thick,smooth] plot[mark=*] file {s1.data};
+	\draw[blue,very thick,smooth] plot[mark=square*, mark options={fill=white}] file {s2.data};
    
 	%legend
 	\begin{scope}[shift={(16,10)}] 
@@ -413,7 +413,7 @@ Wykres OBST:\\
 	\node[rotate=90, above=0.8cm] at (y axis mid) {time [s]};
 
 	%plots
-	\draw[red,very thick] plot[mark=square*, mark options={fill=white}] file {tnorm.data};
+	\draw[red,very thick,smooth] plot[mark=square*, mark options={fill=white}] file {tnorm.data};
    
 	%legend
 	\begin{scope}[shift={(16,70)}] 
@@ -442,7 +442,7 @@ Wersja z if:\\
 	\node[rotate=90, above=0.8cm] at (y axis mid) {time [s]};
 
 	%plots
-	\draw[blue,very thick] plot[mark=*] file {tif.data};
+	\draw[blue,very thick,smooth] plot[mark=*] file {tif.data};
    
 	%legend
 	\begin{scope}[shift={(16,70)}] 
@@ -471,7 +471,7 @@ Wykresy przyśpieszeń (S1):\\
 	\node[rotate=90, above=0.8cm] at (y axis mid) {speedup};
 
 	%plots
-	\draw[red,very thick] plot[mark=*] file {s1.data};
+	\draw[red,very thick,smooth] plot[mark=*] file {s1.data};
    
 	%legend
 	\begin{scope}[shift={(16,10)}] 
@@ -500,7 +500,7 @@ Wykresy przyśpieszeń (S2):\\
 	\node[rotate=90, above=0.8cm] at (y axis mid) {speedup};
 
 	%plots
-	\draw[blue,very thick] plot[mark=square*, mark options={fill=white}] file {s2.data};
+	\draw[blue,very thick,smooth] plot[mark=square*, mark options={fill=white}] file {s2.data};
    
 	%legend
 	\begin{scope}[shift={(16,10)}] 
