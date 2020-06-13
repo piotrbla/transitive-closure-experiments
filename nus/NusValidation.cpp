@@ -58,48 +58,7 @@ void deallocateMatrix(int**, int);
 void write_results_full(int , double , char );
 void write_results(int , double );
 
-void computeDYN0Imperfect(int** table, int n, int *seq) {
-  int** S = getFullCopy(table, n);
-
-  double start = omp_get_wtime();
-  for (int i = n - 1; i >= 0; i--) {
-    for (int j = i + 1; j < n; j++) {
-      for (int k = i; k < j - 1; k++) {
-        S[i][j] = max_score(S[i][k - 1] + S[k + 1][j - 1], S[i][j]); // s1
-      }
-      S[i][j] = max_score(S[i][j], S[i+1][j-1] + sigma(i, j)); // s2
-    }
-  }
-
-  double execution_time = omp_get_wtime() - start;
-
-  printf("IMP: %lf\n", execution_time);
-  write_results(n, execution_time);
-  printMatrix(S, n, 0);
-  deallocateMatrix(S, n);
-}
-
-void computeDYN0Article(int** table, int n, int *seq) {
-  int** S = getFullCopy(table, n);
-
-  double start = omp_get_wtime();
-  for (int i = n - 1; i >= 0; i--) {
-    for (int j = i + 1; j < n; j++) {
-      for (int k = 0; k < j-i; k++) {
-        S[i][j] = max_score(S[i][k+i] + S[k+i+1][j], S[i][j]); // s1
-      }
-      S[i][j] = max_score(S[i][j], S[i+1][j-1] + sigma(i, j)); // s2
-    }
-  }
-  double execution_time = omp_get_wtime() - start;
-
-  printf("ART: %lf\n", execution_time);
-  write_results(n, execution_time);
-  printMatrix(S, n, 3);
-  deallocateMatrix(S, n);
-}
-
-void computeDYN4New(int** table, int n, int *seq) {
+void computeDYN1Imperfect(int** table, int n, int *seq) {
   int** S = getFullCopy(table, n);
 
   double start = omp_get_wtime();
@@ -113,13 +72,13 @@ void computeDYN4New(int** table, int n, int *seq) {
   }
   double execution_time = omp_get_wtime() - start;
 
-  printf("NEW: %lf\n", execution_time);
+  printf("IMP: %lf\n", execution_time);
   write_results(n, execution_time);
-  printMatrix(S, n, 4);
+  printMatrix(S, n, 1);
   deallocateMatrix(S, n);
 }
 
-void computeDYN0Perfect(int** table, int n, int *seq) {
+void computeDYN2Perfect(int** table, int n, int *seq) {
   int** S = getFullCopy(table, n);
 
   double start = omp_get_wtime();
@@ -134,43 +93,10 @@ void computeDYN0Perfect(int** table, int n, int *seq) {
   double execution_time = omp_get_wtime() - start;
 
   printf("PER: %lf\n", execution_time);
-  write_results(n, execution_time);
-  printMatrix(S, n, 1);
-  deallocateMatrix(S, n);
-}
-
-void computeDYN0TestbenchImplementation(int** table, int n, int *seq) {
-  int** S = getFullCopy(table, n);
-
-  double start = omp_get_wtime();
-  for (int i = n - 1; i >= 0; i--) {
-    for (int j = i + 1; j < n; j++) {
-
-      if (j - 1 >= 0)
-        S[i][j] = max_score(S[i][j], S[i][j - 1]);
-      if (i + 1 < n)
-        S[i][j] = max_score(S[i][j], S[i + 1][j]);
-
-      if (j - 1 >= 0 && i + 1 < n) {
-        if (i < j - 1)
-          S[i][j] = max_score(S[i][j], S[i + 1][j - 1] + sigma(i, j));
-        else
-          S[i][j] = max_score(S[i][j], S[i + 1][j - 1]);
-      }
-
-      for (int k = i + 1; k < j; k++) {
-        S[i][j] = max_score(S[i][j], S[i][k] + S[k + 1][j]);
-      }
-    }
-  }
-
-  double execution_time = omp_get_wtime() - start;
-  printf("TSB: %lf\n", execution_time);
   write_results_full(n, execution_time, '\n');
   printMatrix(S, n, 2);
   deallocateMatrix(S, n);
 }
-
 
 void printMatrix(int** matrix, int N, int fileno) {
   char filename[10];
@@ -253,11 +179,8 @@ int main(void) {
   //while (N < ZMAX)
   //{
   N += 10;
-  computeDYN0Imperfect(graph, N, seq);
-  computeDYN0Perfect(graph, N, seq);
-  computeDYN0Article(graph, N, seq);
-  computeDYN4New(graph, N, seq);
-  computeDYN0TestbenchImplementation(graph, N, seq);
+  computeDYN1Imperfect(graph, N, seq);
+  computeDYN2Perfect(graph, N, seq);
   //N += 10;
 //}
   deallocateMatrix(graph, ZMAX);
