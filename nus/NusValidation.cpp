@@ -124,10 +124,10 @@ void computeDYN0Perfect(int** table, int n, int *seq) {
 
   double start = omp_get_wtime();
   //Listing 1.2: Perfectly nested Nussinov loops
-  for (int i = n - 1; i >= 1; i--) {
+  for (int i = n - 1; i >= 0; i--) {
     for (int j = i + 1; j < n; j++) {
-      for (int k = i; k < j - 1; k++) {
-        S[i][j] = max_sc(S[i][j], S[i][j+1], S[i][k-1] + S[k + 1][j - 1] + sigma(i, j));
+      for (int k = i; k < j; k++) {
+        S[i][j] = max_sc(S[i][k] + S[k+1][j], S[i][j], max_score(S[i][j], S[i+1][j-1] + sigma(i, j)));
       }
     }
   }
