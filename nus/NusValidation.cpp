@@ -9,7 +9,7 @@
 #define ceild(n,d)  ceil(((double)(n))/((double)(d)))
 #define floord(n,d) (((n)<0) ? -((-(n)+(d)-1)/(d)) : (n)/(d))
 #define S0(a, i, j, k) c[i][j] = c[i][k] + c[k][j]
-#define match(b1, b2) (((b1)+(b2)) == 3 ? 1 : 0)
+//#define match(b1, b2) (((b1)+(b2)) == 3 ? 1 : 0)
 #define sigma(i, j) (match(seq[i], seq[j]))
 int max_score(int s1, int s2)
 {
@@ -26,6 +26,28 @@ int max_sc(int s1, int s2, int s3) {
   return s3;
 }
 
+bool match(const int e1, const int e2)
+{
+  /*
+   *  'A' => 0
+   *  'G' => 1
+   *  'C' => 2
+   *  'U' => 3
+  */
+  const bool match =
+    (e1 == 0 && e2 == 3) || (e1 == 3 && e2 == 0) ||
+    (e1 == 1 && e2 == 2) || (e1 == 2 && e2 == 1) ||
+    (e1 == 1 && e2 == 3) || (e1 == 3 && e2 == 1);
+  return match;
+  //(e1 == "A" && e2 == "U") ||
+  //(e1 == "U" && e2 == "A") ||
+  //(e1 == "G" && e2 == "C") ||
+  //(e1 == "C" && e2 == "G") ||
+  //(e1 == "G" && e2 == "U") ||
+  //(e1 == "U" && e2 == "G");
+
+}
+
 
 
 void printMatrix(int**, int, int);
@@ -40,14 +62,15 @@ void computeDYN0Imperfect(int** table, int n, int *seq) {
   int** S = getFullCopy(table, n);
 
   double start = omp_get_wtime();
-  for (int i = n - 1; i >= 1; i--) {
+  for (int i = n - 1; i >= 0; i--) {
     for (int j = i + 1; j < n; j++) {
       for (int k = i; k < j - 1; k++) {
         S[i][j] = max_score(S[i][k - 1] + S[k + 1][j - 1], S[i][j]); // s1
       }
-      S[i][j] = max_score(S[i][j - 1], S[i][j] + sigma(i, j)); // s2
+      S[i][j] = max_score(S[i][j], S[i+1][j-1] + sigma(i, j)); // s2
     }
   }
+
   double execution_time = omp_get_wtime() - start;
 
   printf("IMP: %lf\n", execution_time);
@@ -73,6 +96,26 @@ void computeDYN0Article(int** table, int n, int *seq) {
   printf("ART: %lf\n", execution_time);
   write_results(n, execution_time);
   printMatrix(S, n, 3);
+  deallocateMatrix(S, n);
+}
+
+void computeDYN4New(int** table, int n, int *seq) {
+  int** S = getFullCopy(table, n);
+
+  double start = omp_get_wtime();
+  for (int i = n - 1; i >= 0; i--) {
+    for (int j = i + 1; j < n; j++) {
+      for (int k = i; k < j; k++) {
+        S[i][j] = max_score(S[i][k] + S[k+1][j], S[i][j]); // s1
+      }
+      S[i][j] = max_score(S[i][j], S[i+1][j-1] + sigma(i, j)); // s2
+    }
+  }
+  double execution_time = omp_get_wtime() - start;
+
+  printf("NEW: %lf\n", execution_time);
+  write_results(n, execution_time);
+  printMatrix(S, n, 4);
   deallocateMatrix(S, n);
 }
 
@@ -183,14 +226,10 @@ void write_results(int n, double execution_time)
 
 int getValue(const char c)
 {
-  if(c=='A')
-    return 0;
-  if(c=='G')
-    return 1;
-  if(c=='U')
-    return 2;
-  if(c=='C')
-    return 3;
+  if(c=='A')    return 0;
+  if(c=='G')    return 1;
+  if(c=='C')    return 2;
+  if(c=='U')    return 3;
   return 4;
 }
 
@@ -204,22 +243,23 @@ int main(void) {
   for (int i = 0; i < ZMAX; i++)
     graph[i][i] = 0;
   //
-  const char *seqTest = "GCGUCCACGGCUAGCU";
+  const char* seqTest = "GCGUCCACGGCUAGCU";
   ///////////////////////GCGUCCACGGCUAGCU
   //for (int i=0 ; i<ZMAX ; i++)
   //  seq[i] = rand()%4;
-  for (int i=0 ; i<ZMAX ; i++)
+  for (int i = 0; i < ZMAX; i++)
     seq[i] = getValue(seqTest[i]);
   int N = ZMAX - 10;
   //while (N < ZMAX)
   //{
-    N += 10;
-    computeDYN0Imperfect(graph, N, seq);
-    computeDYN0Perfect(graph, N, seq);
-    computeDYN0TestbenchImplementation(graph, N, seq);
-    computeDYN0Article(graph, N, seq);
-    //N += 10;
-  //}
+  N += 10;
+  computeDYN0Imperfect(graph, N, seq);
+  computeDYN0Perfect(graph, N, seq);
+  computeDYN0Article(graph, N, seq);
+  computeDYN4New(graph, N, seq);
+  computeDYN0TestbenchImplementation(graph, N, seq);
+  //N += 10;
+//}
   deallocateMatrix(graph, ZMAX);
   free(seq);
   return 0;
