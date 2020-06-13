@@ -56,6 +56,26 @@ void computeDYN0Imperfect(int** table, int n, int *seq) {
   deallocateMatrix(S, n);
 }
 
+void computeDYN0Article(int** table, int n, int *seq) {
+  int** S = getFullCopy(table, n);
+
+  double start = omp_get_wtime();
+  for (int i = n - 1; i >= 0; i--) {
+    for (int j = i + 1; j < n; j++) {
+      for (int k = 0; k < j-i; k++) {
+        S[i][j] = max_score(S[i][k+i] + S[k+i+1][j], S[i][j]); // s1
+      }
+      S[i][j] = max_score(S[i][j], S[i+1][j-1] + sigma(i, j)); // s2
+    }
+  }
+  double execution_time = omp_get_wtime() - start;
+
+  printf("ART: %lf\n", execution_time);
+  write_results(n, execution_time);
+  printMatrix(S, n, 3);
+  deallocateMatrix(S, n);
+}
+
 void computeDYN0Perfect(int** table, int n, int *seq) {
   int** S = getFullCopy(table, n);
 
@@ -185,6 +205,7 @@ int main(void) {
     graph[i][i] = 0;
   //
   const char *seqTest = "GCGUCCACGGCUAGCU";
+  ///////////////////////GCGUCCACGGCUAGCU
   //for (int i=0 ; i<ZMAX ; i++)
   //  seq[i] = rand()%4;
   for (int i=0 ; i<ZMAX ; i++)
@@ -196,6 +217,7 @@ int main(void) {
     computeDYN0Imperfect(graph, N, seq);
     computeDYN0Perfect(graph, N, seq);
     computeDYN0TestbenchImplementation(graph, N, seq);
+    computeDYN0Article(graph, N, seq);
     //N += 10;
   //}
   deallocateMatrix(graph, ZMAX);
