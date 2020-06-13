@@ -11,8 +11,20 @@
 #define S0(a, i, j, k) c[i][j] = c[i][k] + c[k][j]
 #define match(b1, b2) (((b1)+(b2)) == 3 ? 1 : 0)
 #define sigma(i, j) (match(seq[i], seq[j]))
-#define max_score(s1, s2) ((s1 >= s2) ? s1 : s2)
-#define max_sc(s1, s2, s3) ((s1 >= s2) ? ((s1 >= s3) ? s1 : s3) : ((s2 >= s3) ? s2 : s3))
+int max_score(int s1, int s2)
+{
+  if (s1 >= s2)
+    return s1;
+  return s2;
+}
+
+int max_sc(int s1, int s2, int s3) {
+  if (s1>=s2 && s1>=s3)
+    return s1;
+  if (s2>=s3)
+    return s2;
+  return s3;
+}
 
 
 
@@ -52,7 +64,7 @@ void computeDYN0Perfect(int** table, int n, int *seq) {
   for (int i = n - 1; i >= 1; i--) {
     for (int j = i + 1; j < n; j++) {
       for (int k = i; k < j - 1; k++) {
-        S[i][j] = max_sc(S[i][j], S[i][j-1], S[i][k-1] + S[k + 1][j - 1] + sigma(i, j));
+        S[i][j] = max_sc(S[i][j], S[i][j+1], S[i][k-1] + S[k + 1][j - 1] + sigma(i, j));
       }
     }
   }
