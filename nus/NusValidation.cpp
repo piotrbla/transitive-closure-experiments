@@ -74,31 +74,123 @@ void computeDYN1Imperfect(int** table, int n, int *seq) {
 #pragma endscop
   double execution_time = omp_get_wtime() - start;
 
-  printf("IMP: %lf\n", execution_time);
+  printf("IMPE: %lf\n", execution_time);
   write_results(n, execution_time);
   printMatrix(S, n, 1);
   deallocateMatrix(S, n);
 }
 
-void computeDYN2Perfect(int** table, int n, int *seq) {
+void computeDYN2PerfectA(int** table, int n, int *seq) {
   int** S = getFullCopy(table, n);
 
   double start = omp_get_wtime();
   //Listing 1.2: Perfectly nested Nussinov loops
 #pragma scop
-  for (int i = n - 1; i >= 0; i--) {
-    for (int j = i + 1; j < n; j++) {
-      for (int k = i; k < j; k++) {
-        S[i][j] = max_sc(S[i][k] + S[k+1][j], S[i][j], max_score(S[i][j], S[i+1][j-1] + sigma(i, j)));
+  for (int c0 = 1; c0 < n - 1; c0 += 1)
+  {
+    for (int c1 = 0; c1 < n - c0; c1 += 1)
+    {
+      for (int c2 = c0 + c1; c2 < min(n, 2 * c0 + c1); c2 += 1) {
+        if (2 * c0 + c1 >= c2 + 2)
+        {
+          // (c0, c1, c2, -c0 + c2);
+          S[c1][c2] = max_sc(S[c1][-c0 + c2] + S[-c0 + c2 + 1][c2], S[c1][c2], S[c1 + 1][c2 - 1] + sigma(c1, c2));
+        }
+        //(c0, c1, c2, c0 + c1 - 1);
+        S[c1][c2] = max_sc(S[c1][c0 + c1 - 1] + S[c0 + c1 - 1 + 1][c2], S[c1][c2], S[c1 + 1][c2 - 1] + sigma(c1, c2));
       }
     }
   }
 #pragma endscop
   double execution_time = omp_get_wtime() - start;
 
-  printf("PER: %lf\n", execution_time);
-  write_results_full(n, execution_time, '\n');
+  printf("PERA: %lf\n", execution_time);
+  write_results(n, execution_time);
   printMatrix(S, n, 2);
+  deallocateMatrix(S, n);
+}
+
+void computeDYN3PerfectB(int** table, int n, int *seq) {
+  int** S = getFullCopy(table, n);
+
+  double start = omp_get_wtime();
+  //Listing 1.2: Perfectly nested Nussinov loops
+//c1-> "i" (drugi element pseudo instrukcji)
+//trzeci element każdej  pseudo instrukcji jest to "j"
+//czwarty element jest to "k"
+//piąty element jeśli jest "0" oznacza "s1", 
+//natomiast jeśli "1" oznacza, ze maja byc  2 instrukcje wstawione - s1 i s2  
+//S[i][j] = max_score(S[i][k] + S[k+1][j], S[i][j]); // s1
+//S[i][j] = max_score(S[i][j], S[i+1][j-1] + sigma(i, j)); // s2
+#pragma scop
+    for (int c0 = 1; c0 < n; c0 += 1)
+    {
+        for (int c1 = 0; c1 < n - c0; c1 += 1)
+        {
+            if (c0 >= 2)
+            {
+                S[c1][c0 + c1] = max_score(S[c1][c1] + S[c1+1][c0 + c1], S[c1][c0 + c1]); // s1
+                S[c1][c0 + c1] = max_score(S[c1][c0 + c1], S[c1+1][c0 + c1-1] + sigma(c1, c0 + c1)); // s2
+                //(c0, c1, c0 + c1, c1, 1);
+            }
+            S[c1][c0 + c1] = max_score(S[c1][c0 + c1 - 1] + S[c0 + c1 - 1 + 1][c0 + c1], S[c1][c0 + c1]); // s1
+            S[c1][c0 + c1] = max_score(S[c1][c0 + c1], S[c1+1][c0 + c1 - 1] + sigma(c1, c0 + c1)); // s2
+            //(c0, c1, c0 + c1, c0 + c1 - 1, 1);
+            for (int c2 = c0 + c1 + 1; c2 < min(n, 2 * c0 + c1); c2 += 1)
+            {
+                if (2 * c0 + c1 >= c2 + 2)
+                {
+                  S[c1][c2] = max_score(S[c1][c0 + c1 - 1] + S[c0 + c1 - 1 + 1][c2], S[c1][c2]); // s1
+                  //(c0, c1, c2, -c0 + c2, 0);
+                }
+                S[c1][c2] = max_score(S[c1][c0 + c1 - 1] + S[c0 + c1 - 1 + 1][c2], S[c1][c2]); // s1
+                //(c0, c1, c2, c0 + c1 - 1, 0);
+            }
+        }
+    }
+#pragma endscop
+  double execution_time = omp_get_wtime() - start;
+
+  printf("PERB: %lf\n", execution_time);
+  write_results_full(n, execution_time, '\n');
+  printMatrix(S, n, 3);
+  deallocateMatrix(S, n);
+}
+
+void computeDYN4PerfectC(int** table, int n, int *seq) {
+  int** S = getFullCopy(table, n);
+
+  double start = omp_get_wtime();
+  //Listing 1.2: Perfectly nested Nussinov loops
+#pragma scop
+  for (int c0 = 1; c0 < n; c0 += 1)
+  {
+      for (int c1 = 0; c1 < n - c0; c1 += 1)
+      {
+          for (int c2 = c0 + c1; c2 < min(n, 2 * c0 + c1); c2 += 1)
+          {
+              if (2 * c0 + c1 >= c2 + 2)
+              {
+                  S[c1][c2] = max_score(S[c1][-c0 + c2] + S[-c0 + c2 + 1][c2], S[c1][c2]); // s1
+                  //(c0, c1, c2, -c0 + c2, 0);
+              }
+              S[c1][c2] = max_score(S[c1][c0 + c1 - 1] + S[c0 + c1 - 1 + 1][c2], S[c1][c2]); // s1
+              //(c0, c1, c2, c0 + c1 - 1, 0);
+              if (c2 == c0 + c1)
+              {
+                  S[c1][c0 + c1] = max_score(S[c1][c0 + c1], S[c1+1][c0 + c1 - 1] + sigma(c1, c0 + c1)); // s2
+                  //(c0, c1, c0 + c1, c0 + c1 - 1, 1);
+              }
+          }
+      }
+  }
+
+#pragma endscop
+  double execution_time = omp_get_wtime() - start;
+
+  printf("PERC: %lf\n", execution_time);
+  write_results(n, execution_time);
+  printMatrix(S, n, 4);
   deallocateMatrix(S, n);
 }
 
@@ -164,7 +256,7 @@ int getValue(const char c)
 }
 
 int main(void) {
-  const int ZMAX = 1600;
+  const int ZMAX = 16;
   int** graph = allocateMatrix(ZMAX);
   int* seq = allocateVector(ZMAX);
   for (int i = 0; i < ZMAX; i++)
@@ -175,17 +267,19 @@ int main(void) {
   //
   const char* seqTest = "GCGUCCACGGCUAGCU";
   ///////////////////////GCGUCCACGGCUAGCU
-  for (int i=0 ; i<ZMAX ; i++)
-    seq[i] = rand()%4;
-  //for (int i = 0; i < ZMAX; i++)
-  //  seq[i] = getValue(seqTest[i]);
+  //for (int i=0 ; i<ZMAX ; i++)
+  //  seq[i] = rand()%4;
+  for (int i = 0; i < ZMAX; i++)
+    seq[i] = getValue(seqTest[i]);
   
   int N = ZMAX - 10;
   //while (N < ZMAX)
   //{
   N += 10;
   computeDYN1Imperfect(graph, N, seq);
-  computeDYN2Perfect(graph, N, seq);
+  computeDYN2PerfectA(graph, N, seq);
+  computeDYN4PerfectC(graph, N, seq);
+  computeDYN3PerfectB(graph, N, seq);
   //N += 10;
 //}
   deallocateMatrix(graph, ZMAX);
