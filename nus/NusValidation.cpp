@@ -40,9 +40,9 @@ bool match(const int e1, const int e2)
   //  (e1 == 1 && e2 == 3) || (e1 == 3 && e2 == 1);
   //return match;
   const bool match =
-    (e1 == 1 && e2 == 8) || (e1 == 8 && e2 == 1) ||
-    (e1 == 2 && e2 == 4) || (e1 == 4 && e2 == 2) ||
-    (e1 == 2 && e2 == 8) || (e1 == 8 && e2 == 2);
+    (e1 + e2 == 9) ||
+    (e1 + e2 == 6) || 
+    (e1 + e2 == 10) ;
   return match;
   
   //(e1 == "A" && e2 == "U") ||
