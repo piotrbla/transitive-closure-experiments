@@ -29,16 +29,22 @@ int max_sc(int s1, int s2, int s3) {
 bool match(const int e1, const int e2)
 {
   /*
-   *  'A' => 0
-   *  'G' => 1
-   *  'C' => 2
-   *  'U' => 3
+   *  'A' => 0 -> bitowo 0001 -> 1
+   *  'G' => 1 -> bitowo 0010 -> 2
+   *  'C' => 2 -> bitowo 0100 -> 4
+   *  'U' => 3 -> bitowo 1000 -> 8
   */
+  //const bool match =
+  //  (e1 == 0 && e2 == 3) || (e1 == 3 && e2 == 0) ||
+  //  (e1 == 1 && e2 == 2) || (e1 == 2 && e2 == 1) ||
+  //  (e1 == 1 && e2 == 3) || (e1 == 3 && e2 == 1);
+  //return match;
   const bool match =
-    (e1 == 0 && e2 == 3) || (e1 == 3 && e2 == 0) ||
-    (e1 == 1 && e2 == 2) || (e1 == 2 && e2 == 1) ||
-    (e1 == 1 && e2 == 3) || (e1 == 3 && e2 == 1);
+    (e1 == 1 && e2 == 8) || (e1 == 8 && e2 == 1) ||
+    (e1 == 2 && e2 == 4) || (e1 == 4 && e2 == 2) ||
+    (e1 == 2 && e2 == 8) || (e1 == 8 && e2 == 2);
   return match;
+  
   //(e1 == "A" && e2 == "U") ||
   //(e1 == "U" && e2 == "A") ||
   //(e1 == "G" && e2 == "C") ||
@@ -247,15 +253,28 @@ void write_results(int n, double execution_time)
 
 int getValue(const char c)
 {
-  if(c=='A')    return 0;
-  if(c=='G')    return 1;
-  if(c=='C')    return 2;
-  if(c=='U')    return 3;
-  return 4;
+  /*
+   *  'A' => 0 -> bitowo 0001 -> 1
+   *  'G' => 1 -> bitowo 0010 -> 2
+   *  'C' => 2 -> bitowo 0100 -> 4
+   *  'U' => 3 -> bitowo 1000 -> 8
+  */
+
+  if(c=='A')    return 1;
+  if(c=='G')    return 2;
+  if(c=='C')    return 4;
+  if(c=='U')    return 8;
+  return 16;
 }
 
+#define PERFORMANCE_TEST 1
+
 int main(void) {
-  const int ZMAX = 16;
+#if PERFORMANCE_TEST==1
+    const int ZMAX = 1600;
+#else
+    const int ZMAX = 16;
+#endif
   int** graph = allocateMatrix(ZMAX);
   int* seq = allocateVector(ZMAX);
   for (int i = 0; i < ZMAX; i++)
@@ -265,11 +284,15 @@ int main(void) {
     graph[i][i] = 0;
   //
   const char* seqTest = "GCGUCCACGGCUAGCU";
-  ///////////////////////GCGUCCACGGCUAGCU
-  //for (int i=0 ; i<ZMAX ; i++)
-  //  seq[i] = rand()%4;
+#if PERFORMANCE_TEST==1
+  for (int i=0 ; i<ZMAX ; i++)
+  {
+    seq[i] = 1 << (rand()%4+1);
+  }
+#else
   for (int i = 0; i < ZMAX; i++)
     seq[i] = getValue(seqTest[i]);
+#endif
   
   int N = ZMAX - 10;
   //while (N < ZMAX)
