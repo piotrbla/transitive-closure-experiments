@@ -86,7 +86,7 @@ void computeDYN1Imperfect(int** table, int n, int *seq) {
   deallocateMatrix(S, n);
 }
 
-void computeDYN2PerfectA(int** table, int n, int *seq) {
+void computeDYN2Perfect(int** table, int n, int *seq) {
   int** S = getFullCopy(table, n);
 
   double start = omp_get_wtime();
@@ -110,13 +110,13 @@ void computeDYN2PerfectA(int** table, int n, int *seq) {
 #pragma endscop
   double execution_time = omp_get_wtime() - start;
 
-  printf("PERA: %lf\n", execution_time);
+  printf("PERF: %lf\n", execution_time);
   write_results(n, execution_time);
   printMatrix(S, n, 2);
   deallocateMatrix(S, n);
 }
 
-void computeDYN3PerfectB(int** table, int n, int *seq) {
+void computeDYN3ImperfA(int** table, int n, int *seq) {
   int** S = getFullCopy(table, n);
 
   double start = omp_get_wtime();
@@ -156,13 +156,13 @@ void computeDYN3PerfectB(int** table, int n, int *seq) {
 #pragma endscop
   double execution_time = omp_get_wtime() - start;
 
-  printf("PERB: %lf\n", execution_time);
-  write_results_full(n, execution_time, '\n');
+  printf("IMPA: %lf\n", execution_time);
+  write_results(n, execution_time);
   printMatrix(S, n, 3);
   deallocateMatrix(S, n);
 }
 
-void computeDYN4PerfectC(int** table, int n, int *seq) {
+void computeDYN4ImperfB(int** table, int n, int *seq) {
   int** S = getFullCopy(table, n);
 
   double start = omp_get_wtime();
@@ -193,8 +193,8 @@ void computeDYN4PerfectC(int** table, int n, int *seq) {
 #pragma endscop
   double execution_time = omp_get_wtime() - start;
 
-  printf("PERC: %lf\n", execution_time);
-  write_results(n, execution_time);
+  printf("IMPB: %lf\n", execution_time);
+  write_results_full(n, execution_time, '\n');
   printMatrix(S, n, 4);
   deallocateMatrix(S, n);
 }
@@ -267,7 +267,7 @@ int getValue(const char c)
   return 16;
 }
 
-#define PERFORMANCE_TEST 1
+#define PERFORMANCE_TEST 0
 
 int main(void) {
 #if PERFORMANCE_TEST==1
@@ -299,9 +299,9 @@ int main(void) {
   //{
   N += 10;
   computeDYN1Imperfect(graph, N, seq);
-  computeDYN2PerfectA(graph, N, seq);
-  computeDYN4PerfectC(graph, N, seq);
-  computeDYN3PerfectB(graph, N, seq);
+  computeDYN2Perfect(graph, N, seq);
+  computeDYN3ImperfA(graph, N, seq);
+  computeDYN4ImperfB(graph, N, seq);
   //N += 10;
 //}
   deallocateMatrix(graph, ZMAX);
