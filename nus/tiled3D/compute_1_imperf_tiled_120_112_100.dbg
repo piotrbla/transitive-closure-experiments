@@ -1,0 +1,241 @@
+./NusValidation.c:10:5: warning: return statement must be final statement in function
+    return s1;
+    ^~~~~~~~~
+
+#stencil scop start
+
+#delta analyze start
+
+#distance vectors set : { [i0 = 0, i1 = 0, i2 = 1, i3 = 0, i4 = 2]; [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 2]; [i0 = 0, i1 = 0, i2 = 1, i3 = -1, i4 = 2]; [i0 = 0, i1 = 0, i2 = 1, i3 = 0, i4 = 1]; [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 1]; [i0 = 0, i1 = 0, i2 = 1, i3 = -1, i4 = 1] }
+
+#distance vectors set : { [i0 = 0, i1 = 1, i2 = 1, i3 = 0, i4 = 0] }
+
+#distance vectors set : { [i0 = 0, i1 = 0, i2 = 0, i3 = 1, i4 = 0]; [i0 = 0, i1 = 1, i2 = 1, i3 = 1, i4 = -1]; [i0 = 0, i1 = 0, i2 = 0, i3 = 1, i4 = -1] }
+
+#distance vectors set : { [i0 = 0, i1 = 2, i2 = 0, i3 = 0, i4 = -1]; [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = -1]; [i0 = 0, i1 = 2, i2 = 0, i3 = 0, i4 = -2]; [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = -2] }
+
+#distance vectors set : { [i0 = 0, i1 = 2, i2 = 0, i3 = -1, i4 = 1]; [i0 = 0, i1 = 1, i2 = 0, i3 = -1, i4 = 1]; [i0 = 0, i1 = 1, i2 = 0, i3 = -1, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 1, i3 = 0, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 1, i3 = -1, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 1, i3 = 0, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 1, i3 = -1, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 0, i3 = 1, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 1, i3 = 0, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 1, i3 = 1, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 0, i3 = 1, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 0, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 0, i4 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = -1, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = -1, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = -1, i4 = 0] }
+
+#analyze loop dimensions:
+
+#[i0]:  is not parameter, is order dim
+
+#[i1]:  positive: { [i0 = 0, i1 = 1, i2 = 1, i3 = 0, i4 = 0] }  is parameter
+
+#[i2]:  positive: { [i0 = 0, i1 = 0, i2 = 1, i3 = 0, i4 = 2] }  is parameter
+
+#[i3]:  positive: { [i0 = 0, i1 = 0, i2 = 0, i3 = 1, i4 = 0] }  negative: { [i0 = 0, i1 = 0, i2 = 1, i3 = -1, i4 = 2] }  is not parameter, is order dim
+
+#[i4]:  positive: { [i0 = 0, i1 = 0, i2 = 1, i3 = 0, i4 = 2] }  negative: { [i0 = 0, i1 = 1, i2 = 1, i3 = 1, i4 = -1] }  is parameter
+
+#delta analyze end
+
+#create space start
+
+#hyperplane_for_dim: lexmin( {[d0 = 0, b0, c0, a1, a2, a3, a4, a5] : a2 != 0 } * {[d0, b0, c0, a1, a2, a3, a4, a5] : exists b1, c1, b2, c2, b3, c3, b4, c4, b5, c5 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and ((b3 = a3 and a3 >= 0) or (b3 = -a3 and a3 < 0)) and ((c3 = -1 and a3 >= 0) or (c3 = 0 and a3 < 0)) and ((b4 = a4 and a4 >= 0) or (b4 = -a4 and a4 < 0)) and ((c4 = -1 and a4 >= 0) or (c4 = 0 and a4 < 0)) and ((b5 = a5 and a5 >= 0) or (b5 = -a5 and a5 < 0)) and ((c5 = -1 and a5 >= 0) or (c5 = 0 and a5 < 0)) and b0 > 0 and b0 = b1 + b2 + b3 + b4 + b5 and c0 = c1 + c2 + c3 + c4 + c5 and a2 >= 0  and a3 >= 0  and a5 <= 0  and a5 >= 0  and 0*a1 + 0*a2 + 1*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 1*a3 + -1*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 1*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 1*a3 + -1*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 1*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 1*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 1*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + -1*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + -1*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + -1*a4 + 0*a5 >= 0 } )
+
+#result: { [d0 = 0, b0 = 1, c0 = -5, a1 = 0, a2 = 1, a3 = 0, a4 = 0, a5 = 0] }
+
+#hyperplane check: first hyperplane 
+
+#result: true
+
+#hyperplane_for_dim: lexmin( {[d0 = 0, b0, c0, a1, a2, a3, a4, a5] : a3 != 0 } * {[d0, b0, c0, a1, a2, a3, a4, a5] : exists b1, c1, b2, c2, b3, c3, b4, c4, b5, c5 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and ((b3 = a3 and a3 >= 0) or (b3 = -a3 and a3 < 0)) and ((c3 = -1 and a3 >= 0) or (c3 = 0 and a3 < 0)) and ((b4 = a4 and a4 >= 0) or (b4 = -a4 and a4 < 0)) and ((c4 = -1 and a4 >= 0) or (c4 = 0 and a4 < 0)) and ((b5 = a5 and a5 >= 0) or (b5 = -a5 and a5 < 0)) and ((c5 = -1 and a5 >= 0) or (c5 = 0 and a5 < 0)) and b0 > 0 and b0 = b1 + b2 + b3 + b4 + b5 and c0 = c1 + c2 + c3 + c4 + c5 and a2 >= 0  and a3 >= 0  and a5 <= 0  and a5 >= 0  and 0*a1 + 0*a2 + 1*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 1*a3 + -1*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 1*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 1*a3 + -1*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 1*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 1*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 1*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + -1*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + -1*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + -1*a4 + 0*a5 >= 0 } )
+
+#result: { [d0 = 0, b0 = 1, c0 = -5, a1 = 0, a2 = 0, a3 = 1, a4 = 0, a5 = 0] }
+
+#hyperplane check: { : exists c1, c2 : ( c1!=0 or c2!=0 ) and c2*0 = c1*0 and c2*0 = c1*1 and c2*1 = c1*0 and c2*0 = c1*0 and c2*0 = c1*0 } = {}
+
+#result: true
+
+#hyperplane_for_dim: lexmin( {[d0 = 0, b0, c0, a1, a2, a3, a4, a5] : a5 != 0 } * {[d0, b0, c0, a1, a2, a3, a4, a5] : exists b1, c1, b2, c2, b3, c3, b4, c4, b5, c5 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and ((b3 = a3 and a3 >= 0) or (b3 = -a3 and a3 < 0)) and ((c3 = -1 and a3 >= 0) or (c3 = 0 and a3 < 0)) and ((b4 = a4 and a4 >= 0) or (b4 = -a4 and a4 < 0)) and ((c4 = -1 and a4 >= 0) or (c4 = 0 and a4 < 0)) and ((b5 = a5 and a5 >= 0) or (b5 = -a5 and a5 < 0)) and ((c5 = -1 and a5 >= 0) or (c5 = 0 and a5 < 0)) and b0 > 0 and b0 = b1 + b2 + b3 + b4 + b5 and c0 = c1 + c2 + c3 + c4 + c5 and a2 >= 0  and a3 >= 0  and a5 <= 0  and a5 >= 0  and 0*a1 + 0*a2 + 1*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 1*a3 + -1*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 1*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 1*a3 + -1*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 1*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 1*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 1*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + -1*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + -1*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + -1*a4 + 0*a5 >= 0 } )
+
+#result: { [d0, b0, c0, a1, a2, a3, a4, a5] : false }
+
+#hyperplane check: hyperplane is empty 
+
+#result: false
+
+#created hyperplane : { [d0 = 0, b0 = 1, c0 = -5, a1 = 0, a2 = 0, a3 = 1, a4 = 0, a5 = 0] }
+
+#created hyperplane : { [d0 = 0, b0 = 1, c0 = -5, a1 = 0, a2 = 1, a3 = 0, a4 = 0, a5 = 0] }
+
+# [n, Id1] -> { [i0, i1, i2, i3, i4] : exists bId1 : 0 * i0 + 0 * i1 + 1 * i2 + 0 * i3 + 0 * i4 + bId1 = 0 and 120 * Id1 <= bId1 <= 120 * (Id1 + 1) - 1 } 
+
+# [n, Id2] -> { [i0, i1, i2, i3, i4] : exists bId2 : 0 * i0 + 1 * i1 + 0 * i2 + 0 * i3 + 0 * i4 + bId2 = 0 and 112 * Id2 <= bId2 <= 112 * (Id2 + 1) - 1 } 
+
+#tiles for domain set  : [n] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] : i1 <= 0 and -i1 < i2 < n }
+
+# [n, Id2, Id1] -> { S_1[i0, i1, i2, i3, i4] : -111 - 112Id2 <= i1 <= -112Id2 and -119 - 120Id1 <= i2 <= -120Id1 } * [n] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] : i1 <= 0 and -i1 < i2 < n }
+
+#result  : [n, Id2, Id1] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] : -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and i2 > -i1 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n }
+
+#tiles for domain set  : [n] -> { S_2[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] }
+
+# [n, Id2, Id1] -> { S_2[i0, i1, i2, i3, i4] : -111 - 112Id2 <= i1 <= -112Id2 and -119 - 120Id1 <= i2 <= -120Id1 } * [n] -> { S_2[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] }
+
+#result  : [n, Id2, Id1] -> { S_2[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] : Id2 = 0 and Id1 = 0 }
+
+#tiles for domain set  : [n] -> { S_0[i0 = 0, i1, i2, i3 = 0, i4] : i1 <= 0 and i2 < n and -i1 <= i4 < i2 }
+
+# [n, Id2, Id1] -> { S_0[i0, i1, i2, i3, i4] : -111 - 112Id2 <= i1 <= -112Id2 and -119 - 120Id1 <= i2 <= -120Id1 } * [n] -> { S_0[i0 = 0, i1, i2, i3 = 0, i4] : i1 <= 0 and i2 < n and -i1 <= i4 < i2 }
+
+#result  : [n, Id2, Id1] -> { S_0[i0 = 0, i1, i2, i3 = 0, i4] : -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n and -i1 <= i4 < i2 }
+
+#created spaces:
+
+#[space1]: hyperplane: i0 * ( 0 ) + i1 * ( 0 ) + i2 * ( 1 ) + i3 * ( 0 ) + i4 * ( 0 ) + b = 0
+
+#[space2]: hyperplane: i0 * ( 0 ) + i1 * ( 1 ) + i2 * ( 0 ) + i3 * ( 0 ) + i4 * ( 0 ) + b = 0
+
+#create space end
+
+#create tile relations start
+
+#tlieOrder: [n, Id2', Id2, Id1', Id1] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] : -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and i2 > -i1 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n and not (Id1=Id1' and Id2=Id2' ); S_0[i0 = 0, i1, i2, i3 = 0, i4] : -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n and -i1 <= i4 < i2 and not (Id1=Id1' and Id2=Id2' ); S_2[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] : Id2 = 0 and Id1 = 0  and not (Id1=Id1' and Id2=Id2' )}
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] -> S_1[i0' = 0, i1' = 1 + i1, i2' = 1 + i2, i3' = 1, i4' = 0] : i1 < 0 and -i1 < i2 <= -2 + n }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] -> S_1[i0' = 0, i1' = 1 + i1, i2' = 1 + i2, i3' = 1, i4' = 0] : 111Id1' <= -56 + 56Id2 - 56Id2' + 111Id1 and i1 > 120Id1 and i1 >= -112 - 112Id2' and -112Id2 - 111Id1 + 111Id1' <= i1 <= -112Id2 and i1 < -112Id2' and i1 < 0 and i2 > 112Id2 and -119 - Id1 - 119Id1' <= i2 < -119Id1 - Id1' and i2 <= -2 + n }
+
+#tile relation: [n] -> { S_1[Id1,Id2] -> S_1[Id1',Id2'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : 111Id1' <= -56 + 56Id2 - 56Id2' + 111Id1 and i1 > 120Id1 and i1 >= -112 - 112Id2' and -112Id2 - 111Id1 + 111Id1' <= i1 <= -112Id2 and i1 < -112Id2' and i1 < 0 and i2 > 112Id2 and -119 - Id1 - 119Id1' <= i2 < -119Id1 - Id1' and i2 <= -2 + n }
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] -> S_0[i0' = 0, i1' = i1, i2', i3' = 0, i4' = i2] : i1 <= 0 and i2 > -i1 and i2 < i2' < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] -> S_0[i0' = 0, i1' = i1, i2', i3' = 0, i4' = i2] : Id1' < Id1 and i1 >= -111 - 112Id2' and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= -112Id2' and i1 <= 0 and i2 > -i1 and -119 - 120Id1 <= i2 <= -120Id1 and -119 - 120Id1' <= i2' <= -120Id1' and i2' < n }
+
+#tile relation: [n] -> { S_1[Id1,Id2] -> S_0[Id1',Id2'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' < Id1 and i1 >= -111 - 112Id2' and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= -112Id2' and i1 <= 0 and i2 > -i1 and -119 - 120Id1 <= i2 <= -120Id1 and -119 - 120Id1' <= i2' <= -120Id1' and i2' < n }
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] -> S_0[i0' = 0, i1', i2' = i2, i3' = 0, i4' = -1 - i1] : -i1 < i2 < n and i1 < i1' <= 0 }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] -> S_0[i0' = 0, i1', i2' = i2, i3' = 0, i4' = -1 - i1] : Id1' = Id1 and Id2' < Id2 and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and i2 > -i1 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n and i1' > i1 and -111 - 112Id2' <= i1' <= -112Id2' and i1' <= 0 }
+
+#tile relation: [n] -> { S_1[Id1,Id2] -> S_0[Id1',Id2'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and i2 > -i1 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n and -111 - 112Id2' <= i1' <= -112Id2' and i1' <= 0 }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3 = 0, i4] -> S_1[i0' = 0, i1', i2' = -i1 + i2 + i1', i3' = 1, i4' = 0] : -i1 <= i4 < i2 and i1 <= i1' <= 0 and i1' <= 1 + i1 and i1' < n + i1 - i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3 = 0, i4] -> S_1[i0' = 0, i1' = 1 + i1, i2' = 1 + i2, i3' = 1, i4' = 0] : i1 >= -112 - 112Id2' and -112Id2 - 111Id1 + 111Id1' <= i1 <= -112Id2 and i1 <= -112 - 112Id2' + 111Id1 - 111Id1' and i1 < 0 and i2 >= -120 - 120Id1' and -119 - 120Id1 <= i2 < -119Id1 - Id1' and i2 <= -2 + n and -i1 <= i4 < i2 }
+
+#tile relation: [n] -> { S_0[Id1,Id2] -> S_1[Id1',Id2'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : i1 >= -112 - 112Id2' and -112Id2 - 111Id1 + 111Id1' <= i1 <= -112Id2 and i1 <= -112 - 112Id2' + 111Id1 - 111Id1' and i1 < 0 and i2 >= -120 - 120Id1' and -119 - 120Id1 <= i2 < -119Id1 - Id1' and i2 <= -2 + n and -i1 <= i4 < i2 }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3 = 0, i4] -> S_0[i0' = 0, i1' = i1, i2', i3' = 0, i4' = i2] : i1 <= 0 and -i1 <= i4 < i2 and i2 < i2' < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3 = 0, i4] -> S_0[i0' = 0, i1' = i1, i2', i3' = 0, i4' = i2] : Id1' < Id1 and i1 >= -111 - 112Id2' and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= -112Id2' and i1 <= 0 and -119 - 120Id1 <= i2 <= -120Id1 and -i1 <= i4 < i2 and -119 - 120Id1' <= i2' <= -120Id1' and i2' < n }
+
+#tile relation: [n] -> { S_0[Id1,Id2] -> S_0[Id1',Id2'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' < Id1 and i1 >= -111 - 112Id2' and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= -112Id2' and i1 <= 0 and -119 - 120Id1 <= i2 <= -120Id1 and -i1 <= i4 < i2 and -119 - 120Id1' <= i2' <= -120Id1' and i2' < n }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3 = 0, i4] -> S_0[i0' = 0, i1' = i1, i2' = i2, i3' = 0, i4'] : i1 <= 0 and i2 < n and i4 >= -i1 and i4 < i4' < i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> {  }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3 = 0, i4] -> S_0[i0' = 0, i1', i2' = i2, i3' = 0, i4' = -1 - i1] : i2 < n and -i1 <= i4 < i2 and i1 < i1' <= 0 }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3 = 0, i4] -> S_0[i0' = 0, i1', i2' = i2, i3' = 0, i4' = -1 - i1] : Id1' = Id1 and Id2' < Id2 and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and i2 >= -i1 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n and -i1 <= i4 < i2 and i1' > i1 and -111 - 112Id2' <= i1' <= -112Id2' and i1' <= 0 }
+
+#tile relation: [n] -> { S_0[Id1,Id2] -> S_0[Id1',Id2'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n and -i1 <= i4 < i2 and -111 - 112Id2' <= i1' <= -112Id2' and i1' <= 0 }
+
+#tile relations: [n] -> { S_0[Id1, Id2] -> S_0[Id1' = Id1, Id2'] : 120Id1 >= -118 - n and 14Id2 < -15Id1 and 112Id2 <= -2 + n and 0 <= Id2' < Id2; S_0[Id1, Id2] -> S_0[Id1', Id2' = Id2] : Id2 >= 0 and 14Id2 < -15Id1 and Id1' < Id1 and 120Id1' >= -118 - n; S_1[Id1, Id2] -> S_0[Id1' = Id1, Id2'] : 120Id1 >= -118 - n and 14Id2 < -15Id1 and 112Id2 <= -2 + n and 0 <= Id2' < Id2; S_1[Id1, Id2] -> S_0[Id1', Id2' = Id2] : Id2 >= 0 and 14Id2 < -15Id1 and Id1' < Id1 and 120Id1' >= -118 - n; S_0[Id1, Id2] -> S_1[Id1', Id2'] : 120Id1 >= -117 - n and 112Id2 <= -3 + n and -1 + Id1 <= Id1' <= -2 - 119Id1 - 112Id2 and 120Id1' >= -118 - n and Id2' >= -1 + Id2 and Id2' >= 0 and 14Id2' <= -15 - Id1 - 14Id1' and 56Id2' <= -56 + 111Id1 + 56Id2 - 111Id1' and 112Id2' <= -115 + n + 111Id1 - 111Id1'; S_1[Id1, Id2] -> S_1[Id1', Id2'] : 14Id2 < -15Id1 and 112Id2 <= -3 + n and Id1' >= -1 + Id1 and 119Id1' >= -117 - n - Id1 and Id2' >= -1 + Id2 and Id2' >= 0 and 14Id2' < -15Id1 and 56Id2' <= -56 + 111Id1 + 56Id2 - 111Id1' }
+
+#create tile relations end
+
+#create stencil schedule start
+
+#tile relatiions delta: { [Id1, Id2] : Id1 >= -1 and Id2 >= -1 and 56Id2 <= -56 - 111Id1; [Id1, Id2 = 0] : Id1 < 0; [Id1 = 0, Id2] : Id2 < 0 }
+
+#tile relatiions distance vectors set: { [Id1 = -1, Id2 = 0]; [Id1 = 0, Id2 = -1]; [Id1 = -1, Id2 = -1] }
+
+#tile relatiions distance vectors set: { [Id1 = -1, Id2 = 0]; [Id1 = -2, Id2 = 0] }
+
+#tile relatiions distance vectors set: { [Id1 = 0, Id2 = -1]; [Id1 = 0, Id2 = -2] }
+
+#tile relatiions distance vectors to scan: { [Id1 = -1, Id2 = 0]; [Id1 = -2, Id2 = 0]; [Id1 = 0, Id2 = -1]; [Id1 = 0, Id2 = -2]; [Id1 = -1, Id2 = -1] }
+
+#wafefront hyperplane: lexmin( {[d0 = 0, b0, c0, a1, a2] : exists c1, c2 : ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and c0 = c1 + c2 and a1 != 0 and a2 != 0} * {[d0, b0, c0, a1, a2] : exists b1, b2 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and b0 > 0 and b0 = b1 + b2 and -1*a1 + 0*a2 > 0 and -2*a1 + 0*a2 > 0 and 0*a1 + -1*a2 > 0 and -1*a1 + -1*a2 > 0 and 0*a1 + -2*a2 > 0 } )
+
+#result: { [d0 = 0, b0 = 2, c0 = 0, a1 = -1, a2 = -1] }
+
+#stencil schedule map: [n] -> { S_1[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, 0, i1, i2, 1, 0] : Wid1 = -1 * Id1 + -1 * Id2 + 0 and  -111 - 112Id2 <= i1 <= -112Id2 and -119 - 120Id1 <= i2 <= -120Id1  ; S_2[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, 1, 0, 0, 0, 0] : Wid1 = -1 * Id1 + -1 * Id2 + 0 and  -111 - 112Id2 <= i1 <= -112Id2 and -119 - 120Id1 <= i2 <= -120Id1  ; S_0[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, 0, i1, i2, 0, i4]  : Wid1 = -1 * Id1 + -1 * Id2 + 0 and  -111 - 112Id2 <= i1 <= -112Id2 and -119 - 120Id1 <= i2 <= -120Id1  } 
+ 
+#create stencil schedule end
+
+#create stencil schedule code start
+
+#stencilScheduleMap: [n] -> { S_0[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2 = -Wid1 - Id1, 0, i1, i2, 0, i4] : i1 - 112Wid1 <= 112Id1 <= 111 + i1 - 112Wid1 and -119 - i2 <= 120Id1 <= -i2; S_2[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2 = -Wid1 - Id1, 1, 0, 0, 0, 0] : i1 - 112Wid1 <= 112Id1 <= 111 + i1 - 112Wid1 and -119 - i2 <= 120Id1 <= -i2; S_1[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2 = -Wid1 - Id1, 0, i1, i2, 1, 0] : i1 - 112Wid1 <= 112Id1 <= 111 + i1 - 112Wid1 and -119 - i2 <= 120Id1 <= -i2 }
+
+#domain_union_set: [n] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] : i1 <= 0 and -i1 < i2 < n; S_2[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0]; S_0[i0 = 0, i1, i2, i3 = 0, i4] : i1 <= 0 and i2 < n and -i1 <= i4 < i2 }
+
+#stencilGlobalSchedule: [n] -> { S_1[i0 = 0, i1, i2, i3 = 1, i4 = 0] -> [Wid1, Id1, Id2 = -Wid1 - Id1, 0, i1, i2, 1, 0] : i1 <= 0 and -i1 < i2 < n and i1 - 112Wid1 <= 112Id1 <= 111 + i1 - 112Wid1 and -119 - i2 <= 120Id1 <= -i2; S_0[i0 = 0, i1, i2, i3 = 0, i4] -> [Wid1, Id1, Id2 = -Wid1 - Id1, 0, i1, i2, 0, i4] : i1 <= 0 and i2 < n and -i1 <= i4 < i2 and i1 - 112Wid1 <= 112Id1 <= 111 + i1 - 112Wid1 and -119 - i2 <= 120Id1 <= -i2; S_2[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] -> [Wid1 = 0, Id1 = 0, Id2 = 0, 1, 0, 0, 0, 0] }
+
+#mapper_union_map: [n] -> { S_0[i, j, k] -> S_0[i0 = 0, i1 = -i, i2 = j, i3 = 0, i4 = k]; S_2[] -> S_2[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0]; S_1[i, j] -> S_1[i0 = 0, i1 = -i, i2 = j, i3 = 1, i4 = 0] }
+
+#stencilGlobalSchedule: [n] -> { S_1[i, j] -> [Wid1, Id1, Id2 = -Wid1 - Id1, 0, -i, j, 1, 0] : i >= 0 and i < j < n and -i - 112Wid1 <= 112Id1 <= 111 - i - 112Wid1 and -119 - j <= 120Id1 <= -j; S_0[i, j, k] -> [Wid1, Id1, Id2 = -Wid1 - Id1, 0, -i, j, 0, k] : i >= 0 and j < n and i <= k < j and -i - 112Wid1 <= 112Id1 <= 111 - i - 112Wid1 and -119 - j <= 120Id1 <= -j; S_2[] -> [Wid1 = 0, Id1 = 0, Id2 = 0, 1, 0, 0, 0, 0] }
+
+#create stencil schedule code end
+
+#wavefront card calculate start
+
+#card set: [] -> { [Wid1] : exists n, Id2, Id1, i0, i1, i2, i3, i4 : n <= 1000 and n >= 0 and   Wid1 = -1 * Id1 + -1 * Id2 + 0 and   i0 = 0 and i3 = 1 and i4 = 0 and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and i2 > -i1 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n  } 
+
+#result: { [Wid1] : 0 <= Wid1 <= 9 }
+
+#card set: [] -> { [Wid1] : exists n, Id2, Id1, i0, i1, i2, i3, i4 : n <= 1000 and n >= 0 and   Wid1 = -1 * Id1 + -1 * Id2 + 0 and   i0 = 0 and i3 = 0 and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n and -i1 <= i4 < i2  } 
+
+#result: { [Wid1] : 0 <= Wid1 <= 9 }
+
+#card set: [] -> { [Wid1] : exists n, Id2, Id1, i0, i1, i2, i3, i4 : n <= 1000 and n >= 0 and   Wid1 = -1 * Id1 + -1 * Id2 + 0 and   Id2 = 0 and Id1 = 0 and i0 = 1 and i1 = 0 and i2 = 0 and i3 = 0 and i4 = 0  } 
+
+#result: { [Wid1 = 0] }
+
+#card union set: [n] -> { [Wid1] : exists Id1, Id2, i0, i1, i2, i3, i4 : Wid1 = -1 * Id1 + -1 * Id2 + 0 and   i0 = 0 and i3 = 1 and i4 = 0 and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and i2 > -i1 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n  } 
+
+#result: [n] -> { [Wid1] : n >= 2 and 120Wid1 <= 118 + n and 1680Wid1 >= 114 - n }
+
+#card union set: [n] -> { [Wid1] : exists Id1, Id2, i0, i1, i2, i3, i4 : Wid1 = -1 * Id1 + -1 * Id2 + 0 and   i0 = 0 and i3 = 0 and -111 - 112Id2 <= i1 <= -112Id2 and i1 <= 0 and -119 - 120Id1 <= i2 <= -120Id1 and i2 < n and -i1 <= i4 < i2  } 
+
+#result: [n] -> { [Wid1] : n >= 2 and 120Wid1 <= 118 + n and 1680Wid1 >= 114 - n }
+
+#card union set: [n] -> { [Wid1] : exists Id1, Id2, i0, i1, i2, i3, i4 : Wid1 = -1 * Id1 + -1 * Id2 + 0 and   Id2 = 0 and Id1 = 0 and i0 = 1 and i1 = 0 and i2 = 0 and i3 = 0 and i4 = 0  } 
+
+#result: [n] -> { [Wid1 = 0] }
+
+#wavefront card set: { [Wid1] : 0 <= Wid1 <= 9 }
+
+#wavefront card union set: [n] -> { [Wid1] : n >= 2 and 120Wid1 <= 118 + n and 1680Wid1 >= 114 - n; [Wid1 = 0] }
+
+#Wavefront card calculate end
+
+#stencil scop end

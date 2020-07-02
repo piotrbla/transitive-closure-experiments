@@ -1,0 +1,603 @@
+./NusValidation.c:10:5: warning: return statement must be final statement in function
+    return s1;
+    ^~~~~~~~~
+
+#stencil scop start
+
+#delta analyze start
+
+#distance vectors set : { [i0 = 0, i1 = 2, i2 = 0, i3 = 1, i4 = 0]; [i0 = 0, i1 = 1, i2 = 0, i3 = 1, i4 = 0]; [i0 = 0, i1 = 2, i2 = 0, i3 = 0, i4 = 0]; [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = 0] }
+
+#distance vectors set : { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = 3]; [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 3]; [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = 2]; [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 2] }
+
+#distance vectors set : { [i0 = 0, i1 = 1, i2 = -2, i3 = 0, i4 = 0]; [i0 = 0, i1 = 2, i2 = -3, i3 = 0, i4 = 0]; [i0 = 0, i1 = 1, i2 = -3, i3 = 0, i4 = 0]; [i0 = 0, i1 = 1, i2 = -2, i3 = 0, i4 = -1]; [i0 = 0, i1 = 2, i2 = -3, i3 = 0, i4 = -1]; [i0 = 0, i1 = 1, i2 = -3, i3 = 0, i4 = -1] }
+
+#distance vectors set : { [i0 = 0, i1 = 1, i2 = -3, i3 = 0, i4 = 2]; [i0 = 0, i1 = 2, i2 = -4, i3 = 0, i4 = 2]; [i0 = 0, i1 = 1, i2 = -4, i3 = 0, i4 = 2]; [i0 = 0, i1 = 1, i2 = -3, i3 = 0, i4 = 1]; [i0 = 0, i1 = 2, i2 = -4, i3 = 0, i4 = 1]; [i0 = 0, i1 = 1, i2 = -4, i3 = 0, i4 = 1] }
+
+#distance vectors set : { [i0 = 0, i1 = 3, i2 = 0, i3 = 4, i4 = -2]; [i0 = 0, i1 = 2, i2 = 0, i3 = 4, i4 = -2]; [i0 = 0, i1 = 2, i2 = 0, i3 = 3, i4 = -2]; [i0 = 0, i1 = 3, i2 = 0, i3 = 4, i4 = -3]; [i0 = 0, i1 = 2, i2 = 0, i3 = 4, i4 = -3]; [i0 = 0, i1 = 2, i2 = 0, i3 = 3, i4 = -3] }
+
+#distance vectors set : { [i0 = 0, i1 = 3, i2 = 0, i3 = 5, i4 = 0]; [i0 = 0, i1 = 2, i2 = 0, i3 = 5, i4 = 0]; [i0 = 0, i1 = 2, i2 = 0, i3 = 4, i4 = 0]; [i0 = 0, i1 = 3, i2 = 0, i3 = 5, i4 = -1]; [i0 = 0, i1 = 2, i2 = 0, i3 = 5, i4 = -1]; [i0 = 0, i1 = 2, i2 = 0, i3 = 4, i4 = -1] }
+
+#distance vectors set : { [i0 = 0, i1 = 2, i2 = 0, i3 = 0, i4 = -2]; [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = -2]; [i0 = 0, i1 = 2, i2 = -1, i3 = 0, i4 = -2]; [i0 = 0, i1 = 1, i2 = -1, i3 = 0, i4 = -2] }
+
+#distance vectors set : { [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = 2] }
+
+#distance vectors set : { [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = -2] }
+
+#distance vectors set : { [i0 = 0, i1 = 2, i2 = 0, i3 = 2, i4 = 2]; [i0 = 0, i1 = 1, i2 = 0, i3 = 2, i4 = 2]; [i0 = 0, i1 = 2, i2 = 0, i3 = 1, i4 = 2]; [i0 = 0, i1 = 1, i2 = 0, i3 = 1, i4 = 2] }
+
+#distance vectors set : { [i0 = 0, i1 = 2, i2 = -1, i3 = 0, i4 = 0]; [i0 = 0, i1 = 1, i2 = -1, i3 = 0, i4 = 0]; [i0 = 0, i1 = 2, i2 = -2, i3 = 0, i4 = 0]; [i0 = 0, i1 = 1, i2 = -2, i3 = 0, i4 = 0] }
+
+#distance vectors set : { [i0 = 0, i1 = 3, i2 = -1, i3 = 1, i4 = 1]; [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = 1] }
+
+#distance vectors set : { [i0 = 0, i1 = 1, i2 = -1, i3 = 0, i4 = -3]; [i0 = 0, i1 = 1, i2 = -2, i3 = 0, i4 = -3] }
+
+#distance vectors set : { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = 1]; [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 1] }
+
+#distance vectors set : { [i0 = 0, i1 = 1, i2 = 0, i3 = 2, i4 = -1]; [i0 = 0, i1 = 1, i2 = 0, i3 = 1, i4 = -1] }
+
+#distance vectors set : { [i0 = 0, i1 = 1, i2 = 0, i3 = 2, i4 = 1]; [i0 = 0, i1 = 1, i2 = 0, i3 = 1, i4 = 1] }
+
+#distance vectors set : { [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 2]; [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 1] }
+
+#distance vectors set : { [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = -1]; [i0 = 0, i1 = 2, i2 = 0, i3 = 0, i4 = -1]; [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = -1] }
+
+#distance vectors set : { [i0 = 0, i1 = 1, i2 = -1, i3 = 0, i4 = -1]; [i0 = 0, i1 = 1, i2 = -2, i3 = 0, i4 = -1] }
+
+#distance vectors set : { [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = 3] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 3] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 2, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 2, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 1, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 1, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -3, i3 = 0, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -4, i3 = 0, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -4, i3 = 0, i4 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 2, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 1, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 3, i2 = -1, i3 = 1, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -3, i3 = 0, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -4, i3 = 0, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -4, i3 = 0, i4 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 3, i2 = 0, i3 = 5, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 5, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 4, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 1, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 1, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 0, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -1, i3 = 0, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -1, i3 = 0, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -2, i3 = 0, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -2, i3 = 0, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -3, i3 = 0, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -3, i3 = 0, i4 = 0] }
+
+#selected distance vector: { [i0 = 0, i1 = 3, i2 = 0, i3 = 5, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 5, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 4, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 2, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 1, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 0, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -1, i3 = 0, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -2, i3 = 0, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -3, i3 = 0, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -3, i3 = 0, i4 = -1] }
+
+#selected distance vector: { [i0 = 0, i1 = 3, i2 = 0, i3 = 4, i4 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 4, i4 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 3, i4 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 0, i4 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -1, i3 = 0, i4 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -1, i3 = 0, i4 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 3, i2 = 0, i3 = 4, i4 = -3] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 4, i4 = -3] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = 0, i3 = 3, i4 = -3] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -1, i3 = 0, i4 = -3] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = -2, i3 = 0, i4 = -3] }
+
+#selected distance vector: { [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = 0] }
+
+#analyze loop dimensions:
+
+#[i0]:  is not parameter, is order dim
+
+#[i1]:  positive: { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = 3] }  is parameter
+
+#[i2]:  negative: { [i0 = 0, i1 = 2, i2 = -1, i3 = 1, i4 = 2] }  is parameter
+
+#[i3]:  positive: { [i0 = 0, i1 = 2, i2 = 0, i3 = 2, i4 = 2] }  is parameter
+
+#[i4]:  positive: { [i0 = 0, i1 = 1, i2 = 0, i3 = 0, i4 = 3] }  negative: { [i0 = 0, i1 = 3, i2 = 0, i3 = 5, i4 = -1] }  is not parameter, is order dim
+
+#delta analyze end
+
+#create space start
+
+#hyperplane_for_dim: lexmin( {[d0 = 0, b0, c0, a1, a2, a3, a4, a5] : a2 != 0 } * {[d0, b0, c0, a1, a2, a3, a4, a5] : exists b1, c1, b2, c2, b3, c3, b4, c4, b5, c5 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and ((b3 = a3 and a3 >= 0) or (b3 = -a3 and a3 < 0)) and ((c3 = -1 and a3 >= 0) or (c3 = 0 and a3 < 0)) and ((b4 = a4 and a4 >= 0) or (b4 = -a4 and a4 < 0)) and ((c4 = -1 and a4 >= 0) or (c4 = 0 and a4 < 0)) and ((b5 = a5 and a5 >= 0) or (b5 = -a5 and a5 < 0)) and ((c5 = -1 and a5 >= 0) or (c5 = 0 and a5 < 0)) and b0 > 0 and b0 = b1 + b2 + b3 + b4 + b5 and c0 = c1 + c2 + c3 + c4 + c5 and a2 >= 0  and a3 <= 0  and a4 >= 0  and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 3*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 3*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 2*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 2*a4 + 2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 1*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + 2*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 2*a2 + -4*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + -4*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 2*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + 1*a5 >= 0 and 0*a1 + 3*a2 + -1*a3 + 1*a4 + 1*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 2*a2 + -4*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + -4*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 5*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 5*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 1*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + -2*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + -2*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + -3*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 5*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 5*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 2*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + -2*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + -3*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 4*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 3*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 4*a4 + -3*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + -3*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 3*a4 + -3*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + -3*a5 >= 0 and 0*a1 + 1*a2 + -2*a3 + 0*a4 + -3*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + 0*a5 >= 0 } )
+
+#result: { [d0 = 0, b0 = 1, c0 = -5, a1 = 0, a2 = 1, a3 = 0, a4 = 0, a5 = 0] }
+
+#hyperplane check: first hyperplane 
+
+#result: true
+
+#hyperplane_for_dim: lexmin( {[d0 = 0, b0, c0, a1, a2, a3, a4, a5] : a3 != 0 } * {[d0, b0, c0, a1, a2, a3, a4, a5] : exists b1, c1, b2, c2, b3, c3, b4, c4, b5, c5 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and ((b3 = a3 and a3 >= 0) or (b3 = -a3 and a3 < 0)) and ((c3 = -1 and a3 >= 0) or (c3 = 0 and a3 < 0)) and ((b4 = a4 and a4 >= 0) or (b4 = -a4 and a4 < 0)) and ((c4 = -1 and a4 >= 0) or (c4 = 0 and a4 < 0)) and ((b5 = a5 and a5 >= 0) or (b5 = -a5 and a5 < 0)) and ((c5 = -1 and a5 >= 0) or (c5 = 0 and a5 < 0)) and b0 > 0 and b0 = b1 + b2 + b3 + b4 + b5 and c0 = c1 + c2 + c3 + c4 + c5 and a2 >= 0  and a3 <= 0  and a4 >= 0  and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 3*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 3*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 2*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 2*a4 + 2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 1*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + 2*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 2*a2 + -4*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + -4*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 2*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + 1*a5 >= 0 and 0*a1 + 3*a2 + -1*a3 + 1*a4 + 1*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 2*a2 + -4*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + -4*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 5*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 5*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 1*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + -2*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + -2*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + -3*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 5*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 5*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 2*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + -2*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + -3*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 4*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 3*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 4*a4 + -3*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + -3*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 3*a4 + -3*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + -3*a5 >= 0 and 0*a1 + 1*a2 + -2*a3 + 0*a4 + -3*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + 0*a5 >= 0 } )
+
+#result: { [d0 = 0, b0 = 1, c0 = -4, a1 = 0, a2 = 0, a3 = -1, a4 = 0, a5 = 0] }
+
+#hyperplane check: { : exists c1, c2 : ( c1!=0 or c2!=0 ) and c2*0 = c1*0 and c2*0 = c1*1 and c2*-1 = c1*0 and c2*0 = c1*0 and c2*0 = c1*0 } = {}
+
+#result: true
+
+#hyperplane_for_dim: lexmin( {[d0 = 0, b0, c0, a1, a2, a3, a4, a5] : a4 != 0 } * {[d0, b0, c0, a1, a2, a3, a4, a5] : exists b1, c1, b2, c2, b3, c3, b4, c4, b5, c5 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and ((b3 = a3 and a3 >= 0) or (b3 = -a3 and a3 < 0)) and ((c3 = -1 and a3 >= 0) or (c3 = 0 and a3 < 0)) and ((b4 = a4 and a4 >= 0) or (b4 = -a4 and a4 < 0)) and ((c4 = -1 and a4 >= 0) or (c4 = 0 and a4 < 0)) and ((b5 = a5 and a5 >= 0) or (b5 = -a5 and a5 < 0)) and ((c5 = -1 and a5 >= 0) or (c5 = 0 and a5 < 0)) and b0 > 0 and b0 = b1 + b2 + b3 + b4 + b5 and c0 = c1 + c2 + c3 + c4 + c5 and a2 >= 0  and a3 <= 0  and a4 >= 0  and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 3*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 3*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 2*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 2*a4 + 2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 1*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + 2*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 2*a2 + -4*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + -4*a3 + 0*a4 + 2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 2*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + 1*a5 >= 0 and 0*a1 + 3*a2 + -1*a3 + 1*a4 + 1*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 0*a2 + 0*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 2*a2 + -4*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 1*a2 + -4*a3 + 0*a4 + 1*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 5*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 5*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 1*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + -2*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + -2*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 2*a2 + -3*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + 0*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 5*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 5*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 2*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + -2*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 2*a2 + -3*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 1*a2 + -3*a3 + 0*a4 + -1*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 4*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 3*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 1*a2 + 0*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + -2*a5 >= 0 and 0*a1 + 3*a2 + 0*a3 + 4*a4 + -3*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 4*a4 + -3*a5 >= 0 and 0*a1 + 2*a2 + 0*a3 + 3*a4 + -3*a5 >= 0 and 0*a1 + 1*a2 + -1*a3 + 0*a4 + -3*a5 >= 0 and 0*a1 + 1*a2 + -2*a3 + 0*a4 + -3*a5 >= 0 and 0*a1 + 2*a2 + -1*a3 + 1*a4 + 0*a5 >= 0 } )
+
+#result: { [d0 = 0, b0 = 1, c0 = -5, a1 = 0, a2 = 0, a3 = 0, a4 = 1, a5 = 0] }
+
+#hyperplane check: { : exists c1, c2, c3 : ( c1!=0 or c2!=0 or c3!=0 ) and c3*0 = c1*0 + c2*0 and c3*0 = c1*1 + c2*0 and c3*0 = c1*0 + c2*-1 and c3*1 = c1*0 + c2*0 and c3*0 = c1*0 + c2*0 } = {}
+
+#result: true
+
+#created hyperplane : { [d0 = 0, b0 = 1, c0 = -5, a1 = 0, a2 = 0, a3 = 0, a4 = 1, a5 = 0] }
+
+#created hyperplane : { [d0 = 0, b0 = 1, c0 = -5, a1 = 0, a2 = 1, a3 = 0, a4 = 0, a5 = 0] }
+
+#created hyperplane : { [d0 = 0, b0 = 1, c0 = -4, a1 = 0, a2 = 0, a3 = -1, a4 = 0, a5 = 0] }
+
+# [n, Id1] -> { [i0, i1, i2, i3, i4] : exists bId1 : 0 * i0 + 0 * i1 + 0 * i2 + 1 * i3 + 0 * i4 + bId1 = 0 and 116 * Id1 <= bId1 <= 116 * (Id1 + 1) - 1 } 
+
+# [n, Id2] -> { [i0, i1, i2, i3, i4] : exists bId2 : 0 * i0 + 1 * i1 + 0 * i2 + 0 * i3 + 0 * i4 + bId2 = 0 and 42 * Id2 <= bId2 <= 42 * (Id2 + 1) - 1 } 
+
+# [n, Id3] -> { [i0, i1, i2, i3, i4] : exists bId3 : 0 * i0 + 0 * i1 + -1 * i2 + 0 * i3 + 0 * i4 + bId3 = 0 and 54 * Id3 <= bId3 <= 54 * (Id3 + 1) - 1 } 
+
+#tiles for domain set  : [n] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] : i1 > 0 and 0 <= i2 < n - i1 }
+
+# [n, Id3, Id2, Id1] -> { S_3[i0, i1, i2, i3, i4] : -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 } * [n] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] : i1 > 0 and 0 <= i2 < n - i1 }
+
+#result  : [n, Id3, Id2, Id1] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] : i1 > 0 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 }
+
+#tiles for domain set  : [n] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] : i1 >= 2 and 0 <= i2 < n - i1 }
+
+# [n, Id3, Id2, Id1] -> { S_1[i0, i1, i2, i3, i4] : -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 } * [n] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] : i1 >= 2 and 0 <= i2 < n - i1 }
+
+#result  : [n, Id3, Id2, Id1] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] : i1 >= 2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 }
+
+#tiles for domain set  : [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] : i2 >= 0 and i1 + i2 <= i3 < 2i1 + i2 and i3 < n }
+
+# [n, Id3, Id2, Id1] -> { S_2[i0, i1, i2, i3, i4] : -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 } * [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] : i2 >= 0 and i1 + i2 <= i3 < 2i1 + i2 and i3 < n }
+
+#result  : [n, Id3, Id2, Id1] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] : -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and 0 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n }
+
+#tiles for domain set  : [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] : i2 >= 0 and i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 < n }
+
+# [n, Id3, Id2, Id1] -> { S_0[i0, i1, i2, i3, i4] : -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 } * [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] : i2 >= 0 and i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 < n }
+
+#result  : [n, Id3, Id2, Id1] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] : -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and 0 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n }
+
+#tiles for domain set  : [n] -> { S_4[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] }
+
+# [n, Id3, Id2, Id1] -> { S_4[i0, i1, i2, i3, i4] : -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 } * [n] -> { S_4[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] }
+
+#result  : [n, Id3, Id2, Id1] -> { S_4[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] : Id3 = 0 and Id2 = 0 and Id1 = 0 }
+
+#created spaces:
+
+#[space1]: hyperplane: i0 * ( 0 ) + i1 * ( 0 ) + i2 * ( 0 ) + i3 * ( 1 ) + i4 * ( 0 ) + b = 0
+
+#[space2]: hyperplane: i0 * ( 0 ) + i1 * ( 1 ) + i2 * ( 0 ) + i3 * ( 0 ) + i4 * ( 0 ) + b = 0
+
+#[space3]: hyperplane: i0 * ( 0 ) + i1 * ( 0 ) + i2 * ( -1 ) + i3 * ( 0 ) + i4 * ( 0 ) + b = 0
+
+#create space end
+
+#create tile relations start
+
+#tlieOrder: [n, Id3', Id3, Id2', Id2, Id1', Id1] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] : -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and 0 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and not (Id1=Id1' and Id2=Id2' and Id3=Id3' ); S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] : i1 > 0 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and not (Id1=Id1' and Id2=Id2' and Id3=Id3' ); S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] : i1 >= 2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and not (Id1=Id1' and Id2=Id2' and Id3=Id3' ); S_0[i0 = 0, i1, i2, i3, i4 = 0] : -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and 0 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and not (Id1=Id1' and Id2=Id2' and Id3=Id3' ); S_4[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] : Id3 = 0 and Id2 = 0 and Id1 = 0  and not (Id1=Id1' and Id2=Id2' and Id3=Id3' )}
+
+#rlation: [n] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_2[i0' = 0, i1', i2' = i2 - i1', i3' = i1 + i2, i4' = 2] : i1 > 0 and i2 < n - i1 and i1 < i1' <= i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_2[i0' = 0, i1', i2' = i2 - i1', i3' = i1 + i2, i4' = 2] : Id1' = Id1 and i1 > 0 and i1 >= -41 - 42Id2 and i2 >= 54Id3 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= i2 and ((Id2' < Id2 and i1 <= -42Id2 and -41 - 42Id2' <= i1' <= -42Id2') or (Id2' = Id2 and Id3' < Id3 and i1 < i1' <= -42Id2)) }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and i1 > 0 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and i1' >= -41 - 42Id2' and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= -42Id2' and i1' <= i2 }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = Id2 and Id1' = Id1 and Id3' < Id3 and i1 > 0 and i1 >= -41 - 42Id2 and i2 >= 54Id3 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and i1' > i1 and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= -42Id2 and i1' <= i2 }
+
+#rlation: [n] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_2[i0' = 0, i1' = 1 + i1, i2' = i2, i3', i4' = 2] : i1 > 0 and i2 >= 0 and i1 + i2 < i3' <= 1 + 2i1 + i2 and i3' < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_2[i0' = 0, i1' = 1 + i1, i2' = i2, i3', i4' = 2] : Id1' < Id1 and i1 > 0 and i1 >= -42 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 < -42Id2' and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1' <= i3' <= -116Id1' and i3' <= 1 + 2i1 + i2 and i3' < n; S_3[i0 = 0, i1 = -42Id2, i2, i3 = -42Id2 + i2, i4 = 3] -> S_2[i0' = 0, i1' = 1 - 42Id2, i2' = i2, i3', i4' = 2] : Id2' = -1 + Id2 and Id1' = Id1 and 42Id2 < 0 and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= -115 + 42Id2 - 116Id1 and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -42Id2 + i2 < i3' <= 1 - 84Id2 + i2 and i3' <= -116Id1 and i3' < n }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = -1 + Id2 and Id1' = Id1 and Id2 < 0 and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= -115 + 42Id2 - 116Id1 and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -42Id2 + i2 < i3' <= 1 - 84Id2 + i2 and i3' <= -116Id1 and i3' < n }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' < Id1 and i1 > 0 and i1 >= -42 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 < -42Id2' and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1' <= i3' <= -116Id1' and i3' <= 1 + 2i1 + i2 and i3' < n }
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_1[i0' = 0, i1' = 2 + i1, i2' = -1 + i2, i3' = 1 + i1 + i2, i4' = 1] : i1 >= 2 and 0 < i2 <= -2 + n - i1 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_1[i0' = 0, i1' = 2 + i1, i2' = -1 + i2, i3' = 1 + i1 + i2, i4' = 1] : 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and i1 >= 2 and i1 >= -43 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 <= -2 - 42Id2' and i2 >= 54Id3 and i2 > 54Id3' and i2 > 0 and i2 >= -116 - 116Id1' - i1 and -115 - 116Id1 - i1 <= i2 < -115Id1 - Id1' - i1 and i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i2 <= -2 + n - i1; S_1[i0 = 0, i1, i2 = 54Id3, i3 = 54Id3 + i1, i4 = 1] -> S_1[i0' = 0, i1' = 2 + i1, i2' = -1 + 54Id3, i3' = 1 + 54Id3 + i1, i4' = 1] : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and 54Id3 > 0 and i1 >= 2 and i1 >= -41 - 42Id2 and -115 - 54Id3 - 116Id1 <= i1 < -54Id3 - 116Id1 and i1 <= -2 - 42Id2 and i1 <= -2 + n - 54Id3 }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_1[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and Id3 > 0 and i1 >= 2 and i1 >= -41 - 42Id2 and -115 - 54Id3 - 116Id1 <= i1 < -54Id3 - 116Id1 and i1 <= -2 - 42Id2 and i1 <= -2 + n - 54Id3 }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_1[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and i1 >= 2 and i1 >= -43 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 <= -2 - 42Id2' and i2 >= 54Id3 and i2 > 54Id3' and i2 > 0 and i2 >= -116 - 116Id1' - i1 and -115 - 116Id1 - i1 <= i2 < -115Id1 - Id1' - i1 and i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i2 <= -2 + n - i1 }
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_3[i0' = 0, i1' = 2 + i1, i2' = -1 + i2, i3' = 1 + i1 + i2, i4' = 3] : i1 >= 2 and 0 < i2 <= -2 + n - i1 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_3[i0' = 0, i1' = 2 + i1, i2' = -1 + i2, i3' = 1 + i1 + i2, i4' = 3] : 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and i1 >= 2 and i1 >= -43 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 <= -2 - 42Id2' and i2 >= 54Id3 and i2 > 54Id3' and i2 > 0 and i2 >= -116 - 116Id1' - i1 and -115 - 116Id1 - i1 <= i2 < -115Id1 - Id1' - i1 and i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i2 <= -2 + n - i1; S_1[i0 = 0, i1, i2 = 54Id3, i3 = 54Id3 + i1, i4 = 1] -> S_3[i0' = 0, i1' = 2 + i1, i2' = -1 + 54Id3, i3' = 1 + 54Id3 + i1, i4' = 3] : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and 54Id3 > 0 and i1 >= 2 and i1 >= -41 - 42Id2 and -115 - 54Id3 - 116Id1 <= i1 < -54Id3 - 116Id1 and i1 <= -2 - 42Id2 and i1 <= -2 + n - 54Id3 }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_3[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and Id3 > 0 and i1 >= 2 and i1 >= -41 - 42Id2 and -115 - 54Id3 - 116Id1 <= i1 < -54Id3 - 116Id1 and i1 <= -2 - 42Id2 and i1 <= -2 + n - 54Id3 }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_3[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and i1 >= 2 and i1 >= -43 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 <= -2 - 42Id2' and i2 >= 54Id3 and i2 > 54Id3' and i2 > 0 and i2 >= -116 - 116Id1' - i1 and -115 - 116Id1 - i1 <= i2 < -115Id1 - Id1' - i1 and i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i2 <= -2 + n - i1 }
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_3[i0' = 0, i1' = i1, i2' = i2, i3' = i1 + i2, i4' = 3] : i1 >= 2 and 0 <= i2 < n - i1 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> {  }
+
+#rlation: [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_1[i0' = 0, i1' = 2 - i2 + i3, i2' = -1 + i2, i3' = 1 + i3, i4' = 1] : i2 > 0 and i1 + i2 <= i3 < 2i1 + i2 and i3 <= -2 + n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_1[i0' = 0, i1' = 2 - i2 + i3, i2' = -1 + i2, i3' = 1 + i3, i4' = 1] : Id1' <= Id1 and 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 > 54Id3' and 0 < i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and i3 >= -116 - 116Id1' and i3 >= -115 - 116Id1 and -43 - 42Id2' + i2 <= i3 <= -2 - 42Id2' + i2 and i3 < -115Id1 - Id1' and i3 < 2i1 + i2 and i3 <= -2 + n; S_2[i0 = 0, i1, i2 = 54Id3, i3, i4 = 2] -> S_1[i0' = 0, i1' = 2 - 54Id3 + i3, i2' = -1 + 54Id3, i3' = 1 + i3, i4' = 1] : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and 54Id3 > 0 and i1 >= -41 - 42Id2 and i3 >= 54Id3 + i1 and -115 - 116Id1 <= i3 < -116Id1 and i3 <= -2 + 54Id3 - 42Id2 and i3 < 54Id3 + 2i1 and i3 <= -2 + n }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_1[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and Id3 > 0 and i1 >= -41 - 42Id2 and i3 >= 54Id3 + i1 and -115 - 116Id1 <= i3 < -116Id1 and i3 <= -2 + 54Id3 - 42Id2 and i3 < 54Id3 + 2i1 and i3 <= -2 + n }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_1[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' <= Id1 and 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 > 54Id3' and 0 < i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and i3 >= -116 - 116Id1' and i3 >= -115 - 116Id1 and -43 - 42Id2' + i2 <= i3 <= -2 - 42Id2' + i2 and i3 < -115Id1 - Id1' and i3 < 2i1 + i2 and i3 <= -2 + n }
+
+#rlation: [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_1[i0' = 0, i1' = -i2 + i3, i2' = i2, i3' = i3, i4' = 1] : i2 >= 0 and i1 + i2 < i3 < 2i1 + i2 and i3 < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_1[i0' = 0, i1' = -i2 + i3, i2' = i2, i3' = i3, i4' = 1] : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -41 - 42Id2' + i2 <= i3 <= -42Id2' + i2 and i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_1[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -41 - 42Id2' + i2 <= i3 <= -42Id2' + i2 and i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n }
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_0[i0' = 0, i1', i2' = i2, i3' = i1 + i2 + i1', i4' = 0] : i1 >= 2 and i2 >= 0 and 2 + i1 <= i1' < n - i1 - i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_0[i0' = 0, i1', i2' = i2, i3' = i1 + i2 + i1', i4' = 0] : i1 >= 2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i1' >= 2 + i1 and -41 - 42Id2' <= i1' <= -42Id2' and i1' < n - i1 - i2 and ((Id1' = Id1 and Id2' < Id2 and i1' <= -116Id1 - i1 - i2) or (Id1' < Id1 and i2 <= -116Id1 - i1 and -115 - 116Id1' - i1 - i2 <= i1' <= -116Id1' - i1 - i2)) }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and i1 >= 2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i1' >= 2 + i1 and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -116Id1 - i1 - i2 and i1' < n - i1 - i2 }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' < Id1 and i1 >= 2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i1' >= 2 + i1 and i1' >= -115 - 116Id1' - i1 - i2 and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -116Id1' - i1 - i2 and i1' < n - i1 - i2 }
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_0[i0' = 0, i1' = 1 + i1, i2', i3' = i1 + i2, i4' = 0] : i1 >= 2 and i2 < n - i1 and i2' >= 0 and -i1 + i2 <= i2' < i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_0[i0' = 0, i1' = 1 + i1, i2', i3' = i1 + i2, i4' = 0] : Id2' = Id2 and Id1' = Id1 and Id3' < Id3 and i1 >= 2 and -41 - 42Id2 <= i1 < -42Id2 and i2 >= 54Id3 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and i2' >= 54Id3' and i2' >= 0 and -i1 + i2 <= i2' <= 53 + 54Id3'; S_1[i0 = 0, i1 = -42Id2, i2, i3 = -42Id2 + i2, i4 = 1] -> S_0[i0' = 0, i1' = 1 - 42Id2, i2', i3' = -42Id2 + i2, i4' = 0] : Id2' = -1 + Id2 and Id1' = Id1 and 21Id2 < 0 and i2 >= 54Id3 and -115 + 42Id2 - 116Id1 <= i2 <= 42Id2 - 116Id1 and i2 <= 53 + 54Id3 and i2 < n + 42Id2 and i2' >= 54Id3' and i2' >= 42Id2 + i2 and 0 <= i2' < i2 and i2' <= 53 + 54Id3' }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = -1 + Id2 and Id1' = Id1 and i2 >= 54Id3 and -115 + 42Id2 - 116Id1 <= i2 <= 42Id2 - 116Id1 and i2 <= 53 + 54Id3 and i2 < n + 42Id2 and i2' >= 54Id3' and i2' >= 42Id2 + i2 and 0 <= i2' < i2 and i2' <= 53 + 54Id3' }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = Id2 and Id1' = Id1 and Id3' < Id3 and i1 >= 2 and -41 - 42Id2 <= i1 < -42Id2 and i2 >= 54Id3 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and i2' >= 54Id3' and i2' >= 0 and -i1 + i2 <= i2' <= 53 + 54Id3' }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_1[i0' = 0, i1' = 2 - i2 + i3, i2' = -1 + i2, i3' = 1 + i3, i4' = 1] : i2 > 0 and i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 <= -2 + n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_1[i0' = 0, i1' = 2 - i2 + i3, i2' = -1 + i2, i3' = 1 + i3, i4' = 1] : Id1' <= Id1 and 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 > 54Id3' and 0 < i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and i3 >= -116 - 116Id1' and i3 >= -115 - 116Id1 and -43 - 42Id2' + i2 <= i3 <= -2 - 42Id2' + i2 and i3 < -115Id1 - Id1' and i3 <= -2 + 2i1 + i2 and i3 <= -2 + n; S_0[i0 = 0, i1, i2 = 54Id3, i3, i4 = 0] -> S_1[i0' = 0, i1' = 2 - 54Id3 + i3, i2' = -1 + 54Id3, i3' = 1 + i3, i4' = 1] : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and 54Id3 > 0 and i1 >= -41 - 42Id2 and i3 >= 54Id3 + i1 and -115 - 116Id1 <= i3 < -116Id1 and i3 <= -2 + 54Id3 - 42Id2 and i3 <= -2 + 54Id3 + 2i1 and i3 <= -2 + n }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_1[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and Id3 > 0 and i1 >= -41 - 42Id2 and i3 >= 54Id3 + i1 and -115 - 116Id1 <= i3 < -116Id1 and i3 <= -2 + 54Id3 - 42Id2 and i3 <= -2 + 54Id3 + 2i1 and i3 <= -2 + n }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_1[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' <= Id1 and 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 > 54Id3' and 0 < i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and i3 >= -116 - 116Id1' and i3 >= -115 - 116Id1 and -43 - 42Id2' + i2 <= i3 <= -2 - 42Id2' + i2 and i3 < -115Id1 - Id1' and i3 <= -2 + 2i1 + i2 and i3 <= -2 + n }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_1[i0' = 0, i1' = -i2 + i3, i2' = i2, i3' = i3, i4' = 1] : i2 >= 0 and i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_1[i0' = 0, i1' = -i2 + i3, i2' = i2, i3' = i3, i4' = 1] : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -41 - 42Id2' + i2 <= i3 <= -42Id2' + i2 and i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_1[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -41 - 42Id2' + i2 <= i3 <= -42Id2' + i2 and i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n }
+
+#rlation: [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_2[i0' = 0, i1', i2' = i2, i3' = i3, i4' = 2] : i2 >= 0 and i3 < 2i1 + i2 and i3 < n and i1 < i1' <= -i2 + i3 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_2[i0' = 0, i1', i2' = i2, i3' = i3, i4' = 2] : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -i2 + i3 }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -i2 + i3 }
+
+#rlation: [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_2[i0' = 0, i1', i2' = i2 - i1', i3' = i3, i4' = 2] : i1 + i2 <= i3 < 2i1 + i2 and i3 < n and -i2 + i3 < i1' <= i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_2[i0' = 0, i1', i2' = i2 - i1', i3' = i3, i4' = 2] : Id1' = Id1 and i1 >= -41 - 42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and i1' > -i2 + i3 and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= i2 and ((Id2' < Id2 and i1 <= -42Id2 and -41 - 42Id2' <= i1' <= -42Id2') or (Id2' = Id2 and Id3' < Id3 and i1' <= -42Id2)) }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and i1' > -i2 + i3 and i1' >= -41 - 42Id2' and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= -42Id2' and i1' <= i2 }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = Id2 and Id1' = Id1 and Id3' < Id3 and i1 >= -41 - 42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and i1' > -i2 + i3 and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= -42Id2 and i1' <= i2 }
+
+#rlation: [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_2[i0' = 0, i1' = 1 - i2 + i3, i2' = i2, i3', i4' = 2] : i2 >= 0 and i1 + i2 <= i3 < 2i1 + i2 and i3 < i3' <= 1 - i2 + 2i3 and i3' < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_2[i0' = 0, i1' = 1 - i2 + i3, i2' = i2, i3', i4' = 2] : -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -42 - 42Id2' + i2 <= i3 < -42Id2' + i2 and i3 < 2i1 + i2 and i3' <= 1 - i2 + 2i3 and i3' < n and ((Id1' = Id1 and Id2' < Id2 and i3 < i3' <= -116Id1) or (Id1' < Id1 and i1 + i2 <= i3 <= -116Id1 and -115 - 116Id1' <= i3' <= -116Id1')) }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -42 - 42Id2' + i2 <= i3 < -42Id2' + i2 and i3 < 2i1 + i2 and i3 < i3' <= -116Id1 and i3' <= 1 - i2 + 2i3 and i3' < n }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' < Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and i3 >= -115 - 116Id1 and -42 - 42Id2' + i2 <= i3 < -42Id2' + i2 and i3 <= -116Id1 and i3 < 2i1 + i2 and -115 - 116Id1' <= i3' <= -116Id1' and i3' <= 1 - i2 + 2i3 and i3' < n }
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_2[i0' = 0, i1', i2' = i2 - i1', i3' = i1 + i2, i4' = 2] : i1 >= 2 and i2 < n - i1 and i1 < i1' <= i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_2[i0' = 0, i1', i2' = i2 - i1', i3' = i1 + i2, i4' = 2] : Id1' = Id1 and i1 >= 2 and i1 >= -41 - 42Id2 and i2 >= 54Id3 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= i2 and ((Id2' < Id2 and i1 <= -42Id2 and -41 - 42Id2' <= i1' <= -42Id2') or (Id2' = Id2 and Id3' < Id3 and i1 < i1' <= -42Id2)) }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and i1 >= 2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and i1' >= -41 - 42Id2' and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= -42Id2' and i1' <= i2 }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = Id2 and Id1' = Id1 and Id3' < Id3 and i1 >= 2 and i1 >= -41 - 42Id2 and i2 >= 54Id3 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and i1' > i1 and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= -42Id2 and i1' <= i2 }
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_2[i0' = 0, i1' = 1 + i1, i2' = i2, i3', i4' = 2] : i1 >= 2 and i2 >= 0 and i1 + i2 < i3' <= 1 + 2i1 + i2 and i3' < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_2[i0' = 0, i1' = 1 + i1, i2' = i2, i3', i4' = 2] : Id1' < Id1 and i1 >= 2 and i1 >= -42 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 < -42Id2' and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1' <= i3' <= -116Id1' and i3' <= 1 + 2i1 + i2 and i3' < n; S_1[i0 = 0, i1 = -42Id2, i2, i3 = -42Id2 + i2, i4 = 1] -> S_2[i0' = 0, i1' = 1 - 42Id2, i2' = i2, i3', i4' = 2] : Id2' = -1 + Id2 and Id1' = Id1 and 21Id2 < 0 and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= -115 + 42Id2 - 116Id1 and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -42Id2 + i2 < i3' <= 1 - 84Id2 + i2 and i3' <= -116Id1 and i3' < n }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = -1 + Id2 and Id1' = Id1 and Id2 < 0 and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= -115 + 42Id2 - 116Id1 and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -42Id2 + i2 < i3' <= 1 - 84Id2 + i2 and i3' <= -116Id1 and i3' < n }
+
+#tile relation: [n] -> { S_1[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' < Id1 and i1 >= 2 and i1 >= -42 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 < -42Id2' and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1' <= i3' <= -116Id1' and i3' <= 1 + 2i1 + i2 and i3' < n }
+
+#rlation: [n] -> { S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> S_2[i0' = 0, i1' = i1, i2' = i2, i3' = i1 + i2, i4' = 2] : i1 >= 2 and 0 <= i2 < n - i1 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> {  }
+
+#rlation: [n] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_1[i0' = 0, i1' = 2 + i1, i2' = -1 + i2, i3' = 1 + i1 + i2, i4' = 1] : i1 > 0 and 0 < i2 <= -2 + n - i1 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_1[i0' = 0, i1' = 2 + i1, i2' = -1 + i2, i3' = 1 + i1 + i2, i4' = 1] : 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and i1 > 0 and i1 >= -43 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 <= -2 - 42Id2' and i2 >= 54Id3 and i2 > 54Id3' and i2 > 0 and i2 >= -116 - 116Id1' - i1 and -115 - 116Id1 - i1 <= i2 < -115Id1 - Id1' - i1 and i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i2 <= -2 + n - i1; S_3[i0 = 0, i1, i2 = 54Id3, i3 = 54Id3 + i1, i4 = 3] -> S_1[i0' = 0, i1' = 2 + i1, i2' = -1 + 54Id3, i3' = 1 + 54Id3 + i1, i4' = 1] : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and 54Id3 > 0 and i1 > 0 and i1 >= -41 - 42Id2 and -115 - 54Id3 - 116Id1 <= i1 < -54Id3 - 116Id1 and i1 <= -2 - 42Id2 and i1 <= -2 + n - 54Id3 }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_1[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and Id3 > 0 and i1 > 0 and i1 >= -41 - 42Id2 and -115 - 54Id3 - 116Id1 <= i1 < -54Id3 - 116Id1 and i1 <= -2 - 42Id2 and i1 <= -2 + n - 54Id3 }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_1[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and i1 > 0 and i1 >= -43 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 <= -2 - 42Id2' and i2 >= 54Id3 and i2 > 54Id3' and i2 > 0 and i2 >= -116 - 116Id1' - i1 and -115 - 116Id1 - i1 <= i2 < -115Id1 - Id1' - i1 and i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i2 <= -2 + n - i1 }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_2[i0' = 0, i1', i2' = i2, i3' = i3, i4' = 2] : i2 >= 0 and i3 <= -2 + 2i1 + i2 and i3 < n and i1 <= i1' <= -i2 + i3 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_2[i0' = 0, i1', i2' = i2, i3' = i3, i4' = 2] : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -i2 + i3 }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -i2 + i3 }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_2[i0' = 0, i1', i2' = i2 - i1', i3' = i3, i4' = 2] : i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 < n and -i2 + i3 < i1' <= i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_2[i0' = 0, i1', i2' = i2 - i1', i3' = i3, i4' = 2] : Id1' = Id1 and i1 >= -41 - 42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and i1' > -i2 + i3 and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= i2 and ((Id2' < Id2 and i1 <= -42Id2 and -41 - 42Id2' <= i1' <= -42Id2') or (Id2' = Id2 and Id3' < Id3 and i1' <= -42Id2)) }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and i1' > -i2 + i3 and i1' >= -41 - 42Id2' and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= -42Id2' and i1' <= i2 }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = Id2 and Id1' = Id1 and Id3' < Id3 and i1 >= -41 - 42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and i1' > -i2 + i3 and -53 - 54Id3' + i2 <= i1' <= -54Id3' + i2 and i1' <= -42Id2 and i1' <= i2 }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_2[i0' = 0, i1' = 1 - i2 + i3, i2' = i2, i3', i4' = 2] : i2 >= 0 and i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 < i3' <= 1 - i2 + 2i3 and i3' < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_2[i0' = 0, i1' = 1 - i2 + i3, i2' = i2, i3', i4' = 2] : -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -42 - 42Id2' + i2 <= i3 < -42Id2' + i2 and i3 <= -2 + 2i1 + i2 and i3' <= 1 - i2 + 2i3 and i3' < n and ((Id1' = Id1 and Id2' < Id2 and i3 < i3' <= -116Id1) or (Id1' < Id1 and i1 + i2 <= i3 <= -116Id1 and -115 - 116Id1' <= i3' <= -116Id1')) }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -42 - 42Id2' + i2 <= i3 < -42Id2' + i2 and i3 <= -2 + 2i1 + i2 and i3 < i3' <= -116Id1 and i3' <= 1 - i2 + 2i3 and i3' < n }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_2[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' < Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and i3 >= -115 - 116Id1 and -42 - 42Id2' + i2 <= i3 < -42Id2' + i2 and i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and -115 - 116Id1' <= i3' <= -116Id1' and i3' <= 1 - i2 + 2i3 and i3' < n }
+
+#rlation: [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_0[i0' = 0, i1', i2' = i2, i3' = i3 + i1', i4' = 0] : i2 >= 0 and i1 + i2 <= i3 < 2i1 + i2 and 2 - i2 + i3 <= i1' < n - i3 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_0[i0' = 0, i1', i2' = i2, i3' = i3 + i1', i4' = 0] : -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 < 2i1 + i2 and i1' >= 2 - i2 + i3 and -41 - 42Id2' <= i1' <= -42Id2' and i1' < n - i3 and ((Id1' = Id1 and Id2' < Id2 and i1' <= -116Id1 - i3) or (Id1' < Id1 and i3 <= -116Id1 and -115 - 116Id1' - i3 <= i1' <= -116Id1' - i3)) }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 < 2i1 + i2 and i1' >= 2 - i2 + i3 and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -116Id1 - i3 and i1' < n - i3 }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' < Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i1' >= 2 - i2 + i3 and i1' >= -115 - 116Id1' - i3 and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -116Id1' - i3 and i1' < n - i3 }
+
+#rlation: [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_0[i0' = 0, i1', i2' = i2, i3' = i3, i4' = 0] : i2 >= 0 and i3 < 2i1 + i2 and i3 < n and i1 < i1' <= -i2 + i3 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_0[i0' = 0, i1', i2' = i2, i3' = i3, i4' = 0] : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -i2 + i3 }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -i2 + i3 }
+
+#rlation: [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_0[i0' = 0, i1' = 1 - i2 + i3, i2', i3' = i3, i4' = 0] : i1 + i2 <= i3 < 2i1 + i2 and i3 < n and i2' >= 2i2 - i3 and 0 <= i2' < i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_0[i0' = 0, i1' = 1 - i2 + i3, i2', i3' = i3, i4' = 0] : Id1' = Id1 and i1 >= -41 - 42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and i2' >= 54Id3' and i2' >= 2i2 - i3 and 0 <= i2' <= 53 + 54Id3' and ((Id2' < Id2 and i1 <= -42Id2 and -42 - 42Id2' + i2 <= i3 < -42Id2' + i2 and i2' < i2) or (Id2' = Id2 and Id3' < Id3 and i1 + i2 <= i3 < -42Id2 + i2)) }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -42 - 42Id2' + i2 <= i3 < -42Id2' + i2 and i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and i2' >= 54Id3' and i2' >= 2i2 - i3 and 0 <= i2' < i2 and i2' <= 53 + 54Id3' }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = Id2 and Id1' = Id1 and Id3' < Id3 and i1 >= -41 - 42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 < -42Id2 + i2 and i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n and i2' >= 54Id3' and i2' >= 2i2 - i3 and 0 <= i2' <= 53 + 54Id3' }
+
+#rlation: [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_3[i0' = 0, i1' = 2 - i2 + i3, i2' = -1 + i2, i3' = 1 + i3, i4' = 3] : i2 > 0 and i1 + i2 <= i3 < 2i1 + i2 and i3 <= -2 + n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_3[i0' = 0, i1' = 2 - i2 + i3, i2' = -1 + i2, i3' = 1 + i3, i4' = 3] : Id1' <= Id1 and 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 > 54Id3' and 0 < i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and i3 >= -116 - 116Id1' and i3 >= -115 - 116Id1 and -43 - 42Id2' + i2 <= i3 <= -2 - 42Id2' + i2 and i3 < -115Id1 - Id1' and i3 < 2i1 + i2 and i3 <= -2 + n; S_2[i0 = 0, i1, i2 = 54Id3, i3, i4 = 2] -> S_3[i0' = 0, i1' = 2 - 54Id3 + i3, i2' = -1 + 54Id3, i3' = 1 + i3, i4' = 3] : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and 54Id3 > 0 and i1 >= -41 - 42Id2 and i3 >= 54Id3 + i1 and -115 - 116Id1 <= i3 < -116Id1 and i3 <= -2 + 54Id3 - 42Id2 and i3 < 54Id3 + 2i1 and i3 <= -2 + n }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_3[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and Id3 > 0 and i1 >= -41 - 42Id2 and i3 >= 54Id3 + i1 and -115 - 116Id1 <= i3 < -116Id1 and i3 <= -2 + 54Id3 - 42Id2 and i3 < 54Id3 + 2i1 and i3 <= -2 + n }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_3[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' <= Id1 and 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 > 54Id3' and 0 < i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and i3 >= -116 - 116Id1' and i3 >= -115 - 116Id1 and -43 - 42Id2' + i2 <= i3 <= -2 - 42Id2' + i2 and i3 < -115Id1 - Id1' and i3 < 2i1 + i2 and i3 <= -2 + n }
+
+#rlation: [n] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_3[i0' = 0, i1' = -i2 + i3, i2' = i2, i3' = i3, i4' = 3] : i2 >= 0 and i1 + i2 <= i3 < 2i1 + i2 and i3 < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_2[i0 = 0, i1, i2, i3, i4 = 2] -> S_3[i0' = 0, i1' = -i2 + i3, i2' = i2, i3' = i3, i4' = 3] : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -41 - 42Id2' + i2 <= i3 <= -42Id2' + i2 and i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n }
+
+#tile relation: [n] -> { S_2[Id1,Id2,Id3] -> S_3[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -41 - 42Id2' + i2 <= i3 <= -42Id2' + i2 and i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n }
+
+#rlation: [n] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_0[i0' = 0, i1', i2' = i2, i3' = i1 + i2 + i1', i4' = 0] : i1 > 0 and i2 >= 0 and 2 + i1 <= i1' < n - i1 - i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_0[i0' = 0, i1', i2' = i2, i3' = i1 + i2 + i1', i4' = 0] : i1 > 0 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i1' >= 2 + i1 and -41 - 42Id2' <= i1' <= -42Id2' and i1' < n - i1 - i2 and ((Id1' = Id1 and Id2' < Id2 and i1' <= -116Id1 - i1 - i2) or (Id1' < Id1 and i2 <= -116Id1 - i1 and -115 - 116Id1' - i1 - i2 <= i1' <= -116Id1' - i1 - i2)) }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and i1 > 0 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i1' >= 2 + i1 and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -116Id1 - i1 - i2 and i1' < n - i1 - i2 }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' < Id1 and i1 > 0 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i1' >= 2 + i1 and i1' >= -115 - 116Id1' - i1 - i2 and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -116Id1' - i1 - i2 and i1' < n - i1 - i2 }
+
+#rlation: [n] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_0[i0' = 0, i1' = 1 + i1, i2', i3' = i1 + i2, i4' = 0] : i2 < n - i1 and i2' >= 0 and -i1 + i2 <= i2' < i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_0[i0' = 0, i1' = 1 + i1, i2', i3' = i1 + i2, i4' = 0] : Id2' = Id2 and Id1' = Id1 and Id3' < Id3 and -41 - 42Id2 <= i1 < -42Id2 and i2 >= 54Id3 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and i2' >= 54Id3' and i2' >= 0 and -i1 + i2 <= i2' <= 53 + 54Id3'; S_3[i0 = 0, i1 = -42Id2, i2, i3 = -42Id2 + i2, i4 = 3] -> S_0[i0' = 0, i1' = 1 - 42Id2, i2', i3' = -42Id2 + i2, i4' = 0] : Id2' = -1 + Id2 and Id1' = Id1 and i2 >= 54Id3 and -115 + 42Id2 - 116Id1 <= i2 <= 42Id2 - 116Id1 and i2 <= 53 + 54Id3 and i2 < n + 42Id2 and i2' >= 54Id3' and i2' >= 42Id2 + i2 and 0 <= i2' < i2 and i2' <= 53 + 54Id3' }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = -1 + Id2 and Id1' = Id1 and i2 >= 54Id3 and -115 + 42Id2 - 116Id1 <= i2 <= 42Id2 - 116Id1 and i2 <= 53 + 54Id3 and i2 < n + 42Id2 and i2' >= 54Id3' and i2' >= 42Id2 + i2 and 0 <= i2' < i2 and i2' <= 53 + 54Id3' }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = Id2 and Id1' = Id1 and Id3' < Id3 and -41 - 42Id2 <= i1 < -42Id2 and i2 >= 54Id3 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1 and i2' >= 54Id3' and i2' >= 0 and -i1 + i2 <= i2' <= 53 + 54Id3' }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_3[i0' = 0, i1' = 2 - i2 + i3, i2' = -1 + i2, i3' = 1 + i3, i4' = 3] : i2 > 0 and i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 <= -2 + n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_3[i0' = 0, i1' = 2 - i2 + i3, i2' = -1 + i2, i3' = 1 + i3, i4' = 3] : Id1' <= Id1 and 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 > 54Id3' and 0 < i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and i3 >= -116 - 116Id1' and i3 >= -115 - 116Id1 and -43 - 42Id2' + i2 <= i3 <= -2 - 42Id2' + i2 and i3 < -115Id1 - Id1' and i3 <= -2 + 2i1 + i2 and i3 <= -2 + n; S_0[i0 = 0, i1, i2 = 54Id3, i3, i4 = 0] -> S_3[i0' = 0, i1' = 2 - 54Id3 + i3, i2' = -1 + 54Id3, i3' = 1 + i3, i4' = 3] : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and 54Id3 > 0 and i1 >= -41 - 42Id2 and i3 >= 54Id3 + i1 and -115 - 116Id1 <= i3 < -116Id1 and i3 <= -2 + 54Id3 - 42Id2 and i3 <= -2 + 54Id3 + 2i1 and i3 <= -2 + n }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_3[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and Id3 > 0 and i1 >= -41 - 42Id2 and i3 >= 54Id3 + i1 and -115 - 116Id1 <= i3 < -116Id1 and i3 <= -2 + 54Id3 - 42Id2 and i3 <= -2 + 54Id3 + 2i1 and i3 <= -2 + n }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_3[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' <= Id1 and 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 > 54Id3' and 0 < i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and i3 >= -116 - 116Id1' and i3 >= -115 - 116Id1 and -43 - 42Id2' + i2 <= i3 <= -2 - 42Id2' + i2 and i3 < -115Id1 - Id1' and i3 <= -2 + 2i1 + i2 and i3 <= -2 + n }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_3[i0' = 0, i1' = -i2 + i3, i2' = i2, i3' = i3, i4' = 3] : i2 >= 0 and i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_3[i0' = 0, i1' = -i2 + i3, i2' = i2, i3' = i3, i4' = 3] : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -41 - 42Id2' + i2 <= i3 <= -42Id2' + i2 and i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_3[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -41 - 42Id2' + i2 <= i3 <= -42Id2' + i2 and i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n }
+
+#rlation: [n] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_3[i0' = 0, i1' = 2 + i1, i2' = -1 + i2, i3' = 1 + i1 + i2, i4' = 3] : i1 > 0 and 0 < i2 <= -2 + n - i1 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> S_3[i0' = 0, i1' = 2 + i1, i2' = -1 + i2, i3' = 1 + i1 + i2, i4' = 3] : 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and i1 > 0 and i1 >= -43 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 <= -2 - 42Id2' and i2 >= 54Id3 and i2 > 54Id3' and i2 > 0 and i2 >= -116 - 116Id1' - i1 and -115 - 116Id1 - i1 <= i2 < -115Id1 - Id1' - i1 and i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i2 <= -2 + n - i1; S_3[i0 = 0, i1, i2 = 54Id3, i3 = 54Id3 + i1, i4 = 3] -> S_3[i0' = 0, i1' = 2 + i1, i2' = -1 + 54Id3, i3' = 1 + 54Id3 + i1, i4' = 3] : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and 54Id3 > 0 and i1 > 0 and i1 >= -41 - 42Id2 and -115 - 54Id3 - 116Id1 <= i1 < -54Id3 - 116Id1 and i1 <= -2 - 42Id2 and i1 <= -2 + n - 54Id3 }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_3[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id3' = -1 + Id3 and Id2' = Id2 and Id1' = Id1 and Id3 > 0 and i1 > 0 and i1 >= -41 - 42Id2 and -115 - 54Id3 - 116Id1 <= i1 < -54Id3 - 116Id1 and i1 <= -2 - 42Id2 and i1 <= -2 + n - 54Id3 }
+
+#tile relation: [n] -> { S_3[Id1,Id2,Id3] -> S_3[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : 27Id1' <= -14 + 14Id2 - 14Id2' + 27Id1 and i1 > 0 and i1 >= -43 - 42Id2' and -41 - 42Id2 <= i1 <= -42Id2 and i1 <= -2 - 42Id2' and i2 >= 54Id3 and i2 > 54Id3' and i2 > 0 and i2 >= -116 - 116Id1' - i1 and -115 - 116Id1 - i1 <= i2 < -115Id1 - Id1' - i1 and i2 <= 54 + 54Id3' and i2 <= 53 + 54Id3 and i2 <= -2 + n - i1 }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_0[i0' = 0, i1', i2' = i2, i3' = i3 + i1', i4' = 0] : i2 >= 0 and i1 + i2 <= i3 <= -2 + 2i1 + i2 and 2 - i2 + i3 <= i1' < n - i3 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_0[i0' = 0, i1', i2' = i2, i3' = i3 + i1', i4' = 0] : -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -2 + 2i1 + i2 and i1' >= 2 - i2 + i3 and -41 - 42Id2' <= i1' <= -42Id2' and i1' < n - i3 and ((Id1' = Id1 and Id2' < Id2 and i1' <= -116Id1 - i3) or (Id1' < Id1 and i3 <= -116Id1 and -115 - 116Id1' - i3 <= i1' <= -116Id1' - i3)) }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -2 + 2i1 + i2 and i1' >= 2 - i2 + i3 and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -116Id1 - i3 and i1' < n - i3 }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' < Id1 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i1' >= 2 - i2 + i3 and i1' >= -115 - 116Id1' - i3 and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -116Id1' - i3 and i1' < n - i3 }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_0[i0' = 0, i1', i2' = i2, i3' = i3, i4' = 0] : i2 >= 0 and i3 <= -2 + 2i1 + i2 and i3 < n and i1 < i1' <= -i2 + i3 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_0[i0' = 0, i1', i2' = i2, i3' = i3, i4' = 0] : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -i2 + i3 }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 54Id3' and 0 <= i2 <= 53 + 54Id3' and i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and -41 - 42Id2' <= i1' <= -42Id2' and i1' <= -i2 + i3 }
+
+#rlation: [n] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_0[i0' = 0, i1' = 1 - i2 + i3, i2', i3' = i3, i4' = 0] : i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 < n and i2' >= 2i2 - i3 and 0 <= i2' < i2 }
+
+#(rlation * tile)->*tlieOrder: [n, Id3, Id3', Id2, Id2', Id1, Id1'] -> { S_0[i0 = 0, i1, i2, i3, i4 = 0] -> S_0[i0' = 0, i1' = 1 - i2 + i3, i2', i3' = i3, i4' = 0] : Id1' = Id1 and i1 >= -41 - 42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and i2' >= 54Id3' and i2' >= 2i2 - i3 and 0 <= i2' <= 53 + 54Id3' and ((Id2' < Id2 and i1 <= -42Id2 and -42 - 42Id2' + i2 <= i3 < -42Id2' + i2 and i2' < i2) or (Id2' = Id2 and Id3' < Id3 and i1 + i2 <= i3 < -42Id2 + i2)) }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id1' = Id1 and Id2' < Id2 and -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and i3 >= -115 - 116Id1 and -42 - 42Id2' + i2 <= i3 < -42Id2' + i2 and i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and i2' >= 54Id3' and i2' >= 2i2 - i3 and 0 <= i2' < i2 and i2' <= 53 + 54Id3' }
+
+#tile relation: [n] -> { S_0[Id1,Id2,Id3] -> S_0[Id1',Id2',Id3'] : exists i0,i0',i1,i1',i2,i2',i3,i3',i4,i4' : Id2' = Id2 and Id1' = Id1 and Id3' < Id3 and i1 >= -41 - 42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 < -42Id2 + i2 and i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n and i2' >= 54Id3' and i2' >= 2i2 - i3 and 0 <= i2' <= 53 + 54Id3' }
+
+#tile relations: [n] -> { S_0[Id1, Id2, Id3] -> S_0[Id1' = Id1, Id2', Id3'] : 116Id1 >= -114 - n and 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= 40 + n + 42Id2 and 2Id2 <= Id2' <= Id2 and -21 + 58Id1 + 27Id3 <= 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' >= -41 - n + 54Id3 and 0 <= Id3' <= Id3 and Id3' < Id2 + Id3 - Id2' and 9Id3' >= -8 + 9Id3 + 7Id2' and 27Id3' >= -26 + 58Id1 + 54Id3 and 27Id3' >= -82 - 58Id1 + 42Id2 + 21Id2' and 27Id3' >= -83 - 58Id1 + 42Id2' and -24 - n + 81Id3 <= 27Id3' <= 20 - 58Id1 + 21Id2' and -52 - n + 108Id3 <= 54Id3' <= 40 + n + 42Id2'; S_0[Id1, Id2, Id3] -> S_0[Id1', Id2', Id3' = Id3] : Id2 < 0 and 42Id2 >= -153 - n - 116Id1 and Id3 >= 0 and -83 - 58Id1 + 42Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and -280 - n - 232Id1 <= 54Id3 <= -7 + n and 54Id3 <= 79 + n + 84Id2 and Id1' < Id1 and 58Id1' <= 40 + 42Id2 - 27Id3 and 58Id1' <= 77 + 58Id1 + 21Id2 and 58Id1' <= 140 + 116Id1 + 27Id3 and 116Id1' >= -114 - n and Id2' <= Id2 and 21Id2' >= -19 + 27Id3 + 58Id1' and 21Id2' >= -41 - 21Id2 + 27Id3 + 58Id1' and -78 - 58Id1 + 58Id1' <= 21Id2' <= 57 - 58Id1 + 58Id1' and 21Id2' <= 83 - 42Id2 + 27Id3 + 58Id1' and 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' >= -38 - n + 54Id3 and 42Id2' >= -81 - n - 42Id2 + 54Id3 and -155 - n - 116Id1 <= 42Id2' <= 83 + 27Id3 + 58Id1'; S_0[Id1, Id2, Id3] -> S_0[Id1' = Id1, Id2', Id3' = Id3] : Id3 >= 0 and 27Id3 >= -83 - 58Id1 + 42Id2 and Id2' < Id2 and 21Id2' >= -20 + 58Id1 + 27Id3 and 42Id2' >= -40 - n + 54Id3 and ((116Id1 >= -114 - n and Id2' >= 2Id2) or (Id2 < 0 and 27Id3 >= -140 - 58Id1 and 54Id3 >= -280 - n - 232Id1 and Id2' >= -3 and 21Id2' >= -19 + 58Id1 + 27Id3 and -41 + 58Id1 - 21Id2 + 27Id3 <= 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' >= -38 - n + 54Id3 and 42Id2' >= -81 - n - 42Id2 + 54Id3 and 42Id2' >= -155 - n - 116Id1)); S_2[Id1, Id2, Id3] -> S_1[Id1', Id2', Id3'] : 116Id1 >= -113 - n and Id2 < 0 and 27Id3 >= -83 - 58Id1 + 42Id2 and 54Id3 <= 39 + n + 42Id2 and Id1' <= 40 - 115Id1 + 42Id2 - 54Id3 and Id1' <= Id1 and 116Id1' >= -114 - n and -1 + 2Id2 <= Id2' <= Id2 and 14Id2' <= -14 + 27Id1 + 14Id2 - 27Id1' and 21Id2' <= 83 + 27Id3 + 58Id1' and 42Id2' >= -42 + 115Id1 + 54Id3 + Id1' and 42Id2' >= -41 - n + 54Id3 and Id3' >= -1 + Id3 and 0 <= Id3' <= Id3 and 27Id3' >= -83 + 115Id1 + 54Id3 - 57Id1' and 27Id3' >= -84 + 42Id2 - 58Id1' and 27Id3' >= -84 - 58Id1' + 21Id2' and -83 - 58Id1 + 21Id2' <= 27Id3' <= 82 - 115Id1 + 57Id1' and 54Id3' <= 41 - 115Id1 - Id1' + 42Id2' and 54Id3' <= 39 - 115Id1 + 42Id2 - Id1' and 54Id3' <= 40 + n + 42Id2' and 54Id3' <= 38 + n + 42Id2; S_2[Id1, Id2, Id3] -> S_1[Id1' = Id1, Id2', Id3' = Id3] : 116Id1 >= -114 - n and Id3 >= 0 and 27Id3 >= -83 - 58Id1 + 42Id2 and 2Id2 <= Id2' < Id2 and -20 + 58Id1 + 27Id3 <= 21Id2' <= 84 + 58Id1 + 27Id3 and 42Id2' >= -40 - n + 54Id3; S_2[Id1, Id2, Id3] -> S_1[Id1' = Id1, Id2' = Id2, Id3' = -1 + Id3] : 116Id1 >= -113 - n and Id2 < 0 and Id3 > 0 and -56 - 58Id1 + 21Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= 39 + n + 42Id2; S_0[Id1, Id2, Id3] -> S_2[Id1' = Id1, Id2', Id3'] : 116Id1 >= -114 - n and Id2 < 0 and -83 - 58Id1 + 42Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= -3 + n and 54Id3 <= 40 + n + 42Id2 and Id2' <= Id2 and 21Id2' <= 83 + 58Id1 + 27Id3 and Id3' >= 0 and -8 + 9Id3 + 7Id2' <= 9Id3' <= 15 + 9Id3 + 7Id2' and 9Id3' <= -9 + 10Id2 + 9Id3 - 10Id2' and 27Id3' >= -83 - 58Id1 + 42Id2 + 21Id2' and -83 - 58Id1 + 42Id2' <= 27Id3' <= 19 - 58Id1 + 21Id2' and 27Id3' <= 41 - 58Id1 + 21Id2 + 21Id2' and 27Id3' <= 40 - 58Id1 + 42Id2 and 27Id3' <= 110 + 58Id1 + 54Id3 and 54Id3' <= 38 + n + 42Id2' and 54Id3' <= 81 + n + 42Id2 + 42Id2' and 54Id3' <= 80 + n + 84Id2; S_0[Id1, Id2, Id3] -> S_2[Id1', Id2', Id3' = Id3] : Id3 >= 0 and 27Id3 <= 20 - 58Id1 + 21Id2 and Id1' < Id1 and 58Id1' >= -58 + 116Id1 + 27Id3 and 58Id1' >= -82 + 84Id2 - 27Id3 and 116Id1' >= -114 - n and 2Id2 <= Id2' <= Id2 and -21 + 58Id1 + 27Id3 <= 21Id2' <= 57 - 58Id1 + 58Id1' and 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' <= 83 + 27Id3 + 58Id1'; S_0[Id1, Id2, Id3] -> S_2[Id1' = Id1, Id2', Id3' = Id3] : 116Id1 >= -114 - n and Id3 >= 0 and 27Id3 >= -83 - 58Id1 + 42Id2 and 2Id2 <= Id2' < Id2 and 21Id2' >= -20 + 58Id1 + 27Id3 and 42Id2' >= -40 - n + 54Id3; S_1[Id1, Id2, Id3] -> S_2[Id1' = Id1, Id2', Id3'] : 116Id1 >= -114 - n and Id2 < 0 and -84 - 58Id1 + 21Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= -3 + n and 54Id3 <= 40 + n + 42Id2 and Id2' <= Id2 and Id2' <= 83 + 58Id1 - 20Id2 + 27Id3 and Id3' >= 0 and -8 + 9Id3 + 7Id2' <= 9Id3' <= 15 + 9Id3 + 7Id2' and 9Id3' <= -9 + 10Id2 + 9Id3 - 10Id2' and 27Id3' >= -84 - 58Id1 + 21Id2 + 21Id2' and -83 - 58Id1 + 20Id2 + 22Id2' <= 27Id3' <= 19 - 58Id1 + 21Id2' and 27Id3' <= 41 - 58Id1 + 21Id2 + 21Id2' and 27Id3' <= 40 - 58Id1 + 42Id2 and 27Id3' <= 110 + 58Id1 + 54Id3 and 54Id3' <= 38 + n + 42Id2' and 54Id3' <= 81 + n + 42Id2 + 42Id2' and 54Id3' <= 80 + n + 84Id2; S_1[Id1, Id2, Id3] -> S_2[Id1', Id2', Id3' = Id3] : 116Id1 >= -113 - n and Id2 < 0 and Id3 >= 0 and -84 - 58Id1 + 21Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and 21Id1' < -37Id1 + 21Id2 - 27Id3 and 40Id1' <= -2 + n + 40Id1 + 42Id2 - 54Id3 and 58Id1' >= -58 + 116Id1 + 27Id3 and 58Id1' >= -58 + 58Id1 + 21Id2 and 58Id1' >= -84 + 42Id2 - 27Id3 and 116Id1' >= -114 - n and -1 + Id2 <= Id2' <= Id2 and Id2' < Id1 + Id2 - Id1' and -21 + 58Id1 + 27Id3 <= 21Id2' <= 57 - 58Id1 + 58Id1' and 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' <= 83 + 27Id3 + 58Id1'; S_3[Id1, Id2, Id3] -> S_1[Id1', Id2', Id3'] : 116Id1 >= -113 - n and Id2 < 0 and 54Id3 <= 39 + n + 42Id2 and Id1' <= 40 - 115Id1 + 42Id2 - 54Id3 and 58Id1' >= -84 + 21Id2 - 27Id3 and 116Id1' >= -114 - n and Id2' >= -1 + Id2 and 14Id2' <= -14 + 27Id1 + 14Id2 - 27Id1' and 21Id2' <= 83 + 27Id3 + 58Id1' and 42Id2' >= -42 + 115Id1 + 54Id3 + Id1' and 42Id2' >= -41 - n + 54Id3 and Id3' >= -1 + Id3 and 0 <= Id3' <= Id3 and 27Id3' >= -85 + 21Id2 - 58Id1' and 27Id3' >= -84 - 58Id1' + 21Id2' and 27Id3' >= -84 - 58Id1 + 21Id2 and 54Id3' <= 41 - 115Id1 - Id1' + 42Id2' and 54Id3' <= 39 - 115Id1 + 42Id2 - Id1' and 54Id3' <= 40 + n + 42Id2' and 54Id3' <= 38 + n + 42Id2; S_3[Id1, Id2, Id3] -> S_1[Id1' = Id1, Id2' = Id2, Id3' = -1 + Id3] : 116Id1 >= -113 - n and Id2 < 0 and Id3 > 0 and -56 - 58Id1 + 21Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= 39 + n + 42Id2; S_3[Id1, Id2, Id3] -> S_2[Id1' = Id1, Id2', Id3'] : 116Id1 >= -114 - n and Id2 < 0 and -84 - 58Id1 + 21Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= 40 + n + 42Id2 and Id2' <= Id2 and Id2' <= 83 + 58Id1 - 20Id2 + 27Id3 and Id3' >= 0 and -8 + 9Id3 + 7Id2' <= 9Id3' <= 15 + 9Id3 + 7Id2' and 9Id3' <= -9 + 10Id2 + 9Id3 - 10Id2' and 27Id3' >= -84 - 58Id1 + 21Id2 + 21Id2' and -83 - 58Id1 + 20Id2 + 22Id2' <= 27Id3' <= 41 - 58Id1 + 21Id2 + 21Id2' and 27Id3' <= 40 - 58Id1 + 42Id2 and 27Id3' <= 110 + 58Id1 + 54Id3 and 54Id3' <= 81 + n + 42Id2 + 42Id2' and 54Id3' <= 80 + n + 84Id2; S_3[Id1, Id2, Id3] -> S_2[Id1', Id2', Id3' = Id3] : 116Id1 >= -113 - n and Id2 < 0 and Id3 >= 0 and -84 - 58Id1 + 21Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and 21Id1' < -37Id1 + 21Id2 - 27Id3 and 40Id1' <= -2 + n + 40Id1 + 42Id2 - 54Id3 and 58Id1' >= -58 + 116Id1 + 27Id3 and 58Id1' >= -58 + 58Id1 + 21Id2 and 58Id1' >= -84 + 42Id2 - 27Id3 and 116Id1' >= -114 - n and -1 + Id2 <= Id2' <= Id2 and Id2' < Id1 + Id2 - Id1' and -21 + 58Id1 + 27Id3 <= 21Id2' <= 57 - 58Id1 + 58Id1' and 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' <= 83 + 27Id3 + 58Id1'; S_0[Id1, Id2, Id3] -> S_1[Id1', Id2', Id3'] : 116Id1 >= -113 - n and Id2 < 0 and 54Id3 <= -4 + n and 54Id3 <= 39 + n + 42Id2 and Id1' <= -3 - 115Id1 - 54Id3 and Id1' <= 40 - 115Id1 + 42Id2 - 54Id3 and Id1' <= Id1 and 116Id1' >= -114 - n and 2Id2 <= Id2' <= Id2 and 14Id2' <= -14 + 27Id1 + 14Id2 - 27Id1' and 21Id2' <= 83 + 27Id3 + 58Id1' and 42Id2' >= -42 + 115Id1 + 54Id3 + Id1' and 42Id2' >= -41 - n + 54Id3 and Id3' >= -1 + Id3 and 0 <= Id3' <= Id3 and 27Id3' >= -83 + 115Id1 + 54Id3 - 57Id1' and 27Id3' >= -84 - 58Id1' + 21Id2' and 27Id3' >= -83 - 58Id1 + 21Id2' and 54Id3' <= -4 - 115Id1 - Id1' and 54Id3' <= 41 - 115Id1 - Id1' + 42Id2' and 54Id3' <= 81 - 115Id1 + 27Id3 + 57Id1' and 54Id3' <= 39 - 115Id1 + 42Id2 - Id1' and 54Id3' <= -5 + n and 54Id3' <= 40 + n + 42Id2' and 54Id3' <= 38 + n + 42Id2; S_0[Id1, Id2, Id3] -> S_1[Id1' = Id1, Id2', Id3' = Id3] : 116Id1 >= -114 - n and Id3 >= 0 and 27Id3 >= -83 - 58Id1 + 42Id2 and 2Id2 <= Id2' < Id2 and -20 + 58Id1 + 27Id3 <= 21Id2' <= 84 + 58Id1 + 27Id3 and 42Id2' >= -40 - n + 54Id3; S_0[Id1, Id2, Id3] -> S_1[Id1' = Id1, Id2' = Id2, Id3' = -1 + Id3] : 116Id1 >= -113 - n and Id2 < 0 and Id3 > 0 and -56 - 58Id1 + 21Id2 <= 27Id3 <= -2 - 58Id1 and 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= -4 + n and 54Id3 <= 39 + n + 42Id2; S_0[Id1, Id2, Id3] -> S_3[Id1', Id2', Id3'] : 116Id1 >= -113 - n and Id2 < 0 and 54Id3 <= -4 + n and 54Id3 <= 39 + n + 42Id2 and Id1' <= -3 - 115Id1 - 54Id3 and Id1' <= 40 - 115Id1 + 42Id2 - 54Id3 and Id1' <= Id1 and 116Id1' >= -114 - n and 2Id2 <= Id2' <= Id2 and 14Id2' <= -14 + 27Id1 + 14Id2 - 27Id1' and 21Id2' <= 83 + 27Id3 + 58Id1' and 42Id2' >= -42 + 115Id1 + 54Id3 + Id1' and 42Id2' >= -41 - n + 54Id3 and Id3' >= -1 + Id3 and 0 <= Id3' <= Id3 and 27Id3' >= -83 + 115Id1 + 54Id3 - 57Id1' and 27Id3' >= -84 - 58Id1' + 21Id2' and 27Id3' >= -83 - 58Id1 + 21Id2' and 54Id3' <= -4 - 115Id1 - Id1' and 54Id3' <= 41 - 115Id1 - Id1' + 42Id2' and 54Id3' <= 81 - 115Id1 + 27Id3 + 57Id1' and 54Id3' <= 39 - 115Id1 + 42Id2 - Id1' and 54Id3' <= -5 + n and 54Id3' <= 40 + n + 42Id2' and 54Id3' <= 38 + n + 42Id2; S_0[Id1, Id2, Id3] -> S_3[Id1' = Id1, Id2', Id3' = Id3] : 116Id1 >= -114 - n and Id3 >= 0 and 27Id3 >= -83 - 58Id1 + 42Id2 and 2Id2 <= Id2' < Id2 and -20 + 58Id1 + 27Id3 <= 21Id2' <= 84 + 58Id1 + 27Id3 and 42Id2' >= -40 - n + 54Id3; S_0[Id1, Id2, Id3] -> S_3[Id1' = Id1, Id2' = Id2, Id3' = -1 + Id3] : 116Id1 >= -113 - n and Id2 < 0 and Id3 > 0 and -56 - 58Id1 + 21Id2 <= 27Id3 <= -2 - 58Id1 and 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= -4 + n and 54Id3 <= 39 + n + 42Id2; S_1[Id1, Id2, Id3] -> S_1[Id1', Id2', Id3'] : 116Id1 >= -113 - n and Id2 < 0 and 54Id3 <= -4 + n and 54Id3 <= 39 + n + 42Id2 and Id1' <= -3 - 115Id1 - 54Id3 and Id1' <= 40 - 115Id1 + 42Id2 - 54Id3 and 58Id1' >= -84 + 21Id2 - 27Id3 and 116Id1' >= -114 - n and Id2' >= -1 + Id2 and 14Id2' <= -14 + 27Id1 + 14Id2 - 27Id1' and 21Id2' <= 83 + 27Id3 + 58Id1' and 42Id2' >= -42 + 115Id1 + 54Id3 + Id1' and 42Id2' >= -41 - n + 54Id3 and Id3' >= -1 + Id3 and 0 <= Id3' <= Id3 and 27Id3' >= -85 + 21Id2 - 58Id1' and 27Id3' >= -84 - 58Id1' + 21Id2' and 27Id3' >= -84 - 58Id1 + 21Id2 and 54Id3' <= -4 - 115Id1 - Id1' and 54Id3' <= 41 - 115Id1 - Id1' + 42Id2' and 54Id3' <= 39 - 115Id1 + 42Id2 - Id1' and 54Id3' <= -5 + n and 54Id3' <= 40 + n + 42Id2' and 54Id3' <= 38 + n + 42Id2; S_1[Id1, Id2, Id3] -> S_1[Id1' = Id1, Id2' = Id2, Id3' = -1 + Id3] : 116Id1 >= -113 - n and Id2 < 0 and Id3 > 0 and -56 - 58Id1 + 21Id2 <= 27Id3 <= -2 - 58Id1 and 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= -4 + n and 54Id3 <= 39 + n + 42Id2; S_3[Id1, Id2, Id3] -> S_0[Id1' = Id1, Id2', Id3'] : 116Id1 >= -114 - n and Id2 < 0 and -1 + Id2 <= Id2' <= Id2 and Id2' <= 83 + 58Id1 - 20Id2 + 27Id3 and 20Id2' >= -20 + 58Id1 - Id2 + 27Id3 and 41Id2' >= -40 - n - Id2 + 54Id3 and 0 <= Id3' < Id2 + Id3 - Id2' and 9Id3' >= -8 + 7Id2 + 9Id3 and 27Id3' >= -26 + 58Id1 + 54Id3 and -83 - 58Id1 + 41Id2 + Id2' <= 27Id3' < -58Id1 + 21Id2 and -52 - n + 108Id3 <= 54Id3' <= -2 + n + 42Id2; S_3[Id1, Id2, Id3] -> S_0[Id1', Id2', Id3' = Id3] : Id2 < 0 and 42Id2 >= -153 - n - 116Id1 and Id3 >= 0 and -84 - 58Id1 + 21Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and -280 - n - 232Id1 <= 54Id3 <= 79 + n + 84Id2 and Id1' < Id1 and 58Id1' <= 40 + 42Id2 - 27Id3 and 58Id1' <= 77 + 58Id1 + 21Id2 and 58Id1' <= 140 + 116Id1 + 27Id3 and 116Id1' >= -114 - n and Id2' <= Id2 and 21Id2' >= -41 - 21Id2 + 27Id3 + 58Id1' and -78 - 58Id1 + 58Id1' <= 21Id2' <= 57 - 58Id1 + 58Id1' and 21Id2' <= 84 - 21Id2 + 27Id3 + 58Id1' and 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' >= -81 - n - 42Id2 + 54Id3 and -155 - n - 116Id1 <= 42Id2' <= 83 + 27Id3 + 58Id1'; S_3[Id1, Id2, Id3] -> S_0[Id1' = Id1, Id2', Id3' = Id3] : Id2 < 0 and Id3 >= 0 and 27Id3 >= -84 - 58Id1 + 21Id2 and 54Id3 >= -280 - n - 232Id1 and -3 <= Id2' < Id2 and 21Id2' >= -41 + 58Id1 - 21Id2 + 27Id3 and 42Id2' >= -81 - n - 42Id2 + 54Id3 and 42Id2' >= -155 - n - 116Id1; S_2[Id1, Id2, Id3] -> S_0[Id1' = Id1, Id2', Id3'] : 116Id1 >= -114 - n and 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= 40 + n + 42Id2 and 2Id2 <= Id2' <= Id2 and -21 + 58Id1 + 27Id3 <= 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' >= -41 - n + 54Id3 and 0 <= Id3' <= Id3 and Id3' < Id2 + Id3 - Id2' and 9Id3' >= -8 + 9Id3 + 7Id2' and 27Id3' >= -26 + 58Id1 + 54Id3 and -83 - 58Id1 + 42Id2' <= 27Id3' <= 20 - 58Id1 + 21Id2' and -52 - n + 108Id3 <= 54Id3' <= 40 + n + 42Id2'; S_2[Id1, Id2, Id3] -> S_0[Id1', Id2', Id3' = Id3] : Id2 < 0 and 42Id2 >= -153 - n - 116Id1 and Id3 >= 0 and -83 - 58Id1 + 42Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and -280 - n - 232Id1 <= 54Id3 <= 79 + n + 84Id2 and Id1' < Id1 and 58Id1' <= 40 + 42Id2 - 27Id3 and 58Id1' <= 77 + 58Id1 + 21Id2 and 58Id1' <= 140 + 116Id1 + 27Id3 and 116Id1' >= -114 - n and Id2' <= Id2 and 21Id2' >= -41 - 21Id2 + 27Id3 + 58Id1' and -78 - 58Id1 + 58Id1' <= 21Id2' <= 57 - 58Id1 + 58Id1' and 21Id2' <= 83 - 42Id2 + 27Id3 + 58Id1' and 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' >= -81 - n - 42Id2 + 54Id3 and -155 - n - 116Id1 <= 42Id2' <= 83 + 27Id3 + 58Id1'; S_2[Id1, Id2, Id3] -> S_0[Id1' = Id1, Id2', Id3' = Id3] : Id3 >= 0 and 27Id3 >= -83 - 58Id1 + 42Id2 and Id2' < Id2 and ((116Id1 >= -114 - n and Id2' >= 2Id2 and 21Id2' >= -20 + 58Id1 + 27Id3 and 42Id2' >= -40 - n + 54Id3) or (Id2 < 0 and 27Id3 >= -140 - 58Id1 and 54Id3 >= -280 - n - 232Id1 and Id2' >= -3 and -41 + 58Id1 - 21Id2 + 27Id3 <= 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' >= -81 - n - 42Id2 + 54Id3 and 42Id2' >= -155 - n - 116Id1)); S_1[Id1, Id2, Id3] -> S_3[Id1', Id2', Id3'] : 116Id1 >= -113 - n and Id2 < 0 and 54Id3 <= -4 + n and 54Id3 <= 39 + n + 42Id2 and Id1' <= -3 - 115Id1 - 54Id3 and Id1' <= 40 - 115Id1 + 42Id2 - 54Id3 and 58Id1' >= -84 + 21Id2 - 27Id3 and 116Id1' >= -114 - n and Id2' >= -1 + Id2 and 14Id2' <= -14 + 27Id1 + 14Id2 - 27Id1' and 21Id2' <= 83 + 27Id3 + 58Id1' and 42Id2' >= -42 + 115Id1 + 54Id3 + Id1' and 42Id2' >= -41 - n + 54Id3 and Id3' >= -1 + Id3 and 0 <= Id3' <= Id3 and 27Id3' >= -85 + 21Id2 - 58Id1' and 27Id3' >= -84 - 58Id1' + 21Id2' and 27Id3' >= -84 - 58Id1 + 21Id2 and 54Id3' <= -4 - 115Id1 - Id1' and 54Id3' <= 41 - 115Id1 - Id1' + 42Id2' and 54Id3' <= 39 - 115Id1 + 42Id2 - Id1' and 54Id3' <= -5 + n and 54Id3' <= 40 + n + 42Id2' and 54Id3' <= 38 + n + 42Id2; S_1[Id1, Id2, Id3] -> S_3[Id1' = Id1, Id2' = Id2, Id3' = -1 + Id3] : 116Id1 >= -113 - n and Id2 < 0 and Id3 > 0 and -56 - 58Id1 + 21Id2 <= 27Id3 <= -2 - 58Id1 and 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= -4 + n and 54Id3 <= 39 + n + 42Id2; S_3[Id1, Id2, Id3] -> S_3[Id1', Id2', Id3'] : 116Id1 >= -113 - n and Id2 < 0 and 54Id3 <= 39 + n + 42Id2 and Id1' <= 40 - 115Id1 + 42Id2 - 54Id3 and 58Id1' >= -84 + 21Id2 - 27Id3 and 116Id1' >= -114 - n and Id2' >= -1 + Id2 and 14Id2' <= -14 + 27Id1 + 14Id2 - 27Id1' and 21Id2' <= 83 + 27Id3 + 58Id1' and 42Id2' >= -42 + 115Id1 + 54Id3 + Id1' and 42Id2' >= -41 - n + 54Id3 and Id3' >= -1 + Id3 and 0 <= Id3' <= Id3 and 27Id3' >= -85 + 21Id2 - 58Id1' and 27Id3' >= -84 - 58Id1' + 21Id2' and 27Id3' >= -84 - 58Id1 + 21Id2 and 54Id3' <= 41 - 115Id1 - Id1' + 42Id2' and 54Id3' <= 39 - 115Id1 + 42Id2 - Id1' and 54Id3' <= 40 + n + 42Id2' and 54Id3' <= 38 + n + 42Id2; S_3[Id1, Id2, Id3] -> S_3[Id1' = Id1, Id2' = Id2, Id3' = -1 + Id3] : 116Id1 >= -113 - n and Id2 < 0 and Id3 > 0 and -56 - 58Id1 + 21Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= 39 + n + 42Id2; S_2[Id1, Id2, Id3] -> S_2[Id1' = Id1, Id2', Id3'] : 116Id1 >= -114 - n and Id2 < 0 and -83 - 58Id1 + 42Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= 40 + n + 42Id2 and Id2' <= Id2 and 21Id2' <= 83 + 58Id1 + 27Id3 and Id3' >= 0 and -8 + 9Id3 + 7Id2' <= 9Id3' <= 15 + 9Id3 + 7Id2' and 9Id3' <= -9 + 10Id2 + 9Id3 - 10Id2' and 27Id3' >= -83 - 58Id1 + 42Id2 + 21Id2' and -83 - 58Id1 + 42Id2' <= 27Id3' <= 41 - 58Id1 + 21Id2 + 21Id2' and 27Id3' <= 40 - 58Id1 + 42Id2 and 27Id3' <= 110 + 58Id1 + 54Id3 and 54Id3' <= 81 + n + 42Id2 + 42Id2' and 54Id3' <= 80 + n + 84Id2; S_2[Id1, Id2, Id3] -> S_2[Id1', Id2', Id3' = Id3] : Id3 >= 0 and 27Id3 <= 20 - 58Id1 + 21Id2 and Id1' < Id1 and 29Id1' >= -28 + 87Id1 + 27Id3 and 58Id1' >= -58 + 116Id1 + 27Id3 and 116Id1' >= -114 - n and 2Id2 <= Id2' <= Id2 and -21 + 58Id1 + 27Id3 <= 21Id2' <= 57 - 58Id1 + 58Id1' and 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' <= 83 + 27Id3 + 58Id1'; S_2[Id1, Id2, Id3] -> S_2[Id1' = Id1, Id2', Id3' = Id3] : 116Id1 >= -114 - n and Id3 >= 0 and 27Id3 >= -83 - 58Id1 + 42Id2 and 2Id2 <= Id2' < Id2 and 21Id2' >= -20 + 58Id1 + 27Id3 and 42Id2' >= -40 - n + 54Id3; S_1[Id1, Id2, Id3] -> S_0[Id1' = Id1, Id2', Id3'] : 116Id1 >= -114 - n and Id2 < 0 and 54Id3 <= -3 + n and -1 + Id2 <= Id2' <= Id2 and Id2' <= 83 + 58Id1 - 20Id2 + 27Id3 and 20Id2' >= -20 + 58Id1 - Id2 + 27Id3 and 41Id2' >= -40 - n - Id2 + 54Id3 and 0 <= Id3' < Id2 + Id3 - Id2' and 9Id3' >= -8 + 7Id2 + 9Id3 and 27Id3' >= -26 + 58Id1 + 54Id3 and -83 - 58Id1 + 41Id2 + Id2' <= 27Id3' < -58Id1 + 21Id2 and -52 - n + 108Id3 <= 54Id3' <= -2 + n + 42Id2; S_1[Id1, Id2, Id3] -> S_0[Id1', Id2', Id3' = Id3] : Id2 < 0 and 42Id2 >= -153 - n - 116Id1 and Id3 >= 0 and -84 - 58Id1 + 21Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and -280 - n - 232Id1 <= 54Id3 <= -7 + n and 54Id3 <= 79 + n + 84Id2 and Id1' < Id1 and 58Id1' <= 40 + 42Id2 - 27Id3 and 58Id1' <= 77 + 58Id1 + 21Id2 and 58Id1' <= 140 + 116Id1 + 27Id3 and 116Id1' >= -114 - n and Id2' <= Id2 and 21Id2' >= -19 + 27Id3 + 58Id1' and 21Id2' >= -41 - 21Id2 + 27Id3 + 58Id1' and -78 - 58Id1 + 58Id1' <= 21Id2' <= 57 - 58Id1 + 58Id1' and 21Id2' <= 84 - 21Id2 + 27Id3 + 58Id1' and 21Id2' <= 83 + 58Id1 + 27Id3 and 42Id2' >= -38 - n + 54Id3 and 42Id2' >= -81 - n - 42Id2 + 54Id3 and -155 - n - 116Id1 <= 42Id2' <= 83 + 27Id3 + 58Id1'; S_1[Id1, Id2, Id3] -> S_0[Id1' = Id1, Id2', Id3' = Id3] : Id2 < 0 and Id3 >= 0 and 27Id3 >= -84 - 58Id1 + 21Id2 and 54Id3 >= -280 - n - 232Id1 and -3 <= Id2' < Id2 and 21Id2' >= -19 + 58Id1 + 27Id3 and 21Id2' >= -41 + 58Id1 - 21Id2 + 27Id3 and 42Id2' >= -38 - n + 54Id3 and 42Id2' >= -81 - n - 42Id2 + 54Id3 and 42Id2' >= -155 - n - 116Id1; S_2[Id1, Id2, Id3] -> S_3[Id1', Id2', Id3'] : 116Id1 >= -113 - n and Id2 < 0 and 27Id3 >= -83 - 58Id1 + 42Id2 and 54Id3 <= 39 + n + 42Id2 and Id1' <= 40 - 115Id1 + 42Id2 - 54Id3 and Id1' <= Id1 and 116Id1' >= -114 - n and -1 + 2Id2 <= Id2' <= Id2 and 14Id2' <= -14 + 27Id1 + 14Id2 - 27Id1' and 21Id2' <= 83 + 27Id3 + 58Id1' and 42Id2' >= -42 + 115Id1 + 54Id3 + Id1' and 42Id2' >= -41 - n + 54Id3 and Id3' >= -1 + Id3 and 0 <= Id3' <= Id3 and 27Id3' >= -83 + 115Id1 + 54Id3 - 57Id1' and 27Id3' >= -84 + 42Id2 - 58Id1' and 27Id3' >= -84 - 58Id1' + 21Id2' and -83 - 58Id1 + 21Id2' <= 27Id3' <= 82 - 115Id1 + 57Id1' and 54Id3' <= 41 - 115Id1 - Id1' + 42Id2' and 54Id3' <= 39 - 115Id1 + 42Id2 - Id1' and 54Id3' <= 40 + n + 42Id2' and 54Id3' <= 38 + n + 42Id2; S_2[Id1, Id2, Id3] -> S_3[Id1' = Id1, Id2', Id3' = Id3] : 116Id1 >= -114 - n and Id3 >= 0 and 27Id3 >= -83 - 58Id1 + 42Id2 and 2Id2 <= Id2' < Id2 and -20 + 58Id1 + 27Id3 <= 21Id2' <= 84 + 58Id1 + 27Id3 and 42Id2' >= -40 - n + 54Id3; S_2[Id1, Id2, Id3] -> S_3[Id1' = Id1, Id2' = Id2, Id3' = -1 + Id3] : 116Id1 >= -113 - n and Id2 < 0 and Id3 > 0 and -56 - 58Id1 + 21Id2 <= 27Id3 <= 20 - 58Id1 + 21Id2 and 54Id3 <= 39 + n + 42Id2 }
+
+#create tile relations end
+
+#create stencil schedule start
+
+#tile relatiions delta: { [Id1, Id2, Id3] : 14Id2 <= -14 - 27Id1 and -1 <= Id3 <= 0 and ((exists (e0, e1, e2: Id2 >= -1 and e1 < 0 and e2 >= -Id3 and 27e2 >= -84 - 27Id3 - 58e0 + 21e1 and 27e2 >= -83 - 58Id1 + 21Id2 - 58e0 + 21e1 and 27e2 >= -84 - 58Id1 + 21Id2 - 27Id3 - 58e0 + 21e1 and 27e2 >= -84 - 58Id1 - 58e0 + 21e1 and 27e2 >= -85 - 58Id1 - 27Id3 - 58e0 + 21e1 and 54e2 <= 39 - Id1 - 54Id3 - 116e0 + 42e1 and 54e2 <= 40 - Id1 - 116e0 + 42e1 and 54e2 <= 41 - Id1 + 42Id2 - 54Id3 - 116e0 + 42e1 and 54e2 <= 42 - Id1 + 42Id2 - 116e0 + 42e1)) or (exists (e0, e1, e2: Id1 <= 0 and Id2 <= 0 and e1 < 0 and e1 <= 1 + Id2 and e2 >= -Id3 and 27e2 >= -83 + 21Id2 - 27Id3 - 58e0 + 21e1 and 27e2 >= -83 - 58e0 + 42e1 and 27e2 >= -83 - 58Id1 + 21Id2 - 58e0 + 21e1 and 27e2 >= -84 - 58Id1 + 21Id2 - 27Id3 - 58e0 + 21e1 and -84 - 58Id1 - 27Id3 - 58e0 + 42e1 <= 27e2 <= 82 + 57Id1 - 27Id3 - 58e0 and 27e2 <= 83 + 57Id1 + 27Id3 - 58e0 and 54e2 <= 39 - Id1 - 54Id3 - 116e0 + 42e1 and 54e2 <= 40 - Id1 - 116e0 + 42e1 and 54e2 <= 41 - Id1 + 42Id2 - 54Id3 - 116e0 + 42e1 and 54e2 <= 42 - Id1 + 42Id2 - 116e0 + 42e1))); [Id1 = 0, Id2, Id3] : Id2 <= 0 and Id3 < -Id2 and Id3 <= 0; [Id1, Id2, Id3 = 0] : Id2 <= 0 and (Id1 < 0 or (-1 <= Id2 < -Id1)) }
+
+#tile relatiions distance vectors set: { [Id1 = -1, Id2 = 0, Id3 = 0]; [Id1 = 0, Id2 = -1, Id3 = 0]; [Id1 = -1, Id2 = -1, Id3 = 0]; [Id1 = -1, Id2 = 0, Id3 = -1]; [Id1 = 0, Id2 = -1, Id3 = -1]; [Id1 = -1, Id2 = -1, Id3 = -1] }
+
+#tile relatiions distance vectors set: { [Id1 = -1, Id2 = 0, Id3 = 0]; [Id1 = 0, Id2 = -1, Id3 = 0]; [Id1 = -1, Id2 = -1, Id3 = 0]; [Id1 = -1, Id2 = 0, Id3 = -1]; [Id1 = 0, Id2 = -1, Id3 = -1]; [Id1 = -1, Id2 = -1, Id3 = -1] }
+
+#tile relatiions distance vectors set: { [Id1 = -1, Id2 = 0, Id3 = 0]; [Id1 = -2, Id2 = 0, Id3 = 0]; [Id1 = -1, Id2 = -1, Id3 = 0]; [Id1 = -2, Id2 = -1, Id3 = 0] }
+
+#tile relatiions distance vectors set: { [Id1 = 0, Id2 = -1, Id3 = 0]; [Id1 = 0, Id2 = 0, Id3 = -1]; [Id1 = 0, Id2 = -1, Id3 = -1] }
+
+#tile relatiions distance vectors set: { [Id1 = -1, Id2 = 0, Id3 = 0]; [Id1 = 0, Id2 = -1, Id3 = 0]; [Id1 = -1, Id2 = -1, Id3 = 0] }
+
+#tile relatiions distance vectors to scan: { [Id1 = -1, Id2 = 0, Id3 = 0]; [Id1 = -1, Id2 = 0, Id3 = -1]; [Id1 = -2, Id2 = 0, Id3 = 0]; [Id1 = 0, Id2 = -1, Id3 = 0]; [Id1 = 0, Id2 = -1, Id3 = -1]; [Id1 = -1, Id2 = -1, Id3 = 0]; [Id1 = -1, Id2 = -1, Id3 = -1]; [Id1 = -2, Id2 = -1, Id3 = 0]; [Id1 = 0, Id2 = 0, Id3 = -1] }
+
+#wafefront hyperplane: lexmin( {[d0 = 0, b0, c0, a1, a2, a3] : exists c1, c2, c3 : ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and ((c3 = -1 and a3 >= 0) or (c3 = 0 and a3 < 0)) and c0 = c1 + c2 + c3 and a1 != 0 and a2 != 0 and a3 != 0} * {[d0, b0, c0, a1, a2, a3] : exists b1, b2, b3 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and ((b3 = a3 and a3 >= 0) or (b3 = -a3 and a3 < 0)) and b0 > 0 and b0 = b1 + b2 + b3 and -1*a1 + 0*a2 + 0*a3 > 0 and -2*a1 + 0*a2 + 0*a3 > 0 and 0*a1 + -1*a2 + 0*a3 > 0 and -1*a1 + -1*a2 + 0*a3 > 0 and -2*a1 + -1*a2 + 0*a3 > 0 and 0*a1 + 0*a2 + -1*a3 > 0 and -1*a1 + 0*a2 + -1*a3 > 0 and 0*a1 + -1*a2 + -1*a3 > 0 and -1*a1 + -1*a2 + -1*a3 > 0 } )
+
+#result: { [d0 = 0, b0 = 3, c0 = 0, a1 = -1, a2 = -1, a3 = -1] }
+
+#stencil schedule map: [n] -> { S_1[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, Id3, 0, i1, i2, i1 + i2, 1] : Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and  -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1  ; S_2[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, Id3, 0, i1, i2, i3, 2] : Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and  -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1  ; S_3[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, Id3, 0, i1, i2, i1 + i2, 3] : Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and  -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1  ; S_0[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, Id3, 0, i1, i2, i3, 0] : Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and  -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1  ; S_4[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, Id3, 1, 0, 0, 0, 0]  : Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and  -41 - 42Id2 <= i1 <= -42Id2 and 54Id3 <= i2 <= 53 + 54Id3 and -115 - 116Id1 <= i3 <= -116Id1  } 
+ 
+#create stencil schedule end
+
+#create stencil schedule code start
+
+#stencilScheduleMap: [n] -> { S_3[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, i1, i2, i1 + i2, 3] : -115 - i3 <= 116Id1 <= -i3 and -41 - i1 <= 42Id2 <= -i1 and -i2 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - i2 - 54Wid1 - 54Id1; S_1[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, i1, i2, i1 + i2, 1] : -115 - i3 <= 116Id1 <= -i3 and -41 - i1 <= 42Id2 <= -i1 and -i2 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - i2 - 54Wid1 - 54Id1; S_2[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, i1, i2, i3, 2] : -115 - i3 <= 116Id1 <= -i3 and -41 - i1 <= 42Id2 <= -i1 and -i2 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - i2 - 54Wid1 - 54Id1; S_4[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 1, 0, 0, 0, 0] : -115 - i3 <= 116Id1 <= -i3 and -41 - i1 <= 42Id2 <= -i1 and -i2 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - i2 - 54Wid1 - 54Id1; S_0[i0, i1, i2, i3, i4] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, i1, i2, i3, 0] : -115 - i3 <= 116Id1 <= -i3 and -41 - i1 <= 42Id2 <= -i1 and -i2 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - i2 - 54Wid1 - 54Id1 }
+
+#domain_union_set: [n] -> { S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] : i1 > 0 and 0 <= i2 < n - i1; S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] : i1 >= 2 and 0 <= i2 < n - i1; S_2[i0 = 0, i1, i2, i3, i4 = 2] : i2 >= 0 and i1 + i2 <= i3 < 2i1 + i2 and i3 < n; S_0[i0 = 0, i1, i2, i3, i4 = 0] : i2 >= 0 and i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 < n; S_4[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] }
+
+#stencilGlobalSchedule: [n] -> { S_4[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0] -> [Wid1 = 0, Id1 = 0, Id2 = 0, Id3 = 0, 1, 0, 0, 0, 0]; S_0[i0 = 0, i1, i2, i3, i4 = 0] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, i1, i2, i3, 0] : i2 >= 0 and i1 + i2 <= i3 <= -2 + 2i1 + i2 and i3 < n and -115 - i3 <= 116Id1 <= -i3 and -41 - i1 <= 42Id2 <= -i1 and -i2 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - i2 - 54Wid1 - 54Id1; S_3[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 3] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, i1, i2, i1 + i2, 3] : i1 > 0 and 0 <= i2 < n - i1 and -115 - i1 - i2 <= 116Id1 <= -i1 - i2 and -41 - i1 <= 42Id2 <= -i1 and -i2 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - i2 - 54Wid1 - 54Id1; S_1[i0 = 0, i1, i2, i3 = i1 + i2, i4 = 1] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, i1, i2, i1 + i2, 1] : i1 >= 2 and 0 <= i2 < n - i1 and -115 - i1 - i2 <= 116Id1 <= -i1 - i2 and -41 - i1 <= 42Id2 <= -i1 and -i2 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - i2 - 54Wid1 - 54Id1; S_2[i0 = 0, i1, i2, i3, i4 = 2] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, i1, i2, i3, 2] : i2 >= 0 and i1 + i2 <= i3 < 2i1 + i2 and i3 < n and -115 - i3 <= 116Id1 <= -i3 and -41 - i1 <= 42Id2 <= -i1 and -i2 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - i2 - 54Wid1 - 54Id1 }
+
+#mapper_union_map: [n] -> { S_4[] -> S_4[i0 = 1, i1 = 0, i2 = 0, i3 = 0, i4 = 0]; S_0[c0, c1, c2] -> S_0[i0 = 0, i1 = c0, i2 = c1, i3 = c2, i4 = 0]; S_3[c0, c1, c2] -> S_3[i0 = 0, i1 = c0, i2 = c1, i3 = c0 + c1, i4 = 3]; S_2[c0, c1, c2] -> S_2[i0 = 0, i1 = c0, i2 = c1, i3 = c2, i4 = 2]; S_1[c0, c1, c2] -> S_1[i0 = 0, i1 = c0, i2 = c1, i3 = c0 + c1, i4 = 1] }
+
+#stencilGlobalSchedule: [n] -> { S_0[c0, c1, c2] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, c0, c1, c2, 0] : c1 >= 0 and c0 + c1 <= c2 <= -2 + 2c0 + c1 and c2 < n and -115 - c2 <= 116Id1 <= -c2 and -41 - c0 <= 42Id2 <= -c0 and -c1 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - c1 - 54Wid1 - 54Id1; S_3[c0, c1, c2 = c0 + c1] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, c0, c1, c0 + c1, 3] : c0 > 0 and 0 <= c1 < n - c0 and -115 - c0 - c1 <= 116Id1 <= -c0 - c1 and -41 - c0 <= 42Id2 <= -c0 and -c1 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - c1 - 54Wid1 - 54Id1; S_4[] -> [Wid1 = 0, Id1 = 0, Id2 = 0, Id3 = 0, 1, 0, 0, 0, 0]; S_1[c0, c1, c2 = c0 + c1] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, c0, c1, c0 + c1, 1] : c0 >= 2 and 0 <= c1 < n - c0 and -115 - c0 - c1 <= 116Id1 <= -c0 - c1 and -41 - c0 <= 42Id2 <= -c0 and -c1 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - c1 - 54Wid1 - 54Id1; S_2[c0, c1, c2] -> [Wid1, Id1, Id2, Id3 = -Wid1 - Id1 - Id2, 0, c0, c1, c2, 2] : c1 >= 0 and c0 + c1 <= c2 < 2c0 + c1 and c2 < n and -115 - c2 <= 116Id1 <= -c2 and -41 - c0 <= 42Id2 <= -c0 and -c1 - 54Wid1 - 54Id1 <= 54Id2 <= 53 - c1 - 54Wid1 - 54Id1 }
+
+#create stencil schedule code end
+
+#wavefront card calculate start
+
+#card set: [] -> { [Wid1] : exists n, Id3, Id2, Id1, i0, i1, i2, i3, i4 : n <= 1000 and n >= 0 and   Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and   i0 = 0 and i4 = 2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and 0 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n  } 
+
+#result: { [Wid1] : -8 <= Wid1 <= 33 }
+
+#card set: [] -> { [Wid1] : exists n, Id3, Id2, Id1, i0, i1, i2, i3, i4 : n <= 1000 and n >= 0 and   Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and   i0 = 0 and i3 = i1 + i2 and i4 = 3 and i1 > 0 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1  } 
+
+#result: { [Wid1] : -8 <= Wid1 <= 33 }
+
+#card set: [] -> { [Wid1] : exists n, Id3, Id2, Id1, i0, i1, i2, i3, i4 : n <= 1000 and n >= 0 and   Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and   i0 = 0 and i3 = i1 + i2 and i4 = 1 and i1 >= 2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1  } 
+
+#result: { [Wid1] : -8 <= Wid1 <= 33 }
+
+#card set: [] -> { [Wid1] : exists n, Id3, Id2, Id1, i0, i1, i2, i3, i4 : n <= 1000 and n >= 0 and   Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and   i0 = 0 and i4 = 0 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and 0 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n  } 
+
+#result: { [Wid1] : -8 <= Wid1 <= 33 }
+
+#card set: [] -> { [Wid1] : exists n, Id3, Id2, Id1, i0, i1, i2, i3, i4 : n <= 1000 and n >= 0 and   Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and   Id3 = 0 and Id2 = 0 and Id1 = 0 and i0 = 1 and i1 = 0 and i2 = 0 and i3 = 0 and i4 = 0  } 
+
+#result: { [Wid1 = 0] }
+
+#card union set: [n] -> { [Wid1] : exists Id1, Id2, Id3, i0, i1, i2, i3, i4 : Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and   i0 = 0 and i4 = 2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and 0 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 < 2i1 + i2 and i3 < n  } 
+
+#result: [n] -> { [Wid1] : exists (e0, e1: 116e0 >= -114 - n and e1 <= -Wid1 - e0 and e1 < 0 and 48e1 >= -20 - 27Wid1 + 31e0 and 69e1 <= 83 - 27Wid1 + 31e0 and 96e1 >= -40 - n - 54Wid1 - 54e0) }
+
+#card union set: [n] -> { [Wid1] : exists Id1, Id2, Id3, i0, i1, i2, i3, i4 : Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and   i0 = 0 and i3 = i1 + i2 and i4 = 3 and i1 > 0 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1  } 
+
+#result: [n] -> { [Wid1] : exists (e0: 31e0 <= -28 + 27Wid1 and 42e0 <= 40 + n - 42Wid1 and 54e0 >= 56 - n - 54Wid1 and 79e0 <= 20 - 21Wid1 and 116e0 >= -114 - n) }
+
+#card union set: [n] -> { [Wid1] : exists Id1, Id2, Id3, i0, i1, i2, i3, i4 : Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and   i0 = 0 and i3 = i1 + i2 and i4 = 1 and i1 >= 2 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and i2 >= 0 and -115 - 116Id1 - i1 <= i2 <= -116Id1 - i1 and i2 <= 53 + 54Id3 and i2 < n - i1  } 
+
+#result: [n] -> { [Wid1] : exists (e0: 31e0 <= -28 + 27Wid1 and 42e0 <= 40 + n - 42Wid1 and 54e0 >= 57 - n - 54Wid1 and 79e0 <= 20 - 21Wid1 and 116e0 >= -114 - n) }
+
+#card union set: [n] -> { [Wid1] : exists Id1, Id2, Id3, i0, i1, i2, i3, i4 : Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and   i0 = 0 and i4 = 0 and -41 - 42Id2 <= i1 <= -42Id2 and i2 >= 54Id3 and 0 <= i2 <= 53 + 54Id3 and i3 >= i1 + i2 and -115 - 116Id1 <= i3 <= -116Id1 and i3 <= -2 + 2i1 + i2 and i3 < n  } 
+
+#result: [n] -> { [Wid1] : exists (e0, e1: 116e0 >= -114 - n and e1 <= -Wid1 - e0 and e1 < 0 and 48e1 >= -20 - 27Wid1 + 31e0 and 54e1 >= 3 - n - 54Wid1 - 54e0 and 69e1 <= 83 - 27Wid1 + 31e0 and 96e1 >= -40 - n - 54Wid1 - 54e0) }
+
+#card union set: [n] -> { [Wid1] : exists Id1, Id2, Id3, i0, i1, i2, i3, i4 : Wid1 = -1 * Id1 + -1 * Id2 + -1 * Id3 + 0 and   Id3 = 0 and Id2 = 0 and Id1 = 0 and i0 = 1 and i1 = 0 and i2 = 0 and i3 = 0 and i4 = 0  } 
+
+#result: [n] -> { [Wid1 = 0] }
+
+#wavefront card set: { [Wid1] : -8 <= Wid1 <= 33 }
+
+#wavefront card union set: [n] -> { [Wid1] : (exists (e0: 31e0 <= -28 + 27Wid1 and 42e0 <= 40 + n - 42Wid1 and 54e0 >= 56 - n - 54Wid1 and 79e0 <= 20 - 21Wid1 and 116e0 >= -114 - n)) or (exists (e0, e1: 116e0 >= -114 - n and e1 <= -Wid1 - e0 and e1 < 0 and 48e1 >= -20 - 27Wid1 + 31e0 and 69e1 <= 83 - 27Wid1 + 31e0 and 96e1 >= -40 - n - 54Wid1 - 54e0)); [Wid1 = 0] }
+
+#Wavefront card calculate end
+
+#stencil scop end
