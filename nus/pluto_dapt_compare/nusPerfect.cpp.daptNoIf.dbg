@@ -1,0 +1,196 @@
+./PerfectLoopsMP.c:32:13: warning: implicit declaration of function 'getFullCopy' is invalid in C99
+  int** S = getFullCopy(table, n);
+            ^
+./PerfectLoopsMP.c:32:9: warning: incompatible integer to pointer conversion initializing 'int **' with an expression of type 'int'
+  int** S = getFullCopy(table, n);
+        ^   ~~~~~~~~~~~~~~~~~~~~~
+./PerfectLoopsMP.c:34:18: warning: implicit declaration of function 'omp_get_wtime' is invalid in C99
+  double start = omp_get_wtime();
+                 ^
+./PerfectLoopsMP.c:47:3: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)'
+  printf("PERNIF: %lf\n", execution_time);
+  ^
+./PerfectLoopsMP.c:47:3: note: include the header <stdio.h> or explicitly provide a declaration for 'printf'
+./PerfectLoopsMP.c:48:3: warning: implicit declaration of function 'write_results_full' is invalid in C99
+  write_results_full(n, execution_time, '\n');
+  ^
+./PerfectLoopsMP.c:49:3: warning: implicit declaration of function 'printMatrix' is invalid in C99
+  printMatrix(S, n, 1);
+  ^
+./PerfectLoopsMP.c:50:3: warning: implicit declaration of function 'deallocateMatrix' is invalid in C99
+  deallocateMatrix(S, n);
+  ^
+./PerfectLoopsMP.c:10:5: warning: return statement must be final statement in function
+    return s1;
+    ^~~~~~~~~
+./PerfectLoopsMP.c:16:5: warning: return statement must be final statement in function
+    return s1;
+    ^~~~~~~~~
+
+#stencil scop start
+
+#delta analyze start
+
+#distance vectors set : { [i0 = 0, i1 = 1, i2 = 2]; [i0 = 0, i1 = 0, i2 = 2]; [i0 = 0, i1 = 1, i2 = 1]; [i0 = 0, i1 = 0, i2 = 1] }
+
+#distance vectors set : { [i0 = 1, i1 = 1, i2 = 0] }
+
+#distance vectors set : { [i0 = 2, i1 = 0, i2 = -1]; [i0 = 1, i1 = 0, i2 = -1]; [i0 = 2, i1 = 0, i2 = -2]; [i0 = 1, i1 = 0, i2 = -2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 2] }
+
+#selected distance vector: { [i0 = 0, i1 = 1, i2 = 1] }
+
+#selected distance vector: { [i0 = 0, i1 = 0, i2 = 1] }
+
+#selected distance vector: { [i0 = 1, i1 = 1, i2 = 0] }
+
+#selected distance vector: { [i0 = 2, i1 = 0, i2 = -1] }
+
+#selected distance vector: { [i0 = 1, i1 = 0, i2 = -1] }
+
+#selected distance vector: { [i0 = 2, i1 = 0, i2 = -2] }
+
+#selected distance vector: { [i0 = 1, i1 = 0, i2 = -2] }
+
+#analyze loop dimensions:
+
+#[i0]:  is parameter
+
+#[i1]:  positive: { [i0 = 0, i1 = 1, i2 = 2] }  is parameter
+
+#[i2]:  positive: { [i0 = 0, i1 = 1, i2 = 2] }  negative: { [i0 = 1, i1 = 0, i2 = -2] }  is parameter
+
+#delta analyze end
+
+#create space start
+
+#hyperplane_for_dim: lexmin( {[d0 = 0, b0, c0, a1, a2, a3] : a1 != 0 } * {[d0, b0, c0, a1, a2, a3] : exists b1, c1, b2, c2, b3, c3 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and ((b3 = a3 and a3 >= 0) or (b3 = -a3 and a3 < 0)) and ((c3 = -1 and a3 >= 0) or (c3 = 0 and a3 < 0)) and b0 > 0 and b0 = b1 + b2 + b3 and c0 = c1 + c2 + c3 and a1 >= 0  and a2 >= 0  and a3 <= 0  and a3 >= 0  and 0*a1 + 1*a2 + 2*a3 >= 0 and 0*a1 + 0*a2 + 2*a3 >= 0 and 0*a1 + 1*a2 + 1*a3 >= 0 and 0*a1 + 0*a2 + 1*a3 >= 0 and 1*a1 + 1*a2 + 0*a3 >= 0 and 2*a1 + 0*a2 + -1*a3 >= 0 and 1*a1 + 0*a2 + -1*a3 >= 0 and 2*a1 + 0*a2 + -2*a3 >= 0 and 1*a1 + 0*a2 + -2*a3 >= 0 } )
+
+#result: { [d0 = 0, b0 = 1, c0 = -3, a1 = 1, a2 = 0, a3 = 0] }
+
+#hyperplane check: first hyperplane 
+
+#result: true
+
+#hyperplane_for_dim: lexmin( {[d0 = 0, b0, c0, a1, a2, a3] : a2 != 0 } * {[d0, b0, c0, a1, a2, a3] : exists b1, c1, b2, c2, b3, c3 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and ((b3 = a3 and a3 >= 0) or (b3 = -a3 and a3 < 0)) and ((c3 = -1 and a3 >= 0) or (c3 = 0 and a3 < 0)) and b0 > 0 and b0 = b1 + b2 + b3 and c0 = c1 + c2 + c3 and a1 >= 0  and a2 >= 0  and a3 <= 0  and a3 >= 0  and 0*a1 + 1*a2 + 2*a3 >= 0 and 0*a1 + 0*a2 + 2*a3 >= 0 and 0*a1 + 1*a2 + 1*a3 >= 0 and 0*a1 + 0*a2 + 1*a3 >= 0 and 1*a1 + 1*a2 + 0*a3 >= 0 and 2*a1 + 0*a2 + -1*a3 >= 0 and 1*a1 + 0*a2 + -1*a3 >= 0 and 2*a1 + 0*a2 + -2*a3 >= 0 and 1*a1 + 0*a2 + -2*a3 >= 0 } )
+
+#result: { [d0 = 0, b0 = 1, c0 = -3, a1 = 0, a2 = 1, a3 = 0] }
+
+#hyperplane check: { : exists c1, c2 : ( c1!=0 or c2!=0 ) and c2*0 = c1*1 and c2*1 = c1*0 and c2*0 = c1*0 } = {}
+
+#result: true
+
+#hyperplane_for_dim: lexmin( {[d0 = 0, b0, c0, a1, a2, a3] : a3 != 0 } * {[d0, b0, c0, a1, a2, a3] : exists b1, c1, b2, c2, b3, c3 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and ((b3 = a3 and a3 >= 0) or (b3 = -a3 and a3 < 0)) and ((c3 = -1 and a3 >= 0) or (c3 = 0 and a3 < 0)) and b0 > 0 and b0 = b1 + b2 + b3 and c0 = c1 + c2 + c3 and a1 >= 0  and a2 >= 0  and a3 <= 0  and a3 >= 0  and 0*a1 + 1*a2 + 2*a3 >= 0 and 0*a1 + 0*a2 + 2*a3 >= 0 and 0*a1 + 1*a2 + 1*a3 >= 0 and 0*a1 + 0*a2 + 1*a3 >= 0 and 1*a1 + 1*a2 + 0*a3 >= 0 and 2*a1 + 0*a2 + -1*a3 >= 0 and 1*a1 + 0*a2 + -1*a3 >= 0 and 2*a1 + 0*a2 + -2*a3 >= 0 and 1*a1 + 0*a2 + -2*a3 >= 0 } )
+
+#result: { [d0, b0, c0, a1, a2, a3] : false }
+
+#hyperplane check: hyperplane is empty 
+
+#result: false
+
+#created hyperplane : { [d0 = 0, b0 = 1, c0 = -3, a1 = 0, a2 = 1, a3 = 0] }
+
+#created hyperplane : { [d0 = 0, b0 = 1, c0 = -3, a1 = 1, a2 = 0, a3 = 0] }
+
+# [n, Id1] -> { [i0, i1, i2] : exists bId1 : 0 * i0 + 1 * i1 + 0 * i2 + bId1 = 0 and 26 * Id1 <= bId1 <= 26 * (Id1 + 1) - 1 } 
+
+# [n, Id2] -> { [i0, i1, i2] : exists bId2 : 1 * i0 + 0 * i1 + 0 * i2 + bId2 = 0 and 30 * Id2 <= bId2 <= 30 * (Id2 + 1) - 1 } 
+
+#tiles for domain set  : [n] -> { S_0[i0, i1, i2] : i0 <= 0 and i1 < n and -i0 <= i2 < i1 }
+
+# [n, Id2, Id1] -> { S_0[i0, i1, i2] : -29 - 30Id2 <= i0 <= -30Id2 and -25 - 26Id1 <= i1 <= -26Id1 } * [n] -> { S_0[i0, i1, i2] : i0 <= 0 and i1 < n and -i0 <= i2 < i1 }
+
+#result  : [n, Id2, Id1] -> { S_0[i0, i1, i2] : -29 - 30Id2 <= i0 <= -30Id2 and i0 <= 0 and -25 - 26Id1 <= i1 <= -26Id1 and i1 < n and -i0 <= i2 < i1 }
+
+#created spaces:
+
+#[space1]: hyperplane: i0 * ( 0 ) + i1 * ( 1 ) + i2 * ( 0 ) + b = 0
+
+#[space2]: hyperplane: i0 * ( 1 ) + i1 * ( 0 ) + i2 * ( 0 ) + b = 0
+
+#create space end
+
+#create tile relations start
+
+#tlieOrder: [n, Id2', Id2, Id1', Id1] -> { S_0[i0, i1, i2] : -29 - 30Id2 <= i0 <= -30Id2 and i0 <= 0 and -25 - 26Id1 <= i1 <= -26Id1 and i1 < n and -i0 <= i2 < i1  and not (Id1=Id1' and Id2=Id2' )}
+
+#rlation: [n] -> { S_0[i0, i1, i2] -> S_0[i0' = i0, i1', i2' = i1] : i0 <= 0 and -i0 <= i2 < i1 and i1 < i1' < n }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> { S_0[i0, i1, i2] -> S_0[i0' = i0, i1', i2' = i1] : Id1' < Id1 and i0 >= -29 - 30Id2' and -29 - 30Id2 <= i0 <= -30Id2 and i0 <= -30Id2' and i0 <= 0 and -25 - 26Id1 <= i1 <= -26Id1 and -i0 <= i2 < i1 and -25 - 26Id1' <= i1' <= -26Id1' and i1' < n }
+
+#tile relation: [n] -> { S_0[Id1,Id2] -> S_0[Id1',Id2'] : exists i0,i0',i1,i1',i2,i2' : Id1' < Id1 and i0 >= -29 - 30Id2' and -29 - 30Id2 <= i0 <= -30Id2 and i0 <= -30Id2' and i0 <= 0 and -25 - 26Id1 <= i1 <= -26Id1 and -i0 <= i2 < i1 and -25 - 26Id1' <= i1' <= -26Id1' and i1' < n }
+
+#rlation: [n] -> { S_0[i0, i1, i2] -> S_0[i0' = i0, i1' = i1, i2'] : i0 <= 0 and i1 < n and i2 >= -i0 and i2 < i2' < i1 }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> {  }
+
+#rlation: [n] -> { S_0[i0, i1, i2] -> S_0[i0', i1' = i1, i2' = -1 - i0] : i1 < n and -i0 <= i2 < i1 and i0 < i0' <= 0 }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> { S_0[i0, i1, i2] -> S_0[i0', i1' = i1, i2' = -1 - i0] : Id1' = Id1 and Id2' < Id2 and -29 - 30Id2 <= i0 <= -30Id2 and -25 - 26Id1 <= i1 <= -26Id1 and i1 < n and -i0 <= i2 < i1 and -29 - 30Id2' <= i0' <= -30Id2' and i0' <= 0 }
+
+#tile relation: [n] -> { S_0[Id1,Id2] -> S_0[Id1',Id2'] : exists i0,i0',i1,i1',i2,i2' : Id1' = Id1 and Id2' < Id2 and -29 - 30Id2 <= i0 <= -30Id2 and -25 - 26Id1 <= i1 <= -26Id1 and i1 < n and -i0 <= i2 < i1 and -29 - 30Id2' <= i0' <= -30Id2' and i0' <= 0 }
+
+#rlation: [n] -> { S_0[i0, i1, i2] -> S_0[i0' = 1 + i0, i1' = 1 + i1, i2'] : i0 < 0 and i1 <= -2 + n and -i0 <= i2 < i1 and -1 - i0 <= i2' <= i1 }
+
+#(rlation * tile)->*tlieOrder: [n, Id2, Id2', Id1, Id1'] -> { S_0[i0, i1, i2] -> S_0[i0' = 1 + i0, i1' = 1 + i1, i2'] : 29Id1' <= -15 + 15Id2 - 15Id2' + 29Id1 and i0 >= -30 - 30Id2' and -30Id2 - 29Id1 + 29Id1' <= i0 <= -30Id2 and i0 < -30Id2' and i0 < 0 and -25 - Id1 - 25Id1' <= i1 < -25Id1 - Id1' and i1 <= -2 + n and -i0 <= i2 < i1 and -1 - i0 <= i2' <= i1 }
+
+#tile relation: [n] -> { S_0[Id1,Id2] -> S_0[Id1',Id2'] : exists i0,i0',i1,i1',i2,i2' : 29Id1' <= -15 + 15Id2 - 15Id2' + 29Id1 and i0 >= -30 - 30Id2' and -30Id2 - 29Id1 + 29Id1' <= i0 <= -30Id2 and i0 < -30Id2' and i0 < 0 and -25 - Id1 - 25Id1' <= i1 < -25Id1 - Id1' and i1 <= -2 + n and -i0 <= i2 < i1 and -1 - i0 <= i2' <= i1 }
+
+#tile relations: [n] -> { S_0[Id1, Id2] -> S_0[Id1', Id2'] : 30Id2 <= -3 + n and -1 + Id1 <= Id1' <= -2 - 25Id1 - 30Id2 and 25Id1' >= -23 - n - Id1 and Id2' >= -1 + Id2 and Id2' >= 0 and 15Id2' <= -15 + 29Id1 + 15Id2 - 29Id1' and 30Id2' <= -3 - 25Id1 - Id1' and 30Id2' <= -4 + n; S_0[Id1, Id2] -> S_0[Id1' = Id1, Id2'] : 26Id1 >= -24 - n and 15Id2 < -13Id1 and 30Id2 <= -2 + n and 0 <= Id2' < Id2; S_0[Id1, Id2] -> S_0[Id1', Id2' = Id2] : Id2 >= 0 and 15Id2 < -13Id1 and Id1' < Id1 and 26Id1' >= -24 - n }
+
+#create tile relations end
+
+#create stencil schedule start
+
+#tile relatiions delta: { [Id1, Id2] : Id1 >= -1 and Id2 >= -1 and 15Id2 <= -15 - 29Id1; [Id1, Id2 = 0] : Id1 < 0; [Id1 = 0, Id2] : Id2 < 0 }
+
+#tile relatiions distance vectors set: { [Id1 = -1, Id2 = 0]; [Id1 = -2, Id2 = 0] }
+
+#tile relatiions distance vectors set: { [Id1 = 0, Id2 = -1]; [Id1 = 0, Id2 = -2] }
+
+#tile relatiions distance vectors set: { [Id1 = -1, Id2 = 0]; [Id1 = 0, Id2 = -1]; [Id1 = -1, Id2 = -1] }
+
+#tile relatiions distance vectors to scan: { [Id1 = -1, Id2 = 0]; [Id1 = -1, Id2 = -1]; [Id1 = -2, Id2 = 0]; [Id1 = 0, Id2 = -1]; [Id1 = 0, Id2 = -2] }
+
+#wafefront hyperplane: lexmin( {[d0 = 0, b0, c0, a1, a2] : exists c1, c2 : ((c1 = -1 and a1 >= 0) or (c1 = 0 and a1 < 0)) and ((c2 = -1 and a2 >= 0) or (c2 = 0 and a2 < 0)) and c0 = c1 + c2 and a1 != 0 and a2 != 0} * {[d0, b0, c0, a1, a2] : exists b1, b2 : ((b1 = a1 and a1 >= 0) or (b1 = -a1 and a1 < 0)) and ((b2 = a2 and a2 >= 0) or (b2 = -a2 and a2 < 0)) and b0 > 0 and b0 = b1 + b2 and -1*a1 + 0*a2 > 0 and -2*a1 + 0*a2 > 0 and 0*a1 + -1*a2 > 0 and 0*a1 + -2*a2 > 0 and -1*a1 + -1*a2 > 0 } )
+
+#result: { [d0 = 0, b0 = 2, c0 = 0, a1 = -1, a2 = -1] }
+
+#stencil schedule map: [n] -> { S_0[i0, i1, i2] -> [Wid1, Id1, Id2, i0, i1, i2]  : Wid1 = -1 * Id1 + -1 * Id2 + 0 and  -29 - 30Id2 <= i0 <= -30Id2 and -25 - 26Id1 <= i1 <= -26Id1  } 
+ 
+#create stencil schedule end
+
+#create stencil schedule code start
+
+#stencilScheduleMap: [n] -> { S_0[i0, i1, i2] -> [Wid1, Id1, Id2 = -Wid1 - Id1, i0, i1, i2] : -25 - i1 <= 26Id1 <= -i1 and i0 - 30Wid1 <= 30Id1 <= 29 + i0 - 30Wid1 }
+
+#domain_union_set: [n] -> { S_0[i0, i1, i2] : i0 <= 0 and i1 < n and -i0 <= i2 < i1 }
+
+#stencilGlobalSchedule: [n] -> { S_0[i0, i1, i2] -> [Wid1, Id1, Id2 = -Wid1 - Id1, i0, i1, i2] : i0 <= 0 and i1 < n and -i0 <= i2 < i1 and -25 - i1 <= 26Id1 <= -i1 and i0 - 30Wid1 <= 30Id1 <= 29 + i0 - 30Wid1 }
+
+#mapper_union_map: [n] -> { S_0[i, j, k] -> S_0[i0 = -i, i1 = j, i2 = k] }
+
+#stencilGlobalSchedule: [n] -> { S_0[i, j, k] -> [Wid1, Id1, Id2 = -Wid1 - Id1, -i, j, k] : i >= 0 and j < n and i <= k < j and -25 - j <= 26Id1 <= -j and -i - 30Wid1 <= 30Id1 <= 29 - i - 30Wid1 }
+
+#create stencil schedule code end
+
+#wavefront card calculate start
+
+#card set: [] -> { [Wid1] : exists n, Id2, Id1, i0, i1, i2 : n <= 1000 and n >= 0 and   Wid1 = -1 * Id1 + -1 * Id2 + 0 and   -29 - 30Id2 <= i0 <= -30Id2 and i0 <= 0 and -25 - 26Id1 <= i1 <= -26Id1 and i1 < n and -i0 <= i2 < i1  } 
+
+#result: { [Wid1] : 0 < Wid1 <= 39 }
+
+#card union set: [n] -> { [Wid1] : exists Id1, Id2, i0, i1, i2 : Wid1 = -1 * Id1 + -1 * Id2 + 0 and   -29 - 30Id2 <= i0 <= -30Id2 and i0 <= 0 and -25 - 26Id1 <= i1 <= -26Id1 and i1 < n and -i0 <= i2 < i1  } 
+
+#result: [n] -> { [Wid1] : Wid1 > 0 and 26Wid1 <= 24 + n }
+
+#wavefront card set: { [Wid1] : 0 < Wid1 <= 39 }
+
+#wavefront card union set: [n] -> { [Wid1] : Wid1 > 0 and 26Wid1 <= 24 + n }
+
+#Wavefront card calculate end
+
+#stencil scop end
