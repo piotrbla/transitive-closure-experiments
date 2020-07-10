@@ -96,6 +96,8 @@ void computeDYN2PerfectIf(int** table, int n, int *seq) {
   int** S = getFullCopy(table, n);
 
   double start = omp_get_wtime();
+  for (int c0 = 1; c0 < n - 1; c0 += 1)
+  {
 for (int c0_0 = max(floord(-c0, 15) + 1, floord(-n, 30) + 1); c0_0 <= floord(-15 * c0 + 2 * n - 30, 390) + 2; c0_0 += 1) {
   #pragma omp parallel for
   for (int c1 = max(max(floord(c0 - n + 1, 26), -c0_0 + floord(-n, 30) + 1), -c0 - 8 * c0_0 + floord(c0 + c0_0, 2) + 1); c1 <= min(min(0, -c0_0 + floord(-c0 - 1, 30) + 1), -8 * c0_0 + floord(-c0 + 2 * c0_0 + 2, 4) + 13); c1 += 1) {
@@ -108,6 +110,7 @@ for (int c0_0 = max(floord(-c0, 15) + 1, floord(-n, 30) + 1); c0_0 <= floord(-15
       }
     }
   }
+ }
 }
   double execution_time = omp_get_wtime() - start;
 
