@@ -63,19 +63,36 @@ void LMKernel6_02_Modification(int loop, int n, int *input_w, int **input_b)
 
   double start = omp_get_wtime();
 
-  int l, i, k;
+  for (int c0 = 1; c0 < n; c0 += 1)
+    for (int c1 = 1; c1 <= loop; c1 += 1)
+      for (int c2 = c0; c2 < n; c2 += 1)
+        w[c2] += b[-c0 + c2][c2] * w[(c2 + c0 + c2)-1];
 
-  for (l = 1; l <= loop; l++) {
-    for (i = 1; i < n; i++) {
-      for (k = 0; k < i; k++) {
-        w[i] += b[k][i] * w[(i - k) - 1];
-      }
-    }
-  }
-  w[7]=33;
   double execution_time = omp_get_wtime() - start;
 
   printf("MOD_02: %lf\n", execution_time);
+  write_results(n, execution_time);
+  print_vector(w, n);
+  deallocate_matrix(b, n);
+  free(w);
+  return;
+}
+
+void LMKernel6_03_Modification(int loop, int n, int *input_w, int **input_b)
+{
+  int** b = get_full_copy(input_b, n);
+  int* w = get_vector_copy(input_w, n);
+
+  double start = omp_get_wtime();
+
+  for (int c0 = 1; c0 < n; c0 += 1)
+    for (int c1 = 1; c1 <= loop; c1 += 1)
+      for (int c2 = c0; c2 < n; c2 += 1)
+        w[c2] += b[-c0 + c2][c2] * w[(c2 + c0 + c2)-1];
+
+  double execution_time = omp_get_wtime() - start;
+
+  printf("MOD_03: %lf\n", execution_time);
   write_results(n, execution_time);
   print_vector(w, n);
   deallocate_matrix(b, n);
