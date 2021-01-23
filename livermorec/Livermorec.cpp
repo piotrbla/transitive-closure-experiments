@@ -63,11 +63,10 @@ void LMKernel6_02_Modification(int loop, int n, int *input_w, int **input_b)
 
   double start = omp_get_wtime();
 
-  for (int c0 = 1; c0 < n; c0 += 1)
-    for (int c1 = 1; c1 <= loop; c1 += 1)
-      for (int c2 = c0; c2 < n; c2 += 1)
-        w[c2] += b[-c0 + c2][c2] * w[(c2 + c0 + c2)-1];
-
+for (int c0 = 1; c0 < n; c0 += 1)
+  for (int c1 = 1; c1 <= loop; c1 += 1)
+    for (int c2 = c0; c2 < n; c2 += 1)
+        w[c2] += b[-c0 + c2][c2] * w[(c2 - (-c0 + c2)) - 1];
   double execution_time = omp_get_wtime() - start;
 
   printf("MOD_02: %lf\n", execution_time);
@@ -84,11 +83,10 @@ void LMKernel6_03_Modification(int loop, int n, int *input_w, int **input_b)
   int* w = get_vector_copy(input_w, n);
 
   double start = omp_get_wtime();
-
-  for (int c0 = 1; c0 < n; c0 += 1)
-    for (int c1 = 1; c1 <= loop; c1 += 1)
-      for (int c2 = c0; c2 < n; c2 += 1)
-        w[c2] += b[-c0 + c2][c2] * w[(c2 + c0 + c2)-1];
+for (int c0 = 1; c0 <= loop; c0 += 1)
+  for (int c1 = 1; c1 < n; c1 += 1)
+    for (int c2 = c1; c2 < n; c2 += 1)
+       w[c2] += b[-c1 + c2][c2] * w[(c2 - (-c1 + c2)) - 1];
 
   double execution_time = omp_get_wtime() - start;
 
@@ -135,10 +133,15 @@ int main()
 
   LMKernel6_01_Base(LMAX, ZMAX, result_w, input_b);
   LMKernel6_02_Modification(LMAX, ZMAX, result_w, input_b);
+  LMKernel6_03_Modification(LMAX, ZMAX, result_w, input_b);
   deallocate_matrix(input_b, ZMAX);
   free(result_w);
 
   if (is_files_equal("resVec_1", "resVec_2"))
+    std::cout << "OK\n";
+  else
+    std::cout << "ERROR\n";
+  if (is_files_equal("resVec_1", "resVec_3"))
     std::cout << "OK\n";
   else
     std::cout << "ERROR\n";
