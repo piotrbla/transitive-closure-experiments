@@ -6,8 +6,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 bool is_files_equal(const char * , const char * ) ;
+void print_files_equal(const char * , const char * );
 void write_results_full(int, double, char);
 void write_results(int, double );
+void write_results_last(int, double );
 int** allocate_matrix(int) ;
 
 int **get_full_copy(int ** , int);
@@ -91,14 +93,16 @@ for (int c0 = 1; c0 <= loop; c0 += 1)
   double execution_time = omp_get_wtime() - start;
 
   printf("MOD_03: %lf\n", execution_time);
-  write_results(n, execution_time);
+  write_results_last(n, execution_time);
   print_vector(w, n);
   deallocate_matrix(b, n);
   free(w);
   return;
 }
 
+
 #define PERFORMANCE_TEST 0
+
 
 int main()
 {
@@ -109,7 +113,7 @@ int main()
 #else
   const int ZMAX = 16;
   const int LMAX = 10;
-#endif
+#endif 
 
   int** input_b = allocate_matrix(ZMAX);
   int* result_w = allocate_vector(ZMAX);
@@ -136,22 +140,14 @@ int main()
   LMKernel6_03_Modification(LMAX, ZMAX, result_w, input_b);
   deallocate_matrix(input_b, ZMAX);
   free(result_w);
-
-  if (is_files_equal("resVec_1", "resVec_2"))
-    std::cout << "OK\n";
-  else
-    std::cout << "ERROR\n";
-  if (is_files_equal("resVec_1", "resVec_3"))
-    std::cout << "OK\n";
-  else
-    std::cout << "ERROR\n";
-
-
+  print_files_equal("resVec_1", "resVec_2");
+  print_files_equal("resVec_1", "resVec_3");
+  
 }
 
-bool is_files_equal(const char * filename1, const char * filename2) {
-  std::ifstream f1(filename1, std::ifstream::binary | std::ifstream::ate);
-  std::ifstream f2(filename2, std::ifstream::binary | std::ifstream::ate);
+bool is_files_equal(const char * filename_template, const char * filename_compared) {
+  std::ifstream f1(filename_template, std::ifstream::binary | std::ifstream::ate);
+  std::ifstream f2(filename_compared, std::ifstream::binary | std::ifstream::ate);
   if (f1.fail() || f2.fail()) {
     return false;
   }
@@ -164,6 +160,15 @@ bool is_files_equal(const char * filename1, const char * filename2) {
     std::istreambuf_iterator <char >(),
     std::istreambuf_iterator <char >(f2.rdbuf()));
 }
+
+void print_files_equal(const char* filename_template, const char* filename_compared)
+{
+  if (is_files_equal(filename_template, filename_compared))
+    std::cout << filename_compared << ": OK\n";
+  else
+    std::cout << filename_compared << ": ERROR\n";
+}
+
 void write_results_full(int n, double execution_time, char end_char)
 {
   FILE* f = fopen("results.txt", "at");
@@ -174,6 +179,11 @@ void write_results_full(int n, double execution_time, char end_char)
 void write_results(int n, double execution_time)
 {
   write_results_full(n, execution_time, ';');
+}
+
+void write_results_last(int n, double execution_time)
+{
+  write_results_full(n, execution_time, '\n');
 }
 
 int** allocate_matrix(int N) {
