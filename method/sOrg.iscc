@@ -1,0 +1,122 @@
+P := parse_file "OBSTOrg.cpp";
+print "Loop domain:";
+Domain := P[0];
+print Domain;
+print "Write:";
+Write := P[1] * Domain;
+print Write;
+
+print "Read:";
+Read := P[3] * Domain;
+print Read;
+
+print "Orginal schedule:";
+Schedule := P[4];
+print Schedule;
+
+Before := Schedule << Schedule;
+print "Before";
+print Before;
+
+RaW := (Write . (Read^-1)) * Before;
+
+WaW := (Write . (Write^-1)) * Before;
+
+WaR := (Read . (Write^-1)) * Before;
+print "RaW deps";
+print RaW;
+print "WaW deps";
+print WaW;
+print "WaR deps";
+print WaR;
+
+
+R := (RaW+WaW+WaR);
+print "R";
+print R;
+
+## generujemy kod za pomoca operatora "codegen m", gdzie   m jest szeregowanie
+
+## przyklad 1
+## dla szeregowania nizej implementujacego wave-fronting
+
+SCHED:=[n]->{[i,j]->[i+j,j]:  1<=i,j<=n};
+#SCHED:=[n]->{[i,j]->[2i+2j][j]:  1<=i,j<=n};
+## operator  
+print "Schedule:";
+codegen Schedule;
+
+##generuje pseudokod nizej 
+#for (int c0 = 2; c0 <= 2 * n; c0 += 1)
+#  for (int c1 = max(1, -n + c0); c1 <= min(n, c0 - 1); c1 += 1)
+#    (c0 - c1, c1);
+
+##UWAGA: nie jest to kod kompilowalny poniewaz:
+## 1) (c0 - c1, c1);  jest to pseudoinstrukcja
+## 2) brakuje pragm parallel i for jesli kod docelowy ma byc w OpenMP
+
+##zeby wegenerowac kod przebierajacy elementy zbioru
+S:=[n]->{ S_0[]; S_3[i, j] : 0 < i <= 4 and 0 < j <= 4; S_4[i] : 0 < i <= 4; S_2[i, j] : 0 < i <= 4 and 0 < j <= 4; S_1[i] : 0 < i <= 4 };
+# S:=[n]->{[i,j]:  1<=i,j<=n};
+
+##konwertujemy go na relacje nizej
+
+m:=[n]->{[i,j]->[i,j]:  1<=i,j<=n};
+
+SC1 := Schedule * SCHED ;
+print "SC1:";
+codegen(SC1);
+#Relacja wyzej jest wynikiem zastosowania operatora identity  do zbioru S
+
+## i stosujemy do relacji m polecenie codegen jak nizej
+print "codegen:";
+codegen m;
+
+
+
+###### POSTPROCESOR  
+
+##Zeby wygenerowac kod kompilowalny przeksztalcamy pseudokod wyzej na kod:
+  
+
+#define P #pragma openmp parallel for 
+#define S   a[i][j]=a[i][j-1];
+#define i c0-c1  // zgodnie z pierwszym elementem pseudoinstrtukcji (c0 - c1, c1);
+#define j c1 // zgodnie z drugim elementem pseudoinstrtukcji (c0 - c1, c1);
+
+#int main() {
+#        int  c1,c2,n;
+#        int a[n][n];
+#   for (int c0 = 1; c0 <= n; c0 += 1)
+#     P
+#     for (int c1 = 1; c1 <= n; c1 += 1)
+#         S
+#}
+
+
+
+ #zalozmy ze kod wyzej jest  w pliku "test.c"
+
+##korzystamy z polecenia:
+#gcc test.c -E -o test.txt
+## w pliku "test.txt" jest kod wynikowy
+
+
+#int main() {
+#        int c1,c2,n;
+#        int a[n][n];
+#   for (int c0 = 1; c0 <= n; c0 += 1)
+#     #pragma openmp parallel for
+#     for (int c1 = 1; c1 <= n; c1 += 1)
+#       a[c0-c1][c1]=a[c0-c1][c1-1];
+#}
+
+
+
+##definicje funkcji, ktore moga sie pojawic w pseudokodzie
+
+#include <math.h>
+#define ceild(n,d)  ceil(((double)(n))/((double)(d)))
+#define floord(n,d) floor(((double)(n))/((double)(d)))
+#define max(x,y)    ((x) > (y)? (x) : (y))
+#define min(x,y)    ((x) < (y)? (x) : (y))
